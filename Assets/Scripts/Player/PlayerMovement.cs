@@ -45,7 +45,7 @@ namespace Player
 
         private void FixedUpdate()
         {
-            _rb.AddForce(_moveInput * swimForce);
+            _rb.AddForce(_moveInput * swimForce, ForceMode2D.Force);
             if(_rb.linearVelocity.magnitude > maxSpeed){
                 _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
 
