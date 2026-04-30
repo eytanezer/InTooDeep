@@ -1,3 +1,4 @@
+using Managment;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,9 +12,10 @@ namespace Player
     {
         private Vector3 _spawnPosition;
 
-        [Header("Movement Settings")] [SerializeField]
-        private float maxSpeed = 5;
-        private float swimForce = 10;
+        [Header("Movement Settings")] 
+        [SerializeField] private float maxSpeed = 5;
+        [SerializeField] private float swimForce = 10;
+        [SerializeField] public float rotationSpeed = 360f;
     
         private Vector2 _moveInput;
 
@@ -49,7 +51,29 @@ namespace Player
             if(_rb.linearVelocity.magnitude > maxSpeed){
                 _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
 
+            if (_moveInput != Vector2.zero)
+            {
+                float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
+                
+                Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation, 
+                    targetRotation, 
+                    rotationSpeed * Time.fixedDeltaTime 
+                );
+                // if (Mathf.Abs(_rb.linearVelocity.x) > 0.1f)
+                // {
+                //     _spriteRenderer.flipY = _rb.linearVelocity.x < 0;
+                // }
+                if(_moveInput.x > 0.1f){
+                    _spriteRenderer.flipY = false;
+                } else if(_moveInput.x < -0.1f){
+                    _spriteRenderer.flipY = true;
+                }
+            }
+            
         }
+        
 
    
 
