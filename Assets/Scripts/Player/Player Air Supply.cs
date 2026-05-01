@@ -24,7 +24,7 @@ namespace Player
         
         void Start()
         {
-            _currentAirSupply = airSupplyMax;   
+            ResetAirSupply();  
             _underWater = true;
         }
 
@@ -49,43 +49,38 @@ namespace Player
         private void ResetAirSupply()
         {
             _currentAirSupply = airSupplyMax;
+            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
         }
 
         private void DecreaseAirSupply()
         {
-            if (_currentAirSupply < 0){return;}
+            if (_currentAirSupply <= 0){return;}
+            
             _currentAirSupply -= airLossAmount;
             Debug.Log("Decreasing air supply: " + _currentAirSupply);
-            UpdateLights(false);
+            
+            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
+            UpdateLights();
         }
 
         private void IncreaseAirSupply()
         {
             if (_currentAirSupply >= airSupplyMax) {return;}
+            
             _currentAirSupply += (airLossAmount * airGainSpeed);
             Debug.Log("Increasing air supply: " + _currentAirSupply);
-            UpdateLights(true);
+            
+            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
+            UpdateLights();
         }
 
-        private void UpdateLights(bool increase)
+        // ReSharper disable Unity.PerformanceAnalysis
+        private void UpdateLights()
         {
-            foreach (var lightControler in lights)
+            float airSupplyPercentage = _currentAirSupply / airSupplyMax;
+            foreach (PlayerLightControler lightControler in lights)
             {
-                if (increase)
-                {
-                    if (_currentAirSupply == airSupplyMax)
-                    {
-                        lightControler.ResetLight();
-                    }
-                    else
-                    {
-                        lightControler.IncreaseLight();
-                    }
-                }
-                else
-                {
-                    lightControler.DecreaseLight();
-                }
+                lightControler.UpdateLight(airSupplyPercentage);
             }
         }
 

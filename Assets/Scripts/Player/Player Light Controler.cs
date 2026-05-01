@@ -11,10 +11,8 @@ namespace Player
         [Header("Light Settings")]
         [SerializeField] private float maxSize;
         [SerializeField] private float minSize;
-        [SerializeField] private float sizeIntervals;
         [SerializeField] private float maxIntensity;
         [SerializeField] private float minIntensity;
-        [SerializeField] private float intensityIntervals;
         
         
         private Light2D  _lightSource;
@@ -24,7 +22,6 @@ namespace Player
             _lightSource = GetComponent<Light2D>();
         }
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             ResetLight();
@@ -36,33 +33,41 @@ namespace Player
             _lightSource.pointLightOuterRadius = maxSize;
         }
 
-        public void DecreaseLight()
+        public void UpdateLight(float airSupplyPercentage)
         {
-            if (_lightSource.intensity > minIntensity)
-            {
-                _lightSource.intensity = Mathf.Max(minIntensity, _lightSource.intensity - intensityIntervals);
-            }
-            if (_lightSource.pointLightOuterRadius > minSize)
-            {
-                _lightSource.pointLightOuterRadius = Mathf.Max(minSize, _lightSource.pointLightOuterRadius  - sizeIntervals);
-            }
+            _lightSource.intensity = Mathf.Lerp(minIntensity, maxIntensity, airSupplyPercentage);
+            _lightSource.pointLightOuterRadius = Mathf.Lerp(minSize, maxSize, airSupplyPercentage);
             
-            Debug.Log("Decreasing Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
+            Debug.Log("Updating Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
         }
         
-        public void IncreaseLight()
-        {
-            if (_lightSource.intensity < maxIntensity)
-            {
-                _lightSource.intensity = Mathf.Min(maxIntensity, _lightSource.intensity + intensityIntervals);
-            }
-            if (_lightSource.pointLightOuterRadius < maxSize)
-            {
-                _lightSource.pointLightOuterRadius = Mathf.Min(minSize, _lightSource.pointLightOuterRadius + sizeIntervals);
-            }
-            
-            Debug.Log("Increasing Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
-
-        }
+        // public void DecreaseLight()
+        // {
+        //     if (_lightSource.intensity > minIntensity)
+        //     {
+        //         _lightSource.intensity = Mathf.Max(minIntensity, _lightSource.intensity - intensityIntervals);
+        //     }
+        //     if (_lightSource.pointLightOuterRadius > minSize)
+        //     {
+        //         _lightSource.pointLightOuterRadius = Mathf.Max(minSize, _lightSource.pointLightOuterRadius  - sizeIntervals);
+        //     }
+        //     
+        //     Debug.Log("Decreasing Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
+        // }
+        //
+        // public void IncreaseLight()
+        // {
+        //     if (_lightSource.intensity < maxIntensity)
+        //     {
+        //         _lightSource.intensity = Mathf.Min(maxIntensity, _lightSource.intensity + intensityIntervals);
+        //     }
+        //     if (_lightSource.pointLightOuterRadius < maxSize)
+        //     {
+        //         _lightSource.pointLightOuterRadius = Mathf.Min(minSize, _lightSource.pointLightOuterRadius + sizeIntervals);
+        //     }
+        //     
+        //     Debug.Log("Increasing Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
+        //
+        // }
     }
 }
