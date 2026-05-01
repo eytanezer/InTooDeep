@@ -17,24 +17,12 @@ PrefabInstance:
       value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1827
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9995844
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalRotation.x
@@ -54,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.028828656
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -89,31 +77,15 @@ PrefabInstance:
       value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Size.x
-      value: 0.3368576
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Size.y
-      value: 0.11658994
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0050354153
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0013233759
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.38
+      value: 5.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835908705164915672, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 3438627320219637762, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698185885582895954, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3698185885582895954, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
@@ -151,10 +123,6 @@ PrefabInstance:
     - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: maxSpeed
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: rotationSpeed
-      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 8985453816818474161, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: maxSize

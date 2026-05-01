@@ -185,7 +185,6 @@ MonoBehaviour:
   minSize: 6
   maxIntensity: 1
   minIntensity: 0.4
-  intervals: 0.2
 --- !u!1 &5049870029652413704
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +200,6 @@ GameObject:
   - component: {fileID: 3438627320219637762}
   - component: {fileID: 8370031910306869498}
   - component: {fileID: 8293014673306911130}
-  - component: {fileID: 5775757092793819143}
   - component: {fileID: 3698185885582895954}
   m_Layer: 0
   m_Name: Player
@@ -220,7 +218,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5112686, y: 6.3211884, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5205416243423469325}
@@ -240,9 +238,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd40e2b7549047998e6e57b5e09425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerMovement
-  maxSpeed: 5
+  maxSpeed: 6
   swimForce: 10
-  rotationSpeed: 360
+  rotationSpeed: 5
+  inputSmoothSpeed: 10
+  dashForce: 100
+  dashAirCost: 10
+  dashCooldown: 1
 --- !u!61 &2835908705164915672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -281,13 +283,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.38, y: 0.16}
+    oldSize: {x: 5.09, y: 1.22}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.38, y: 0.16}
+  m_Size: {x: 5, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &4075866226413523499
 SpriteRenderer:
@@ -338,7 +340,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 894768925919314059, guid: b2359478582f24772bf5d63174aaea58, type: 3}
+  m_Sprite: {fileID: 5623864195369250307, guid: 69ffc25b8a31e48b8a55fdcae1c23d8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,58 +429,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5775757092793819143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5049870029652413704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
-  m_ComponentVersion: 2
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: cf94fc77
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowsEnabled: 1
-  m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0.3
-  m_ShadowSoftnessFalloffIntensity: 0.5
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 1.1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!114 &3698185885582895954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +445,9 @@ MonoBehaviour:
   airLossSpeed: 5
   airLossAmount: 5
   airGainSpeed: 0
-  lights: []
+  lights:
+  - {fileID: 8985453816818474161}
+  - {fileID: 84946539600367484}
 --- !u!1 &5296532380652259081
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5296532380652259081}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.66852736, w: 0.7436876}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -567,10 +519,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 49.19
-  m_PointLightOuterAngle: 49.19
+  m_PointLightInnerAngle: 16.3
+  m_PointLightOuterAngle: 57
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 7.93
+  m_PointLightOuterRadius: 10.011944
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -597,4 +549,3 @@ MonoBehaviour:
   minSize: 0
   maxIntensity: 1.2
   minIntensity: 0.8
-  intervals: 0.5
