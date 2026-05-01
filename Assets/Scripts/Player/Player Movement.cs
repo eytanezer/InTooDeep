@@ -16,8 +16,13 @@ namespace Player
         [SerializeField] private float maxSpeed = 5;
         [SerializeField] private float swimForce = 10;
         [SerializeField] public float rotationSpeed = 360f;
+        [SerializeField] public float inputSmoothSpeed = 0.1f;
     
+        // old movement system
         private Vector2 _moveInput;
+        //testing new movement system
+        private Vector2 _targetInput;   // The raw input from the player
+        private Vector2 _currentInput;
 
         public float MaxSpeed
         {
@@ -41,47 +46,74 @@ namespace Player
 
         void OnMove(InputValue value)
         {
-            _moveInput = value.Get<Vector2>();
+            // _moveInput = value.Get<Vector2>();
+            _targetInput = value.Get<Vector2>();
         }
     
 
         private void FixedUpdate()
         {
-            _rb.AddForce(_moveInput * swimForce, ForceMode2D.Force);
-            if(_rb.linearVelocity.magnitude > maxSpeed){
-                _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
+            _currentInput = Vector2.MoveTowards(_currentInput, _targetInput, Time.fixedDeltaTime * inputSmoothSpeed);
 
-            if (_moveInput != Vector2.zero)
+            if (_currentInput != Vector2.zero)
             {
-                float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
+                // negate gravity on rotation
+                Vector2 counterGravityForce = -(Physics2D.gravity * (_rb.gravityScale * _rb.mass));
+                _rb.AddForce(counterGravityForce);
                 
-                Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
-                transform.rotation = Quaternion.RotateTowards(
-                    transform.rotation, 
-                    targetRotation, 
-                    rotationSpeed * Time.fixedDeltaTime 
-                );
-                // if (Mathf.Abs(_rb.linearVelocity.x) > 0.1f)
-                // {
-                //     _spriteRenderer.flipY = _rb.linearVelocity.x < 0;
-                // }
-                if(_moveInput.x > 0.1f){
-                    _spriteRenderer.flipY = false;
-                } else if(_moveInput.x < -0.1f){
-                    _spriteRenderer.flipY = true;
+                // input movement force
+                _rb.AddForce(_currentInput * swimForce);
+                
+                if(_rb.linearVelocity.magnitude > maxSpeed){
+                    _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;
+                }
+                
+                if (_currentInput.sqrMagnitude > 0.01f)
+                {
+                    // float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
+
+                    float targetAngle = Mathf.Atan2(_currentInput.y, _currentInput.x) * Mathf.Rad2Deg;
+                    
+                    Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+                    
+                    transform.rotation = Quaternion.Slerp(
+                        transform.rotation, 
+                        targetRotation, 
+                        rotationSpeed * Time.fixedDeltaTime 
+                    );
+                    
+                    if (Mathf.Abs(_currentInput.x) > 0.1f)
+                    {
+                        _spriteRenderer.flipY = _currentInput.x < 0;
+                    }
+                 
                 }
             }
             
+            
+            // _rb.AddForce(_moveInput * swimForce, ForceMode2D.Force);
+            // if(_rb.linearVelocity.magnitude > maxSpeed){
+            //     _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
+            //
+            // if (_moveInput != Vector2.zero)
+            // {
+            //     float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
+            //     
+            //     Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+            //     transform.rotation = Quaternion.RotateTowards(
+            //         transform.rotation, 
+            //         targetRotation, 
+            //         rotationSpeed * Time.fixedDeltaTime 
+            //     );
+            //     if(_moveInput.x > 0.1f){
+            //         _spriteRenderer.flipY = false;
+            //     } else if(_moveInput.x < -0.1f){
+            //         _spriteRenderer.flipY = true;
+            //     }
+            // }
+            
         }
         
-
-   
-
-
-
-
-
-    
         [Tooltip("Teleports the player back to their original spawn position")]
         public void ResetToSpawn()
         {
@@ -96,8 +128,6 @@ namespace Player
             }
 
         }
-
-
 
         void OnEnable()
         {
