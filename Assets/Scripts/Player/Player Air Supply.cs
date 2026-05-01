@@ -63,6 +63,18 @@ namespace Player
             UpdateLights();
         }
 
+        public bool UseAirSupply(float amount)
+        {
+            if (_currentAirSupply >= amount)
+            {
+                _currentAirSupply -= amount;
+                EventManager.RaiseAirSupplyChanged(_currentAirSupply);
+                UpdateLights();
+                return true;
+            }
+            return false;
+        }
+
         private void IncreaseAirSupply()
         {
             if (_currentAirSupply >= airSupplyMax) {return;}

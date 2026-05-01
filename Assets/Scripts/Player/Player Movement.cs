@@ -17,12 +17,21 @@ namespace Player
         [SerializeField] private float swimForce = 10;
         [SerializeField] public float rotationSpeed = 360f;
         [SerializeField] public float inputSmoothSpeed = 0.1f;
+        
+        [Header("Dash Settings")]
+        [SerializeField] public float dashForce = 20f;
+        public float dashAirCost = 10f;
+        public float dashCooldown = 1f;
     
         // old movement system
-        private Vector2 _moveInput;
+        // private Vector2 _moveInput;
+        
         //testing new movement system
         private Vector2 _targetInput;   // The raw input from the player
         private Vector2 _currentInput;
+        
+        private float _lastDashTime;
+        private PlayerAirSupply _airSupply;
 
         public float MaxSpeed
         {
@@ -41,6 +50,7 @@ namespace Player
             _rb = GetComponent<Rigidbody2D>();
             _spawnPosition = transform.position;
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            _airSupply = GetComponent<PlayerAirSupply>();
         
         }
 
@@ -48,6 +58,14 @@ namespace Player
         {
             // _moveInput = value.Get<Vector2>();
             _targetInput = value.Get<Vector2>();
+        }
+
+        void OnJump(InputValue value)
+        {
+            if (value.isPressed && Time.time >= _lastDashTime + dashCooldown)
+            {
+                Dash();
+            }
         }
     
 
@@ -89,8 +107,6 @@ namespace Player
                  
                 }
             }
-            
-            
             // _rb.AddForce(_moveInput * swimForce, ForceMode2D.Force);
             // if(_rb.linearVelocity.magnitude > maxSpeed){
             //     _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
@@ -111,7 +127,17 @@ namespace Player
             //         _spriteRenderer.flipY = true;
             //     }
             // }
-            
+        }
+
+        private void Dash()
+        {
+            if(_airSupply && _airSupply.UseAirSupply(dashAirCost))
+            {
+                Vector2 dashDirection = _currentInput.normalized;
+                
+                _rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
+                _lastDashTime = dashCooldown;
+            }
         }
         
         [Tooltip("Teleports the player back to their original spawn position")]
