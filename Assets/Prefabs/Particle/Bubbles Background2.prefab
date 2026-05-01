@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1195653220630290990}
   - component: {fileID: 436221398230174865}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Bubbles Background2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1368,8 +1368,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1487,7 +1487,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: -3292208445908796610, guid: c7cfba6cff7934c28bd4e9a5c5f808c0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
