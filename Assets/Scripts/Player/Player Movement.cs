@@ -23,12 +23,10 @@ namespace Player
         public float dashAirCost = 10f;
         public float dashCooldown = 1f;
     
-        // old movement system
-        // private Vector2 _moveInput;
-        
-        //testing new movement system
+        //movement system
         private Vector2 _targetInput;   // The raw input from the player
         private Vector2 _currentInput;
+        private bool _inputChanged = false;
         
         private float _lastDashTime;
         private PlayerAirSupply _airSupply;
@@ -57,6 +55,8 @@ namespace Player
         void OnMove(InputValue value)
         {
             // _moveInput = value.Get<Vector2>();
+            Vector2 input = value.Get<Vector2>();
+            _inputChanged = input != _targetInput;
             _targetInput = value.Get<Vector2>();
         }
 
@@ -76,8 +76,13 @@ namespace Player
             if (_currentInput != Vector2.zero)
             {
                 // negate gravity on rotation
-                Vector2 counterGravityForce = -(Physics2D.gravity * (_rb.gravityScale * _rb.mass));
-                _rb.AddForce(counterGravityForce);
+                if (_inputChanged)
+                {
+                    Debug.Log(_currentInput);
+                    Vector2 counterGravityForce = -(Physics2D.gravity * (_rb.gravityScale * _rb.mass));
+                    _rb.AddForce(counterGravityForce,  ForceMode2D.Force);
+                    _inputChanged = false;
+                }
                 
                 // input movement force
                 _rb.AddForce(_currentInput * swimForce);
@@ -88,8 +93,6 @@ namespace Player
                 
                 if (_currentInput.sqrMagnitude > 0.01f)
                 {
-                    // float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
-
                     float targetAngle = Mathf.Atan2(_currentInput.y, _currentInput.x) * Mathf.Rad2Deg;
                     
                     Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
@@ -107,26 +110,6 @@ namespace Player
                  
                 }
             }
-            // _rb.AddForce(_moveInput * swimForce, ForceMode2D.Force);
-            // if(_rb.linearVelocity.magnitude > maxSpeed){
-            //     _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;}
-            //
-            // if (_moveInput != Vector2.zero)
-            // {
-            //     float targetAngle = Mathf.Atan2(_rb.linearVelocity.y, _rb.linearVelocity.x) * Mathf.Rad2Deg;
-            //     
-            //     Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
-            //     transform.rotation = Quaternion.RotateTowards(
-            //         transform.rotation, 
-            //         targetRotation, 
-            //         rotationSpeed * Time.fixedDeltaTime 
-            //     );
-            //     if(_moveInput.x > 0.1f){
-            //         _spriteRenderer.flipY = false;
-            //     } else if(_moveInput.x < -0.1f){
-            //         _spriteRenderer.flipY = true;
-            //     }
-            // }
         }
 
         private void Dash()
