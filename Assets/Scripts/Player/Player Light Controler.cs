@@ -7,12 +7,23 @@ namespace Player
 {
     public class PlayerLightControler : MonoBehaviour
     {
-        
-        [Header("Light Settings")]
+
+        [Header("Light Settings")] 
+        [Header("Size")] 
+        [SerializeField] private bool controlSize;
         [SerializeField] private float maxSize;
         [SerializeField] private float minSize;
+        
+        [Header("Intensity")]
+        [SerializeField] private bool controlIntensity;
         [SerializeField] private float maxIntensity;
         [SerializeField] private float minIntensity;
+        
+        [Header("Angles")]
+        [SerializeField] private bool controlAngles;
+        [SerializeField] private float maxAngles;
+        [SerializeField] private float minAngles;
+
         
         
         private Light2D  _lightSource;
@@ -35,8 +46,11 @@ namespace Player
 
         public void UpdateLight(float airSupplyPercentage)
         {
-            _lightSource.intensity = Mathf.Lerp(minIntensity, maxIntensity, airSupplyPercentage);
-            _lightSource.pointLightOuterRadius = Mathf.Lerp(minSize, maxSize, airSupplyPercentage);
+            if (controlAngles) {_lightSource.pointLightInnerAngle = Mathf.Lerp(minAngles, maxAngles, airSupplyPercentage);}
+            if (controlIntensity) {_lightSource.intensity = Mathf.Lerp(minIntensity, maxIntensity, airSupplyPercentage);}
+            if(controlSize) {_lightSource.pointLightOuterRadius = Mathf.Lerp(minSize, maxSize, airSupplyPercentage);}
+            
+            
             
             // Debug.Log("Updating Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
         }
