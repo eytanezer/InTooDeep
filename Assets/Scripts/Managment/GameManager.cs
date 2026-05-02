@@ -1,66 +1,76 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Managment
 {
     public class GameManager : MonoSingleton<GameManager>
     {
-        
         public enum GameState
         {
             Title,
             Instructions,
             Gameplay,
+            Paused,
             GameOver
         }
-   
-        
 
-        private void Awake()
-        {
-            
-        }
-        
+        public GameState CurrentState { get; private set; }
+
         private void Start()
         {
-            
+            ChangeState(GameState.Title);
         }
 
         private void OnEnable()
         {
-            Cheats.OnResetGame += ResetGame;
-            Cheats.OnQuit += QuitGame;
-       
+            EventManager.OnStartGame += StartGame;
+            EventManager.OnPauseGame += PauseGame;
+            EventManager.OnResumeGame += ResumeGame;
+            EventManager.OnGameOver += GameOver;
         }
-    
+
         private void OnDisable()
         {
-            Cheats.OnResetGame -= ResetGame;
-            Cheats.OnQuit -= QuitGame;
+            EventManager.OnStartGame -= StartGame;
+            EventManager.OnPauseGame -= PauseGame;
+            EventManager.OnResumeGame -= ResumeGame;
+            EventManager.OnGameOver -= GameOver;
         }
-        
-    
-        public void QuitGame()
+
+        private void ChangeState(GameState newState)
         {
-#if UNITY_EDITOR
-            // Application.Quit() does not work in the editor
-            // so we use this instead
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-        // Close the game!
-        Application.Quit();
-#endif
+            if (CurrentState == newState)
+            {
+                return;
+            }
+
+            CurrentState = newState;
+            EventManager.RaiseGameStateChanged(newState);
         }
 
-  
-
-
-        private void ResetGame()
+        private void StartGame()
         {
-            // Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ChangeState(GameState.Gameplay);
         }
-        
+
+        private void PauseGame()
+        {
+            if (CurrentState == GameState.Gameplay)
+            {
+                ChangeState(GameState.Paused);
+            }
+        }
+
+        private void ResumeGame()
+        {
+            if (CurrentState == GameState.Paused)
+            {
+                ChangeState(GameState.Gameplay);
+            }
+        }
+
+        private void GameOver()
+        {
+            ChangeState(GameState.GameOver);
+        }
     }
 }
