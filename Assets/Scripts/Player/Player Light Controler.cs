@@ -38,7 +38,7 @@ namespace Player
             _lightSource.intensity = Mathf.Lerp(minIntensity, maxIntensity, airSupplyPercentage);
             _lightSource.pointLightOuterRadius = Mathf.Lerp(minSize, maxSize, airSupplyPercentage);
             
-            Debug.Log("Updating Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
+            // Debug.Log("Updating Lights: intensity:" +_lightSource.intensity + " radius:" +_lightSource.pointLightOuterRadius);
         }
         
         // public void DecreaseLight()

@@ -57,7 +57,7 @@ namespace Player
             if (_currentAirSupply <= 0){return;}
             
             _currentAirSupply -= airLossAmount;
-            Debug.Log("Decreasing air supply: " + _currentAirSupply);
+            // Debug.Log("Decreasing air supply: " + _currentAirSupply);
             
             EventManager.RaiseAirSupplyChanged(_currentAirSupply);
             UpdateLights();
@@ -80,7 +80,7 @@ namespace Player
             if (_currentAirSupply >= airSupplyMax) {return;}
             
             _currentAirSupply += (airLossAmount * airGainSpeed);
-            Debug.Log("Increasing air supply: " + _currentAirSupply);
+            // Debug.Log("Increasing air supply: " + _currentAirSupply);
             
             EventManager.RaiseAirSupplyChanged(_currentAirSupply);
             UpdateLights();

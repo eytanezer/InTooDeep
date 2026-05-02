@@ -78,7 +78,7 @@ namespace Player
                 // negate gravity on rotation
                 if (_inputChanged)
                 {
-                    Debug.Log(_currentInput);
+                    // Debug.Log(_currentInput);
                     Vector2 counterGravityForce = -(Physics2D.gravity * (_rb.gravityScale * _rb.mass));
                     _rb.AddForce(counterGravityForce,  ForceMode2D.Force);
                     _inputChanged = false;
