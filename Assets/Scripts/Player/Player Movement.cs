@@ -76,9 +76,28 @@ namespace Player
         private void FixedUpdate()
         {
             if(_lastDashTime > 0) {_lastDashTime -= Time.fixedDeltaTime;}
+
+
+            if (_isAtSurface)
+            {
+                transform.position = new Vector3(transform.position.x, _surfaceSnapY, transform.position.z);
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
+
+                if (_currentInput.y < -0.5f)
+                {
+                    _isAtSurface = false;
+                    _rb.AddForce(_currentInput * swimForce, ForceMode2D.Impulse);
+                }
+            }
             
             _currentInput = Vector2.MoveTowards(_currentInput, _targetInput, Time.fixedDeltaTime * inputSmoothSpeed);
 
+            Vector2 movementForce = _currentInput;
+            if (_isAtSurface)
+            {
+                movementForce.y = 0f; // Disable upward/downward swimming force while snapped
+            }
+            
             if (_currentInput != Vector2.zero)
             {
                 // negate gravity on rotation
@@ -91,7 +110,7 @@ namespace Player
                 }
                 
                 // input movement force
-                _rb.AddForce(_currentInput * swimForce);
+                _rb.AddForce(movementForce * swimForce);
                 
                 if(_lastDashTime <= 0 && _rb.linearVelocity.magnitude > maxSpeed){
                     _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;

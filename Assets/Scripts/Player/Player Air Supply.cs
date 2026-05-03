@@ -41,6 +41,7 @@ namespace Player
             if (!_underWater)
             {
                 IncreaseAirSupply();
+                _timePassed = 0;
             }
             else
             {
@@ -51,7 +52,9 @@ namespace Player
                     _timePassed = 0;
                 }
             }
-
+            
+            
+            
         }
 
         private void ResetAirSupply()
@@ -68,7 +71,7 @@ namespace Player
             }
 
             _currentAirSupply -= airLossAmount;
-            // Debug.Log("Decreasing air supply: " + _currentAirSupply);
+            Debug.Log("Decreasing air supply: " + _currentAirSupply);
 
             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
             UpdateVisuals();
@@ -102,8 +105,9 @@ namespace Player
                 return;
             }
 
-            _currentAirSupply += (airLossAmount * airGainSpeed);
-            // Debug.Log("Increasing air supply: " + _currentAirSupply);
+            _currentAirSupply = Mathf.Min((airLossAmount * airGainSpeed * Time.deltaTime) + _currentAirSupply,  airSupplyMax) ;
+            
+            Debug.Log("Increasing air supply: " + _currentAirSupply);
 
             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
             UpdateVisuals();
