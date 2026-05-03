@@ -22,6 +22,10 @@ namespace Player
         [SerializeField] public float dashForce = 20f;
         public float dashAirCost = 10f;
         public float dashCooldown = 1f;
+        
+        // Surface snapping
+        private bool _isAtSurface = false;
+        private float _surfaceSnapY;
     
         //movement system
         private Vector2 _targetInput;   // The raw input from the player
@@ -71,6 +75,8 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if(_lastDashTime > 0) {_lastDashTime -= Time.fixedDeltaTime;}
+            
             _currentInput = Vector2.MoveTowards(_currentInput, _targetInput, Time.fixedDeltaTime * inputSmoothSpeed);
 
             if (_currentInput != Vector2.zero)
@@ -87,7 +93,7 @@ namespace Player
                 // input movement force
                 _rb.AddForce(_currentInput * swimForce);
                 
-                if(_rb.linearVelocity.magnitude > maxSpeed){
+                if(_lastDashTime <= 0 && _rb.linearVelocity.magnitude > maxSpeed){
                     _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;
                 }
                 
@@ -122,6 +128,19 @@ namespace Player
                 _lastDashTime = dashCooldown;
             }
         }
+
+        public void SnapToSurface(float surfaceSnapY)
+        {
+            if (!_isAtSurface)
+            {
+                _isAtSurface = true;
+                _surfaceSnapY = surfaceSnapY;
+                
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0);
+                transform.position = new Vector3(transform.position.x, _surfaceSnapY, transform.position.z);
+            }
+        }
+        
         
         [Tooltip("Teleports the player back to their original spawn position")]
         public void ResetToSpawn()
@@ -135,7 +154,6 @@ namespace Player
                 _rb.linearVelocity = Vector3.zero;
                 _rb.angularVelocity = 0;
             }
-
         }
 
         void OnEnable()

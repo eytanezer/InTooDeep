@@ -8,16 +8,18 @@ namespace UI
     public class AirSupplyBar : EnemyController
     {
         
-        [SerializeField] private Slider airSupplySlider;
+        [SerializeField] private Image airSupplySlider;
         
         public void SetMaxAirSupply(float maxAirSupply)
         {
-            airSupplySlider.maxValue = maxAirSupply;
+            airSupplySlider.fillAmount = 1;
+            // airSupplySlider.maxValue = maxAirSupply;
         }
         
         public void SetAirSupply(float airSupply)
         {
-            airSupplySlider.value = airSupply;
+            airSupplySlider.fillAmount = airSupply;
+            // airSupplySlider.value = airSupply;
         }
 
         private void OnEnable()
