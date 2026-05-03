@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Player;
 
@@ -9,18 +10,25 @@ namespace Collectables
         [SerializeField] private int requiredKeys = 3;
         
         private bool _isOpen = false;
-        
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void Start()
         {
-            if(_isOpen){return;}
+            _isOpen = false;
+        }
 
-            if (collision.CompareTag("Player"))
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.unityLogger.Log("T1");
+            if(_isOpen){return;}
+            Debug.unityLogger.Log("T2");
+            if (other.CompareTag("Player"))
             {
-                PlayerInventory playerInventory = collision.GetComponent<PlayerInventory>();
+                Debug.unityLogger.Log("T3");
+                PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
                 if (playerInventory != null && playerInventory.KeyCount >= requiredKeys)
                 {
-                    OpenChest();
+                    // OpenChest();
                     Debug.unityLogger.Log("Treasure chest collected");
                     _isOpen = true;
                 }

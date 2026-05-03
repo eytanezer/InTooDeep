@@ -134,7 +134,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.565
   m_Color: {r: 0.501515, g: 0.764151, b: 0.48660558, a: 1}
-  m_Intensity: 0.64
+  m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -181,10 +181,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dab26c15ace4e0eaa7f6767cec3ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerLightControler
+  controlSize: 1
   maxSize: 10
-  minSize: 6
-  maxIntensity: 1
-  minIntensity: 0.4
+  minSize: 3
+  controlIntensity: 0
+  maxIntensity: 5
+  minIntensity: 5
+  controlAngles: 0
+  maxAngles: 0
+  minAngles: 0
 --- !u!1 &5049870029652413704
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +516,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.565
   m_Color: {r: 0.501515, g: 0.764151, b: 0.48660558, a: 1}
-  m_Intensity: 1
+  m_Intensity: 8
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -532,8 +537,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 16.3
-  m_PointLightOuterAngle: 57
+  m_PointLightInnerAngle: 2.799999
+  m_PointLightOuterAngle: 16.3
   m_PointLightInnerRadius: 0
   m_PointLightOuterRadius: 10.011944
   m_ShapeLightParametricSides: 5
@@ -558,7 +563,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dab26c15ace4e0eaa7f6767cec3ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerLightControler
+  controlSize: 1
   maxSize: 10
   minSize: 0
-  maxIntensity: 1.2
-  minIntensity: 0.8
+  controlIntensity: 0
+  maxIntensity: 8
+  minIntensity: 8
+  controlAngles: 1
+  maxAngles: 16
+  minAngles: 3
