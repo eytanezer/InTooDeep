@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour, IPoolable
@@ -6,6 +7,9 @@ public class EnemyController : MonoBehaviour, IPoolable
     [SerializeField] private float maxSpeed = 3f;
     [SerializeField] private float swimForce = 6f;
 
+    [Header("Damage")]
+    [SerializeField] private float airDamageAmount = 10f;
+
     [Header("Lifetime")]
     [SerializeField] private float lifetimeSeconds = 10f;
 
@@ -13,6 +17,7 @@ public class EnemyController : MonoBehaviour, IPoolable
     private Rigidbody2D _rb;
     private Transform _target;
     private float _lifeTimer;
+    private bool _hasHitPlayer;
 
     private void Awake()
     {
@@ -53,6 +58,24 @@ public class EnemyController : MonoBehaviour, IPoolable
         _target = target;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLISION WITH: " + collision.gameObject.name);
+
+        PlayerAirSupply airSupply =
+            collision.gameObject.GetComponent<PlayerAirSupply>();
+
+        if (airSupply == null)
+        {
+            Debug.Log("PlayerAirSupply is NULL");
+            return;
+        }
+
+        Debug.Log("FOUND PlayerAirSupply, reducing air");
+
+        airSupply.UseAirSupply(airDamageAmount);
+    }
+
     public void Despawn()
     {
         _pool?.Return(gameObject);
@@ -61,6 +84,7 @@ public class EnemyController : MonoBehaviour, IPoolable
     public void OnTakenFromPool()
     {
         _lifeTimer = 0f;
+        _hasHitPlayer = false;
 
         if (_rb != null)
         {
@@ -72,6 +96,7 @@ public class EnemyController : MonoBehaviour, IPoolable
     public void OnReturnedToPool()
     {
         _target = null;
+        _hasHitPlayer = false;
 
         if (_rb != null)
         {
