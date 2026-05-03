@@ -1,30 +1,38 @@
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerAirSupply : MonoBehaviour
     {
-        [Header("Air supply parameters")]
-        [SerializeField] private float airSupplyMax;
+        [Header("Air supply parameters")] [SerializeField]
+        private float airSupplyMax;
+
         [SerializeField] private float airLossSpeed;
         [SerializeField] private float airLossAmount;
         [SerializeField] private float airGainSpeed;
-        
-        [Header("Lights")]
-        [SerializeField] private List<PlayerLightControler> lights;
-        
-    
+
+        [Header("Lights")] [SerializeField] private List<PlayerLightControler> lights;
+
+        [Header("MMFeedbacks")] [SerializeField]
+        private MMProgressBar airProgressBar;
+
+        [SerializeField] private MMF_Player dashDrainFeedback; // 2. Add your Feedback slot
+        [SerializeField] private MMF_Player lowAirWarningFeedback;
+
+
         private float _currentAirSupply;
         private float _timePassed;
         private bool _underWater;
-    
+
         public float CurrentAirSupply => _currentAirSupply;
-        
-        
+
+
         void Start()
         {
-            ResetAirSupply();  
+            ResetAirSupply();
             _underWater = true;
         }
 
@@ -43,24 +51,32 @@ namespace Player
                     _timePassed = 0;
                 }
             }
-            
+
         }
 
         private void ResetAirSupply()
         {
             _currentAirSupply = airSupplyMax;
-            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
+            EventManager.RaiseAirSupplyChanged(1);
         }
 
         private void DecreaseAirSupply()
         {
-            if (_currentAirSupply <= 0){return;}
-            
+            if (_currentAirSupply <= 0)
+            {
+                return;
+            }
+
             _currentAirSupply -= airLossAmount;
             // Debug.Log("Decreasing air supply: " + _currentAirSupply);
-            
-            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
-            UpdateLights();
+
+            EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
+            UpdateVisuals();
+
+            if (_currentAirSupply < (airSupplyMax * 0.25f))
+            {
+                // lowAirWarningFeedback?.PlayFeedbacks();
+            }
         }
 
         public bool UseAirSupply(float amount)
@@ -68,22 +84,36 @@ namespace Player
             if (_currentAirSupply >= amount)
             {
                 _currentAirSupply -= amount;
-                EventManager.RaiseAirSupplyChanged(_currentAirSupply);
-                UpdateLights();
+                EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
+                UpdateVisuals();
+
+                // dashDrainFeedback?.PlayFeedbacks();
+
                 return true;
             }
+
             return false;
         }
 
         private void IncreaseAirSupply()
         {
-            if (_currentAirSupply >= airSupplyMax) {return;}
-            
+            if (_currentAirSupply >= airSupplyMax)
+            {
+                return;
+            }
+
             _currentAirSupply += (airLossAmount * airGainSpeed);
             // Debug.Log("Increasing air supply: " + _currentAirSupply);
-            
-            EventManager.RaiseAirSupplyChanged(_currentAirSupply);
+
+            EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
+            UpdateVisuals();
+
+        }
+
+        private void UpdateVisuals()
+        {
             UpdateLights();
+            UpdateAirUI();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -96,6 +126,17 @@ namespace Player
             }
         }
 
+        private void UpdateAirUI()
+        {
+            if (airProgressBar != null)
+            {
+                airProgressBar.UpdateBar(_currentAirSupply, 0f, airSupplyMax);
+            }
+        }
         
+        public void SetUnderWater(bool underWater)
+        {
+            _underWater = underWater;
+        }
     }
 }
