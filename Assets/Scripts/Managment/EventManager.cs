@@ -4,6 +4,7 @@ using Managment;
 
 public class EventManager : MonoBehaviour
 {
+    #region Actions
     public static event Action<GameObject> OnEnemySpawned;
     public static event Action<GameObject> OnEnemyDespawned;
 
@@ -19,6 +20,10 @@ public class EventManager : MonoBehaviour
 
     public static event Action<GameManager.GameState> OnGameStateChanged;
 
+    #endregion
+    
+    #region Invoking Events
+    #region  Enemy Events
     public static void RaiseEnemySpawned(GameObject enemy) =>
         OnEnemySpawned?.Invoke(enemy);
 
@@ -30,7 +35,8 @@ public class EventManager : MonoBehaviour
 
     public static void RaiseMaxAirSupplyChanged(float newMaxAirSupply) =>
         OnMaxAirSupplyChanged?.Invoke(newMaxAirSupply);
-
+    #endregion
+    #region GameState Events
     public static void RaiseStartGame() =>
         OnStartGame?.Invoke();
 
@@ -51,4 +57,6 @@ public class EventManager : MonoBehaviour
 
     public static void RaiseGameStateChanged(GameManager.GameState state) =>
         OnGameStateChanged?.Invoke(state);
+    #endregion
+    #endregion
 }
