@@ -4,7 +4,8 @@ public class EnemyPool : ObjectPool<EnemyController>
 {
     public void Initialize(GameObject enemyPrefab, int initialSize)
     {
-        EnemyController enemyController = enemyPrefab.GetComponent<EnemyController>();
+        EnemyController enemyController =
+            enemyPrefab.GetComponent<EnemyController>();
 
         if (enemyController == null)
         {
@@ -18,7 +19,6 @@ public class EnemyPool : ObjectPool<EnemyController>
     public GameObject Get()
     {
         EnemyController enemy = GetFromPool();
-        enemy.Init(this);
         return enemy.gameObject;
     }
 
