@@ -71,6 +71,7 @@ namespace Managment
         private void GameOver()
         {
             ChangeState(GameState.GameOver);
+            EventManager.RaiseResetGame();
         }
     }
 }
