@@ -450,10 +450,13 @@ MonoBehaviour:
   airSupplyMax: 100
   airLossSpeed: 5
   airLossAmount: 5
-  airGainSpeed: 0
+  airGainSpeed: 2
   lights:
   - {fileID: 8985453816818474161}
   - {fileID: 84946539600367484}
+  airProgressBar: {fileID: 0}
+  dashDrainFeedback: {fileID: 0}
+  lowAirWarningFeedback: {fileID: 0}
 --- !u!114 &3729090350602663048
 MonoBehaviour:
   m_ObjectHideFlags: 0
