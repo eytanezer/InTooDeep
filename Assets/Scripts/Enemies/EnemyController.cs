@@ -5,15 +5,13 @@ public class EnemyController : MonoBehaviour, IPoolable
     [Header("Movement Settings")]
     [SerializeField] private float maxSpeed = 3f;
     [SerializeField] private float swimForce = 6f;
-    [SerializeField] private float directionChangeInterval = 1.5f;
 
     [Header("Lifetime")]
     [SerializeField] private float lifetimeSeconds = 10f;
 
     private EnemyPool _pool;
     private Rigidbody2D _rb;
-    private Vector2 _swimDirection;
-    private float _directionTimer;
+    private Transform _target;
     private float _lifeTimer;
 
     private void Awake()
@@ -24,13 +22,6 @@ public class EnemyController : MonoBehaviour, IPoolable
     private void Update()
     {
         _lifeTimer += Time.deltaTime;
-        _directionTimer += Time.deltaTime;
-
-        if (_directionTimer >= directionChangeInterval)
-        {
-            _directionTimer = 0f;
-            PickRandomDirection();
-        }
 
         if (_lifeTimer >= lifetimeSeconds)
         {
@@ -40,9 +31,15 @@ public class EnemyController : MonoBehaviour, IPoolable
 
     private void FixedUpdate()
     {
-        if (_rb == null) return;
+        if (_rb == null || _target == null)
+        {
+            return;
+        }
 
-        _rb.AddForce(_swimDirection * swimForce, ForceMode2D.Force);
+        Vector2 direction =
+            ((Vector2)_target.position - _rb.position).normalized;
+
+        _rb.AddForce(direction * swimForce, ForceMode2D.Force);
 
         if (_rb.linearVelocity.magnitude > maxSpeed)
         {
@@ -50,9 +47,10 @@ public class EnemyController : MonoBehaviour, IPoolable
         }
     }
 
-    public void Init(EnemyPool pool)
+    public void Init(EnemyPool pool, Transform target)
     {
         _pool = pool;
+        _target = target;
     }
 
     public void Despawn()
@@ -63,8 +61,6 @@ public class EnemyController : MonoBehaviour, IPoolable
     public void OnTakenFromPool()
     {
         _lifeTimer = 0f;
-        _directionTimer = 0f;
-        PickRandomDirection();
 
         if (_rb != null)
         {
@@ -75,20 +71,12 @@ public class EnemyController : MonoBehaviour, IPoolable
 
     public void OnReturnedToPool()
     {
+        _target = null;
+
         if (_rb != null)
         {
             _rb.linearVelocity = Vector2.zero;
             _rb.angularVelocity = 0f;
-        }
-    }
-
-    private void PickRandomDirection()
-    {
-        _swimDirection = UnityEngine.Random.insideUnitCircle.normalized;
-
-        if (_swimDirection == Vector2.zero)
-        {
-            _swimDirection = Vector2.right;
         }
     }
 }
