@@ -2604,41 +2604,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &788633878 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2970201581555677652, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
-  m_PrefabInstance: {fileID: 1738802505}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &788633880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8441667349943793555, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
-  m_PrefabInstance: {fileID: 1738802505}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788633878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b502d474233c843a075dbb76cdf41f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPool
---- !u!114 &788633882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788633878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76915897322f0c244b882c996582e02e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  pool: {fileID: 788633880}
-  enemyPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  player: {fileID: 0}
-  initialPoolSize: 10
-  spawnInterval: 2
-  maxActiveEnemies: 20
 --- !u!4 &798409832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5340951680306831929, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
@@ -5547,13 +5512,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 201397728}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8584269525366064406, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2970201581555677652, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 788633882}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69230179e382ca44a64eeac48e6509a, type: 3}
 --- !u!43 &1818860536
 Mesh:
