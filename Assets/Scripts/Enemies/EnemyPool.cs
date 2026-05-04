@@ -18,7 +18,7 @@ public class EnemyPool : ObjectPool<EnemyController>
     public GameObject Get()
     {
         EnemyController enemy = GetFromPool();
-        enemy.Init(this);
+        // enemy.Init(this);
         return enemy.gameObject;
     }
 

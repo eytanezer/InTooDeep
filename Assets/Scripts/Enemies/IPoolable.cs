@@ -1,5 +1,8 @@
-public interface IPoolable
+namespace Enemies
 {
-    void OnTakenFromPool();
-    void OnReturnedToPool();
+    public interface IPoolable
+    {
+        void OnTakenFromPool();
+        void OnReturnedToPool();
+    }
 }
