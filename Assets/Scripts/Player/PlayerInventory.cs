@@ -16,5 +16,14 @@ namespace Player
         {
             KeyCount = 0;
         }
+        
+        private void OnEnable()
+        {
+            EventManager.OnResetGame += ResetKeyCount;
+        }
+        private void OnDisable(){
+            EventManager.OnResetGame -= ResetKeyCount;
+            
+        }
     }
 }
