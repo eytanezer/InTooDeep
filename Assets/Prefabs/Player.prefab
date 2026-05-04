@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerMovement
   maxSpeed: 6
   swimForce: 10
-  rotationSpeed: 5
+  rotationSpeed: 3
   inputSmoothSpeed: 10
   dashForce: 10
   dashAirCost: 10

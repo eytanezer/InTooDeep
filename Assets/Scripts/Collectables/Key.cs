@@ -77,7 +77,7 @@ namespace Collectables
         private void CollectKey()
         {
             _isCollected  = true;
-            EventManager.RaiseKeyCollected();
+            // EventManager.RaiseKeyCollected();
             
             if(_spriteRenderer) _spriteRenderer.enabled = false;
             if(_collider2D) _collider2D.enabled = false;

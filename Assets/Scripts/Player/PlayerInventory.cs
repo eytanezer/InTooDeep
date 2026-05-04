@@ -10,11 +10,13 @@ namespace Player
         {
             KeyCount++;
             Debug.Log("Key collected! Total keys: " + KeyCount);
+            EventManager.RaiseKeyCollected(KeyCount);
         }
 
         public void ResetKeyCount()
         {
             KeyCount = 0;
+            EventManager.RaiseKeyCollected(KeyCount);
         }
         
         private void OnEnable()
