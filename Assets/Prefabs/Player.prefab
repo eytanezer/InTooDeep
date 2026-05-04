@@ -568,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerLightControler
   controlSize: 1
   maxSize: 10
-  minSize: 0
+  minSize: 4
   controlIntensity: 0
   maxIntensity: 8
   minIntensity: 8
