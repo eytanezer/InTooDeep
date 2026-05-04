@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2587803871795563118}
   - component: {fileID: 8441667349943793555}
-  - component: {fileID: 8584269525366064406}
+  - component: {fileID: 8875631580558808291}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b502d474233c843a075dbb76cdf41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPool
---- !u!114 &8584269525366064406
+--- !u!114 &8875631580558808291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,15 +55,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2970201581555677652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1bc5a5dba2cb3943bcfe643e684ec4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 76915897322f0c244b882c996582e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   pool: {fileID: 8441667349943793555}
   enemyPrefab: {fileID: 1913872607596558790, guid: a89aad123056f8748a189ddd0cc8f157, type: 3}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 5340951680306831929}
   player: {fileID: 0}
   initialPoolSize: 10
-  spawnInterval: 6
+  spawnInterval: 2
   maxActiveEnemies: 20
 --- !u!1 &6020321365272480181
 GameObject:
