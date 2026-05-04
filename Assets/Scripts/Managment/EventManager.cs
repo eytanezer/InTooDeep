@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action<float> OnAirSupplyChanged;
     public static event Action<float> OnMaxAirSupplyChanged;
+    public static event Action OnKeyCollected;
 
     public static event Action OnStartGame;
     public static event Action OnPauseGame;
@@ -35,7 +36,14 @@ public class EventManager : MonoBehaviour
 
     public static void RaiseMaxAirSupplyChanged(float newMaxAirSupply) =>
         OnMaxAirSupplyChanged?.Invoke(newMaxAirSupply);
+    
+    public static void RaiseKeyCollected() =>
+        OnKeyCollected?.Invoke();
     #endregion
+    
+    
+    
+    
     #region GameState Events
     public static void RaiseStartGame() =>
         OnStartGame?.Invoke();
