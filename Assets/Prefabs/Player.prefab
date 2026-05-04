@@ -224,8 +224,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5205416243423469325}
   - {fileID: 7130667825066159446}
@@ -248,7 +248,7 @@ MonoBehaviour:
   swimForce: 10
   rotationSpeed: 5
   inputSmoothSpeed: 10
-  dashForce: 100
+  dashForce: 10
   dashAirCost: 10
   dashCooldown: 1
 --- !u!61 &2835908705164915672
@@ -450,7 +450,7 @@ MonoBehaviour:
   airSupplyMax: 100
   airLossSpeed: 5
   airLossAmount: 5
-  airGainSpeed: 2
+  airGainSpeed: 20
   lights:
   - {fileID: 8985453816818474161}
   - {fileID: 84946539600367484}

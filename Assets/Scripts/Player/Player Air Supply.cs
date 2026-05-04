@@ -36,6 +36,16 @@ namespace Player
             _underWater = true;
         }
 
+        void OnEnable()
+        {
+            EventManager.OnResetGame += ResetAirSupply;
+        }
+
+        void OnDisable()
+        {
+            EventManager.OnResetGame -= ResetAirSupply;
+        }
+
         void Update()
         {
             if (!_underWater)
@@ -52,9 +62,6 @@ namespace Player
                     _timePassed = 0;
                 }
             }
-            
-            
-            
         }
 
         private void ResetAirSupply()
@@ -70,7 +77,7 @@ namespace Player
                 return;
             }
 
-            _currentAirSupply -= airLossAmount;
+            _currentAirSupply = Mathf.Max(0,  _currentAirSupply - airLossAmount) ;
             Debug.Log("Decreasing air supply: " + _currentAirSupply);
 
             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
@@ -79,6 +86,12 @@ namespace Player
             if (_currentAirSupply < (airSupplyMax * 0.25f))
             {
                 // lowAirWarningFeedback?.PlayFeedbacks();
+            }
+
+            if (_currentAirSupply <= 0)
+            {
+                Debug.Log("NO AIR!!!");
+                EventManager.RaiseGameOver();
             }
         }
 
@@ -141,6 +154,9 @@ namespace Player
         public void SetUnderWater(bool underWater)
         {
             _underWater = underWater;
+            _currentAirSupply = Mathf.Round(_currentAirSupply);
+             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
+             UpdateVisuals();
         }
     }
 }

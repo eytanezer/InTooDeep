@@ -166,6 +166,7 @@ namespace Player
         {
             // Reset position
             transform.position = _spawnPosition;
+            transform.rotation = Quaternion.identity;
 
             // If the player has a Rigidbody, kill any leftover movement/momentum
             if (_rb)
@@ -178,11 +179,13 @@ namespace Player
         void OnEnable()
         {
             Cheats.OnResetPlayersPosition += ResetToSpawn;
+            EventManager.OnResetGame += ResetToSpawn;
         }
 
         void OnDisable()
         {
             Cheats.OnResetPlayersPosition -= ResetToSpawn;
+            EventManager.OnResetGame += ResetToSpawn;
         }
     }
 }
