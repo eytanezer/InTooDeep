@@ -6,19 +6,28 @@ namespace Collectables
 {
     public class Key : MonoBehaviour
     {
-        
+        [Header("Proximity Settings")]
         [SerializeField] private float PlayerDistanceLimit;
+        
+        
+        [Header("Light Settings")]
+        [SerializeField] private float MaxLightIntensity;
+        [SerializeField] private float GlowSpeed;
+        
         
         private Transform _playerTransform;
         private bool _isPlayerInRange;
         
         private Light2D _light2D;
+        private float _targetLightIntensity = 0f;
 
         void Start()
         {
             _playerTransform = GameObject.FindWithTag("Player").transform;
             _light2D = GetComponentInChildren<Light2D>();
-            _light2D.enabled = false;
+            
+            _light2D.intensity = 0f;
+            _light2D.enabled = true;
         }
 
         void Update()
@@ -28,9 +37,14 @@ namespace Collectables
             {
                 PlayerInRange(false);
             }
-            if(!_isPlayerInRange && distance < PlayerDistanceLimit)
+            if(!_isPlayerInRange && distance <= PlayerDistanceLimit)
             {
                 PlayerInRange(true);
+            }
+
+            if (_light2D.intensity != _targetLightIntensity)
+            {
+                _light2D.intensity = Mathf.MoveTowards(_light2D.intensity, _targetLightIntensity, GlowSpeed * Time.deltaTime);
             }
         }
         
@@ -52,7 +66,8 @@ namespace Collectables
 
         private void PlayerInRange(bool isPlayerInRange)
         {
-            _light2D.enabled = isPlayerInRange;
+            
+            _targetLightIntensity = isPlayerInRange ? MaxLightIntensity : 0f;
             _isPlayerInRange = isPlayerInRange;
         }
     }
