@@ -223,8 +223,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.010699987, y: -0.29260004, z: 0}
-    m_Extent: {x: 1.0353, y: 0.7084, z: 0}
+    m_Center: {x: 0.011750013, y: -0.28315002, z: 0}
+    m_Extent: {x: 0.83385, y: 0.69895, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -235,16 +235,16 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5458595, y: -0.49999988, z: 0}
-  - {x: 0.49968803, y: -0.29983377, z: 0}
+  - {x: -0.316854, y: -0.4811671, z: 0}
+  - {x: 0.34543538, y: -0.48116696, z: 0}
+  - {x: 0.31308657, y: -0.32808313, z: 0}
   - {x: 0.32073146, y: -0.18163808, z: 0}
   - {x: 0.1753846, y: -0.23844104, z: 0}
   - {x: 0.02858649, y: -0.0839819, z: 0}
   - {x: -0.15068227, y: -0.09534261, z: 0}
   - {x: -0.22989404, y: -0.0839819, z: 0}
-  - {x: -0.3799794, y: -0.27711275, z: 0}
-  - {x: -0.52589583, y: -0.40207958, z: 0}
+  - {x: -0.31777915, y: -0.2300304, z: 0}
+  - {x: -0.32201606, y: -0.3832466, z: 0}
 --- !u!114 &5840684179748613627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,10 +257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13344cf0a0440908ca5fdb562ae791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Effects.EnvironmentLightEffect
-  enableFlicker: 1
-  flickerSpeed: 5
-  flickerIntensityVariation: 0.5
-  enablePulse: 0
+  enableFlicker: 0
+  flickerSpeed: 0.38
+  flickerIntensityVariation: 0.64
+  enablePulse: 1
   pulseSpeed: 2
-  pulseIntensityVariation: 1
-  pulseSizeVariation: 0.2
+  pulseIntensityVariation: 0.3
+  pulseSizeVariation: 0.08
