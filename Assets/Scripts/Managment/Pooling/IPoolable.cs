@@ -1,4 +1,4 @@
-namespace Enemies
+namespace Managment.Pooling
 {
     public interface IPoolable
     {
