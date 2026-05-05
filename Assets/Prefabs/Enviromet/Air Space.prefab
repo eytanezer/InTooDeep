@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.WaterSurface
   snapPoint: {fileID: 4979339370724152494}
+  fillingAirClip: {fileID: 8300000, guid: 7f30d122c231542cf95eb7186092de78, type: 3}
 --- !u!61 &6794946571702233339
 BoxCollider2D:
   m_ObjectHideFlags: 0

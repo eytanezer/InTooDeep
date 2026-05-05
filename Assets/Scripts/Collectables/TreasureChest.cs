@@ -1,4 +1,5 @@
 using System;
+using Managment.SoundScripts;
 using UnityEngine;
 using Player;
 
@@ -8,6 +9,11 @@ namespace Collectables
     {
         [Header("Chest Settings")]
         [SerializeField] private int requiredKeys = 3;
+        
+        [Header("Audio Settings")]
+        [SerializeField] private AudioClip chestLockedClip;
+        [SerializeField] private AudioClip chestOpensClip;
+        [SerializeField] private AudioClip sparkleClip;
         
         private bool _isOpen = false;
 
@@ -30,11 +36,15 @@ namespace Collectables
                 {
                     OpenChest();
                     Debug.unityLogger.Log("Treasure chest collected");
+                    SoundManager.Instance.PlaySoundFXClip(chestOpensClip, transform, 0.8f);
+                    SoundManager.Instance.PlaySoundFXClip(sparkleClip, transform, 0.5f);
                     _isOpen = true;
                 }
                 else
                 {
                     Debug.unityLogger.Log("Treasure still locked");
+                    SoundManager.Instance.PlaySoundFXClip(chestLockedClip, transform, 0.8f);
+                    
                 }
             }
         }

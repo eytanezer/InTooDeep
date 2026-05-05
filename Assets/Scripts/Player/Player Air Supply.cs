@@ -26,9 +26,14 @@ namespace Player
         private float _currentAirSupply;
         private float _timePassed;
         private bool _underWater;
+        private PlayerBreathingManager _breathingManager;
 
         public float CurrentAirSupply => _currentAirSupply;
 
+        void Awake()
+        {
+            _breathingManager = GetComponent<PlayerBreathingManager>();
+        }
 
         void Start()
         {
@@ -161,6 +166,8 @@ namespace Player
             _currentAirSupply = Mathf.Round(_currentAirSupply);
              EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
              UpdateVisuals();
+             
+             if (!_breathingManager) _breathingManager.SetUnderwaterStatus(underWater);
         }
     }
 }

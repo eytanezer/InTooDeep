@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 8293014673306911130}
   - component: {fileID: 3698185885582895954}
   - component: {fileID: 3729090350602663048}
+  - component: {fileID: 2868224085088233651}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,6 +252,7 @@ MonoBehaviour:
   dashForce: 10
   dashAirCost: 10
   dashCooldown: 1
+  dashClip: {fileID: 8300000, guid: a9aa4b33a2f5440fd90206e8ae73de9f, type: 3}
 --- !u!61 &2835908705164915672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -469,6 +471,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111842161b5fd48c58233f3dd01d563e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+--- !u!114 &2868224085088233651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049870029652413704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa38a89956704fbf85af47659a9c1584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerBreathingManager
+  breathingClip: {fileID: 8300000, guid: 9b7b3b7cc00d04665a7548f01d1f32de, type: 3}
+  breathingVolume: 1
 --- !u!1 &5296532380652259081
 GameObject:
   m_ObjectHideFlags: 0

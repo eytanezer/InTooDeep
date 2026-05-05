@@ -1,3 +1,4 @@
+using Managment.SoundScripts;
 using UnityEngine;
 
 namespace Player
@@ -5,6 +6,8 @@ namespace Player
     public class WaterSurface : MonoBehaviour
     {
         public Transform snapPoint;
+        
+        [SerializeField] private AudioClip fillingAirClip;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -16,6 +19,7 @@ namespace Player
                 if (playerMovement != null  && playerAirSupply != null){
                     playerMovement.SnapToSurface(snapPoint.position.y);
                     playerAirSupply.SetUnderWater(false);
+                    SoundManager.Instance.PlaySoundFXClip(fillingAirClip, transform, 0.8f, 5f);
                 }
             }
         }

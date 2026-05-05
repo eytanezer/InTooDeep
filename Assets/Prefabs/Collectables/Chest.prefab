@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectables.TreasureChest
   requiredKeys: 3
+  chestLockedClip: {fileID: 8300000, guid: d681d89075dce4b40b4167d205f1e84f, type: 3}
+  chestOpensClip: {fileID: 8300000, guid: 3169f73c4e02641f6b23a55a64ef2144, type: 3}
+  sparkleClip: {fileID: 8300000, guid: fe75e220270d2487686425561e36520e, type: 3}
 --- !u!61 &8702961785617850975
 BoxCollider2D:
   m_ObjectHideFlags: 0

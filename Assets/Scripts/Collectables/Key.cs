@@ -1,4 +1,5 @@
 using System;
+using Managment.SoundScripts;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -13,6 +14,9 @@ namespace Collectables
         [Header("Light Settings")]
         [SerializeField] private float MaxLightIntensity;
         [SerializeField] private float GlowSpeed;
+        
+        [Header("Audio Settings")]
+        [SerializeField] private AudioClip KeyCollectClip;
         
         private bool _isPlayerInRange;
         private bool _isCollected =  false;
@@ -78,7 +82,7 @@ namespace Collectables
         {
             _isCollected  = true;
             // EventManager.RaiseKeyCollected();
-            
+            SoundManager.Instance.PlaySoundFXClip(KeyCollectClip, transform, 0.25f);
             if(_spriteRenderer) _spriteRenderer.enabled = false;
             if(_collider2D) _collider2D.enabled = false;
             if(_light2D) _light2D.enabled = false;

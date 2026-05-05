@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using Management.SoundScripts;
-using Managment;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace ManagmentScripts.SoundScripts
+namespace Managment.SoundScripts
 {
     /// <summary>
     /// singleton class to manage all sound effects and background music

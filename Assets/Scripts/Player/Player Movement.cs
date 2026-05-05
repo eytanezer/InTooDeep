@@ -1,4 +1,5 @@
 using Managment;
+using Managment.SoundScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,7 @@ namespace Player
         [SerializeField] public float dashForce = 20f;
         public float dashAirCost = 10f;
         public float dashCooldown = 1f;
+        [SerializeField] private AudioClip dashClip;
         
         // Surface snapping
         private bool _isAtSurface = false;
@@ -144,6 +146,7 @@ namespace Player
                 Vector2 dashDirection = _currentInput.normalized;
                 
                 _rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
+                SoundManager.Instance.PlaySoundFXClip(dashClip, transform, 0.8f, 3f);
                 _lastDashTime = dashCooldown;
             }
         }
