@@ -674,7 +674,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
-    m_Scale: {x: 100, y: 100, z: 100}
+    m_Scale: {x: 5, y: 5, z: 5}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4868,6 +4868,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1102948035364909184}
     m_Modifications:
+    - target: {fileID: 2548290976107470656, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548290976107470656, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.73
@@ -4894,19 +4902,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2933165660370152341, guid: 4e4693f2fab8c4c5e94d81a687119acc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
