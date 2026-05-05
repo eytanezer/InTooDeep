@@ -83,7 +83,7 @@ namespace Player
             }
 
             _currentAirSupply = Mathf.Max(0,  _currentAirSupply - airLossAmount) ;
-            Debug.Log("Decreasing air supply: " + _currentAirSupply);
+            // Debug.Log("Decreasing air supply: " + _currentAirSupply);
 
             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
             UpdateVisuals();
@@ -129,7 +129,7 @@ namespace Player
 
             _currentAirSupply = Mathf.Min((airLossAmount * airGainSpeed * Time.deltaTime) + _currentAirSupply,  airSupplyMax) ;
             
-            Debug.Log("Increasing air supply: " + _currentAirSupply);
+            // Debug.Log("Increasing air supply: " + _currentAirSupply);
 
             EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
             UpdateVisuals();
@@ -167,7 +167,7 @@ namespace Player
              EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
              UpdateVisuals();
              
-             if (!_breathingManager) _breathingManager.SetUnderwaterStatus(underWater);
+             if (_breathingManager) _breathingManager.SetUnderwaterStatus(underWater);
         }
     }
 }

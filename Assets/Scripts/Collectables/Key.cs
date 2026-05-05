@@ -82,7 +82,7 @@ namespace Collectables
         {
             _isCollected  = true;
             // EventManager.RaiseKeyCollected();
-            SoundManager.Instance.PlaySoundFXClip(KeyCollectClip, transform, 0.25f);
+            SoundManager.Instance.PlaySoundFXClip(KeyCollectClip, transform, 0.1f);
             if(_spriteRenderer) _spriteRenderer.enabled = false;
             if(_collider2D) _collider2D.enabled = false;
             if(_light2D) _light2D.enabled = false;

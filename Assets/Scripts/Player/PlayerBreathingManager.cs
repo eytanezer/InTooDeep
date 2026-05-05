@@ -10,7 +10,7 @@ namespace Player
         [Header("Audio Settings")]
         [SerializeField] private AudioClip breathingClip;
         // [SerializeField] private AudioClip fillingAirClip;
-        [SerializeField] private float breathingVolume = 1f;
+        [SerializeField] private float breathingVolume = 0.5f;
 
         private AudioSourcePoolable _breathingSource;
         // private AudioSourcePoolable _fillingAirSource;
@@ -23,6 +23,7 @@ namespace Player
             
             if (_breathingSource)  _breathingSource.Source.Pause();
             // if (_fillingAirSource)  _breathingSource.Source.Pause();
+            Debug.Log("_breathingSource now: "+_breathingSource.Source.isPlaying);
             
         }
 
@@ -48,9 +49,11 @@ namespace Player
 
             if (state == GameManager.GameState.Gameplay)
             {
+                Debug.Log("Gameplay");
                 if (_isUnderwater && !_breathingSource.Source.isPlaying)
                 {
                     _breathingSource.Source.Play();
+                    Debug.Log("_breathingSource now: "+_breathingSource.Source.isPlaying);
                 }
             }
             else 
@@ -58,6 +61,7 @@ namespace Player
                 if (_breathingSource.Source.isPlaying)
                 {
                     _breathingSource.Source.Pause();
+                    Debug.Log("_breathingSource now: "+_breathingSource.Source.isPlaying);
                 }
             }
         }
@@ -73,11 +77,13 @@ namespace Player
                 Debug.Log("Underwater");
                 // _fillingAirSource.Source.Pause();
                 _breathingSource.Source.Play();
+                Debug.Log("_breathingSource now: "+_breathingSource.Source.isPlaying);
             }
             else
             {
                 Debug.Log("Not underwater");
                 _breathingSource.Source.Pause();
+                Debug.Log("_breathingSource now: "+_breathingSource.Source.isPlaying);
                 // _fillingAirSource.Source.Play();
             }
         }

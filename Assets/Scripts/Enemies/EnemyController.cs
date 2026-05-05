@@ -18,7 +18,10 @@ public class EnemyController : MonoBehaviour, IPoolable
     private Rigidbody2D _rb;
     private Transform _target;
     private float _lifeTimer;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
     private bool _hasHitPlayer;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
+    
 
     private void Awake()
     {

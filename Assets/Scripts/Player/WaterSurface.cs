@@ -19,7 +19,7 @@ namespace Player
                 if (playerMovement != null  && playerAirSupply != null){
                     playerMovement.SnapToSurface(snapPoint.position.y);
                     playerAirSupply.SetUnderWater(false);
-                    SoundManager.Instance.PlaySoundFXClip(fillingAirClip, transform, 0.8f, 5f);
+                    SoundManager.Instance.PlaySoundFXClip(fillingAirClip, transform, 0.3f, 5f);
                 }
             }
         }
