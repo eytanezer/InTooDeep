@@ -5,6 +5,7 @@ using Managment;
 public class EventManager : MonoBehaviour
 {
     #region Actions
+
     public static event Action<GameObject> OnEnemySpawned;
     public static event Action<GameObject> OnEnemyDespawned;
 
@@ -17,14 +18,17 @@ public class EventManager : MonoBehaviour
     public static event Action OnResumeGame;
     public static event Action OnQuitGame;
     public static event Action OnResetGame;
+
     public static event Action OnGameOver;
+    public static event Action OnWinGame;
+    public static event Action OnLoseGame;
 
     public static event Action<GameManager.GameState> OnGameStateChanged;
 
     #endregion
-    
+
     #region Invoking Events
-    #region  Enemy Events
+
     public static void RaiseEnemySpawned(GameObject enemy) =>
         OnEnemySpawned?.Invoke(enemy);
 
@@ -63,8 +67,14 @@ public class EventManager : MonoBehaviour
     public static void RaiseGameOver() =>
         OnGameOver?.Invoke();
 
+    public static void RaiseWinGame() =>
+        OnWinGame?.Invoke();
+
+    public static void RaiseLoseGame() =>
+        OnLoseGame?.Invoke();
+
     public static void RaiseGameStateChanged(GameManager.GameState state) =>
         OnGameStateChanged?.Invoke(state);
-    #endregion
+
     #endregion
 }
