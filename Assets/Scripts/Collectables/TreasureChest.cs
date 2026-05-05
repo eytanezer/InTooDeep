@@ -28,7 +28,7 @@ namespace Collectables
                 PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
                 if (playerInventory != null && playerInventory.KeyCount >= requiredKeys)
                 {
-                    // OpenChest();
+                    OpenChest();
                     Debug.unityLogger.Log("Treasure chest collected");
                     _isOpen = true;
                 }
@@ -41,7 +41,8 @@ namespace Collectables
 
         private void OpenChest()
         {
-            // TODO: add chest opening animation
+            EventManager.RaiseWinGame();
         }
+    
     }
 }

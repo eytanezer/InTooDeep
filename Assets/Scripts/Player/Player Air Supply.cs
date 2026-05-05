@@ -91,7 +91,7 @@ namespace Player
             if (_currentAirSupply <= 0)
             {
                 Debug.Log("NO AIR!!!");
-                EventManager.RaiseGameOver();
+                EventManager.RaiseLoseGame();
             }
         }
 
@@ -103,11 +103,15 @@ namespace Player
                 EventManager.RaiseAirSupplyChanged(_currentAirSupply / airSupplyMax);
                 UpdateVisuals();
 
-                // dashDrainFeedback?.PlayFeedbacks();
-
+                if (_currentAirSupply <= 0)
+                {
+                    Debug.Log("NO AIR!!!");
+                    EventManager.RaiseLoseGame();
+                }
+                
                 return true;
             }
-
+            
             return false;
         }
 
