@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameOverScreenUI : MonoBehaviour
 {
+    [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_Text resultText;
 
     private void OnEnable()
@@ -18,9 +19,10 @@ public class GameOverScreenUI : MonoBehaviour
 
     private void HandleStateChanged(GameManager.GameState state)
     {
-        gameObject.SetActive(state == GameManager.GameState.GameOver);
+        bool shouldShow = state == GameManager.GameState.GameOver;
+        gameOverPanel.SetActive(shouldShow);
 
-        if (state == GameManager.GameState.GameOver)
+        if (shouldShow)
         {
             UpdateResultText();
         }
