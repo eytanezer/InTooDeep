@@ -102,5 +102,5 @@ Assets/TextMesh Pro/
 Assets/TextMesh Pro.meta
 
 # Feel package (avoid pushing heavy assets)
-Assets/Feel/
-Assets/Feel.meta
+#Assets/Feel/
+#Assets/Feel.meta
