@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class LightRadiusTriggerScaler : MonoBehaviour
 {
-    [Header("Collider Radius")]
-    [SerializeField] private float maxRadius = 3f;
-    [SerializeField] private float minRadius = 0.5f;
+    [Header("Light Reference")]
+    [SerializeField] private Light2D playerLight;
+
+    [Header("Radius Multiplier")]
+    [SerializeField] private float radiusMultiplier = 1f;
 
     private CircleCollider2D _circleCollider;
 
@@ -13,19 +16,14 @@ public class LightRadiusTriggerScaler : MonoBehaviour
         _circleCollider = GetComponent<CircleCollider2D>();
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        EventManager.OnAirSupplyChanged += UpdateRadius;
-    }
+        if (playerLight == null)
+        {
+            return;
+        }
 
-    private void OnDisable()
-    {
-        EventManager.OnAirSupplyChanged -= UpdateRadius;
-    }
-
-    private void UpdateRadius(float airPercent)
-    {
-        float newRadius = Mathf.Lerp(minRadius, maxRadius, airPercent);
-        _circleCollider.radius = newRadius;
+        _circleCollider.radius =
+            playerLight.pointLightOuterRadius * radiusMultiplier;
     }
 }
