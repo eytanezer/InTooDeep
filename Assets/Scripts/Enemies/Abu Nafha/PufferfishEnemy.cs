@@ -77,7 +77,7 @@ public class PufferfishEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerAirSupply airSupply =
-            collision.gameObject.GetComponent<PlayerAirSupply>();
+            collision.gameObject.GetComponentInParent<PlayerAirSupply>();
 
         if (airSupply == null)
         {
@@ -96,5 +96,7 @@ public class PufferfishEnemy : MonoBehaviour
         }
 
         airSupply.UseAirSupply(damage);
+
+        Debug.Log("Pufferfish hit player, oxygen reduced by: " + damage);
     }
 }
