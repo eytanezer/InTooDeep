@@ -143,13 +143,19 @@ namespace Player
         {
             if(_airSupply && _airSupply.UseAirSupply(dashAirCost))
             {
-                Vector2 dashDirection = _targetInput.sqrMagnitude > 0.01f
-                    ? _targetInput.normalized
-                    : _currentInput.normalized;
+                Vector2 dashDirection = transform.right;
 
                 Debug.Log("DASH HAPPENED. direction = " + dashDirection);
 
-                GetComponent<DashBubbleEffect>().PlayDashBubbles(dashDirection);
+                DashBubbleEffect bubbleEffect = GetComponent<DashBubbleEffect>();
+
+                if (bubbleEffect == null)
+                {
+                    Debug.LogError("NO DashBubbleEffect ON PLAYER");
+                    return;
+                }
+
+                bubbleEffect.PlayDashBubbles(dashDirection);
 
                 _rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
 
