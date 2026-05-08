@@ -4,56 +4,51 @@ using UnityEngine;
 public class PufferfishEnemy : MonoBehaviour
 {
     [Header("Inflation")]
-    [SerializeField] private float inflatedScaleMultiplier = 1.8f;
+    [SerializeField] private float inflationMultiplier = 1.8f;
     [SerializeField] private float inflateSpeed = 5f;
     [SerializeField] private float deflateSpeed = 3f;
 
     [Header("Damage")]
-    [SerializeField] private float normalDamage = 5f;
-    [SerializeField] private float inflatedDamage = 15f;
+    [SerializeField] private float damage = 15f;
 
-    private Vector3 _normalScale;
+    private static Vector3 _normalScale = Vector3.one;
     private Vector3 _inflatedScale;
-
+    
+    private Vector3 _targetScale;
+    private float _scalingSpeed;
     private bool _isInflated;
 
-    private void Awake()
+    void Start()
     {
-        _normalScale = transform.localScale;
-        _inflatedScale = _normalScale * inflatedScaleMultiplier;
+        
+        _inflatedScale = _normalScale * inflationMultiplier;
     }
 
     private void Update()
     {
-        Vector3 targetScale;
-
-        if (_isInflated)
-        {
-            targetScale = _inflatedScale;
-        }
-        else
-        {
-            targetScale = _normalScale;
-        }
-
-        float speed;
-
-        if (_isInflated)
-        {
-            speed = inflateSpeed;
-        }
-        else
-        {
-            speed = deflateSpeed;
-        }
+        UpdateAttributes();
 
         transform.localScale = Vector3.Lerp(
             transform.localScale,
-            targetScale,
-            speed * Time.deltaTime
+            _targetScale,
+            _scalingSpeed * Time.deltaTime
         );
     }
 
+    void UpdateAttributes()
+    {
+        if (_isInflated)
+        {
+            _targetScale = _inflatedScale;
+            _scalingSpeed = inflateSpeed;
+        }
+        else
+        {
+            _targetScale = _normalScale;
+            _scalingSpeed = deflateSpeed;
+        }
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("PlayerLight"))
@@ -83,18 +78,6 @@ public class PufferfishEnemy : MonoBehaviour
         {
             return;
         }
-
-        float damage;
-
-        if (_isInflated)
-        {
-            damage = inflatedDamage;
-        }
-        else
-        {
-            damage = normalDamage;
-        }
-
         airSupply.UseAirSupply(damage);
 
         Debug.Log("Pufferfish hit player, oxygen reduced by: " + damage);
