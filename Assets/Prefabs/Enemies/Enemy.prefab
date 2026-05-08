@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7569517842608532992}
   - component: {fileID: 1170971373851791621}
-  - component: {fileID: 2824678789216609580}
   - component: {fileID: 976304091106825287}
   - component: {fileID: 8978590544214074560}
   m_Layer: 0
@@ -95,22 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2824678789216609580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913872607596558790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711ac9f7edd93e34da93a45e210524d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  maxSpeed: 3
-  swimForce: 6
-  airDamageAmount: 10
-  lifetimeSeconds: 10
 --- !u!61 &976304091106825287
 BoxCollider2D:
   m_ObjectHideFlags: 0
