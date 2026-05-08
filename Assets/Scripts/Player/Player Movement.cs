@@ -143,10 +143,18 @@ namespace Player
         {
             if(_airSupply && _airSupply.UseAirSupply(dashAirCost))
             {
-                Vector2 dashDirection = _currentInput.normalized;
-                
+                Vector2 dashDirection = _targetInput.sqrMagnitude > 0.01f
+                    ? _targetInput.normalized
+                    : _currentInput.normalized;
+
+                Debug.Log("DASH HAPPENED. direction = " + dashDirection);
+
+                GetComponent<DashBubbleEffect>().PlayDashBubbles(dashDirection);
+
                 _rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
-                SoundManager.Instance.PlaySoundFXClip(dashClip, transform, 0.8f, 3f);
+
+                // SoundManager.Instance.PlaySoundFXClip(dashClip, transform, 0.8f, 3f);
+
                 _lastDashTime = dashCooldown;
             }
         }
