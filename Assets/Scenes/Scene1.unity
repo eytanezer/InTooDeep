@@ -29200,17 +29200,65 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 70.38373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 29.082165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: -0.32338506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 5.478865e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Position.z
+      value: 0.00000018154054
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: 89.98022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274876788276608787, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0053277
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0053277
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0053277
+      objectReference: {fileID: 0}
     - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.21154
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.32369
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1309801169163550009, guid: 027e68798d9992249af793730b03c25b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33029,10 +33077,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
