@@ -147,8 +147,9 @@ namespace Player
         {
             if(_airSupply && _airSupply.UseAirSupply(dashAirCost))
             {
+                EventManager.RaiseDash();
                 Vector2 dashDirection = transform.right;
-
+                
                 Debug.Log("DASH HAPPENED. direction = " + dashDirection);
 
                 DashBubbleEffect bubbleEffect = GetComponent<DashBubbleEffect>();

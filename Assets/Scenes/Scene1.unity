@@ -31953,7 +31953,7 @@ Transform:
   m_GameObject: {fileID: 1785714214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.23925, y: 4.05922, z: 0}
+  m_LocalPosition: {x: 35.23925, y: 4.05922, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34460,40 +34460,20 @@ PrefabInstance:
       propertyPath: airProgressBar
       value: 
       objectReference: {fileID: 372911805}
-    - target: {fileID: 3922519489517757360, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 5
+    - target: {fileID: 3707122508920070418, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5049870029652413704, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99965733
-      objectReference: {fileID: 0}
-    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.026176924
-      objectReference: {fileID: 0}
-    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: swimForce
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 8985453816818474161, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: maxSize
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985453816818474161, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: minSize
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4075866226413523499, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -38150,18 +38130,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 941692397}
     m_Modifications:
     - target: {fileID: 1304835769294131261, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1304835769294131261, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1304835769294131261, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1304835769294131261, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.73
       objectReference: {fileID: 0}
@@ -38201,13 +38169,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1304835769294131261, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2957746325965049734, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
       propertyPath: m_Name
       value: Geyser
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583546197186852621, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669882165430058343, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669882165430058343, guid: 7ee2d1749409044688dffb0ff4512940, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
