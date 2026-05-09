@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7325d1cf66ecc7c4d95a8bdcbec86d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MiniMapController
-  player: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-  miniMapPanel: {fileID: 3217447345792705021, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+  player: {fileID: 0}
+  miniMapPanel: {fileID: 0}
   playerDot: {fileID: 0}
-  worldMin: {x: 0, y: 0}
-  worldMax: {x: 0, y: 0}
+  worldMin: {x: -103, y: -43}
+  worldMax: {x: 103, y: 43}
