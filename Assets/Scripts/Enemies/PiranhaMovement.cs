@@ -16,6 +16,7 @@ public class PiranhaMovement : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
     [Header("Rotation Settings")]
     [SerializeField] private float rotationLerpSpeed = 6f;  // Higher is snappier, lower is smoother
+    [SerializeField] private float requiredFacingAngleToMove = 8f; // degrees
 
     private Rigidbody2D _rb;
     private Vector2 _targetPosition;
@@ -23,7 +24,8 @@ public class PiranhaMovement : MonoBehaviour
     private Transform _playerTransform;
     private Coroutine _randomMoveCoroutine;
     private Coroutine _chasePlayerCoroutine;
-    private Vector2 _lastDirection = Vector2.right; // Default start facing right
+    private Vector2 _desiredDirection = Vector2.right; // Where the fish wants to move/face
+    private bool _facingTarget = true;
 
     void Awake()
     {
@@ -60,39 +62,53 @@ public class PiranhaMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 moveDirection = Vector2.zero;
-        if (!_chasingPlayer)
-        {
-            moveDirection = (_targetPosition - (Vector2)transform.position).normalized;
-            _rb.AddForce(moveDirection * speed, ForceMode2D.Force);
+        _facingTarget = false;
 
-            if (Vector2.Distance(transform.position, _targetPosition) < 0.5f)
-                PickNewTarget();
-        }
-        // Else, chasing player logic handled in ChasePlayer()
-
-        // Choose facing direction (either chase direction or random movement direction)
+        // Update _desiredDirection depending on behavior
         if (_chasingPlayer && _playerTransform != null)
         {
-            Vector2 chaseDir = ((Vector2)_playerTransform.position - (Vector2)transform.position).normalized;
-            if (chaseDir.sqrMagnitude > 0.0001f)
-                _lastDirection = chaseDir;
+            _desiredDirection = ((Vector2)_playerTransform.position - (Vector2)transform.position).normalized;
         }
-        else if (moveDirection.sqrMagnitude > 0.0001f)
+        else
         {
-            _lastDirection = moveDirection;
+            _desiredDirection = (_targetPosition - (Vector2)transform.position).normalized;
         }
 
-        UpdateRotation();
-    }
+        // Rotation step: rotate toward _desiredDirection, don't move until facing close enough
+        float desiredAngle = Mathf.Atan2(_desiredDirection.y, _desiredDirection.x) * Mathf.Rad2Deg;
+        float currentAngle = transform.eulerAngles.z;
+        float deltaAngle = Mathf.DeltaAngle(currentAngle, desiredAngle);
 
-    // This will smoothy rotate using lerp towards the _lastDirection vector
-    private void UpdateRotation()
-    {
-        if (_lastDirection.sqrMagnitude > 0.0001f)
+        // Rotate
+        float lerpedAngle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.fixedDeltaTime * rotationLerpSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, lerpedAngle);
+
+        // Only move if sufficiently aligned
+        if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, desiredAngle)) < requiredFacingAngleToMove)
         {
-            float targetAngle = Mathf.Atan2(_lastDirection.y, _lastDirection.x) * Mathf.Rad2Deg;
-            float angle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, Time.fixedDeltaTime * rotationLerpSpeed);
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            _facingTarget = true;
+        }
+        else
+        {
+            _facingTarget = false;
+        }
+
+        // Movement handling:
+        if (_facingTarget)
+        {
+            if (_chasingPlayer && _playerTransform != null)
+            {
+                Vector2 chaseDir = ((Vector2)_playerTransform.position - (Vector2)transform.position).normalized;
+                _rb.AddForce(chaseDir * speed, ForceMode2D.Force);
+            }
+            else
+            {
+                moveDirection = (_targetPosition - (Vector2)transform.position).normalized;
+                _rb.AddForce(moveDirection * speed, ForceMode2D.Force);
+
+                if (Vector2.Distance(transform.position, _targetPosition) < 0.5f)
+                    PickNewTarget();
+            }
         }
     }
 
@@ -138,9 +154,7 @@ public class PiranhaMovement : MonoBehaviour
     {
         while (_chasingPlayer)
         {
-            Vector2 direction = ((Vector2)_playerTransform.position - (Vector2)transform.position).normalized;
-            _rb.AddForce(direction * speed, ForceMode2D.Force);
-            // Rotation will be handled in FixedUpdate for consistency (using _lastDirection)
+            // The fixed update now handles both rotation and movement gating
             yield return null;
         }
     }
