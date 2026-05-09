@@ -55,7 +55,11 @@ namespace Player
             _spawnPosition = transform.position;
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             _airSupply = GetComponent<PlayerAirSupply>();
-        
+            
+            if (_spriteRenderer == null)
+            {
+                Debug.LogError("PlayerMovement: No SpriteRenderer found in children.");
+            }
         }
 
         void OnMove(InputValue value)

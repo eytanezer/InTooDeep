@@ -34468,6 +34468,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99965733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.026176924
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: swimForce
       value: 6
@@ -34480,7 +34492,8 @@ PrefabInstance:
       propertyPath: minSize
       value: 1.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4075866226413523499, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
