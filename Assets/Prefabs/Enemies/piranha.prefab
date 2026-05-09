@@ -202,12 +202,12 @@ MonoBehaviour:
   rotationSpeed: 6
   damage: 10
   nestingGround: {fileID: 0}
-  nestingGroundRadius: 3
-  nestingGroundBuffer: 2
+  nestingGroundRadius: 12
+  nestingGroundBuffer: 4
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerDetectionRadius: 2
+  playerDetectionRadius: 4
   waypointTolerance: 0.5
   pauseChance: 0.3
   bounceForce: 3
