@@ -1290,6 +1290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseScreenUI
   pausePanel: {fileID: 7523933497572987657}
+  pauseButton: {fileID: 2956041535565718637}
+  firstPausePanelButton: {fileID: 7928720653407547488}
 --- !u!114 &2642224486501338162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,6 +1306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenUI
   gameOverPanel: {fileID: 6868573279189706257}
   resultText: {fileID: 4767985327462743585}
+  firstSelectedButton: {fileID: 5863168847284337561}
 --- !u!1 &5371009128609199729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1725,6 @@ GameObject:
   - component: {fileID: 1773309880427983254}
   - component: {fileID: 1485198313250992211}
   - component: {fileID: 4814026284261558184}
-  - component: {fileID: 2556088888749319769}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -1789,20 +1791,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2556088888749319769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6868573279189706257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f505600fce35944ab0217c551f801d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenUI
-  gameOverPanel: {fileID: 0}
-  resultText: {fileID: 4767985327462743585}
 --- !u!1 &7523933497572987657
 GameObject:
   m_ObjectHideFlags: 0

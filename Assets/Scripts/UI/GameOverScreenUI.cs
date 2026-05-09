@@ -1,11 +1,14 @@
+using System.Collections;
 using Managment;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameOverScreenUI : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_Text resultText;
+    [SerializeField] private GameObject firstSelectedButton;
 
     private void OnEnable()
     {
@@ -25,7 +28,18 @@ public class GameOverScreenUI : MonoBehaviour
         if (shouldShow)
         {
             UpdateResultText();
+            StartCoroutine(SelectButtonNextFrame());
         }
+    }
+
+    private IEnumerator SelectButtonNextFrame()
+    {
+        yield return null;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+
+        Debug.Log("Selected button: " + EventSystem.current.currentSelectedGameObject);
     }
 
     private void UpdateResultText()
