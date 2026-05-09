@@ -198,8 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PiranhaMovement1
   speed: 3
+  acceleration: 5
   rotationSpeed: 6
-  damage: 15
+  damage: 10
   nestingGround: {fileID: 0}
   nestingGroundRadius: 3
   nestingGroundBuffer: 2
@@ -207,7 +208,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerDetectionRadius: 2
-  stopDistance: 0.05
-  bounceForce: 5
-  bounceRecoveryTime: 2
+  waypointTolerance: 0.5
+  pauseChance: 0.3
+  bounceForce: 3
+  bounceRecoveryTime: 1
   bounceRotationDamping: 5

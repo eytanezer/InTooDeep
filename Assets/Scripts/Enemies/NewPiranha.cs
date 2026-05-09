@@ -8,6 +8,7 @@ public class PiranhaMovement1 : MonoBehaviour
 {
     [Header("Piranha Settings")]
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float acceleration = 3f;
     [SerializeField] private float rotationSpeed = 6f;
     [SerializeField] private float damage = 15f;
     [SerializeField] private Transform nestingGround;
@@ -19,9 +20,11 @@ public class PiranhaMovement1 : MonoBehaviour
     private Collider2D _playerCol;
     private bool _detectedPlayer;
 
-    [Header("Wander Settings")]
-    [SerializeField] private float stopDistance = 0.05f;
-
+    [Tooltip("How close to the target before picking a new one or pausing")]
+    [SerializeField] private float waypointTolerance = 0.5f;
+    [Tooltip("Chance to pause when reaching a waypoint (0 to 1)")]
+    [SerializeField] private float pauseChance = 0.5f;
+    
     [Header("Bounce Settings")]
     [SerializeField] private float bounceForce = 5f;
     [SerializeField] private float bounceRecoveryTime = 2f;
@@ -84,18 +87,23 @@ public class PiranhaMovement1 : MonoBehaviour
     {
         float distance = Vector2.Distance(_rb.position, _currentTarget);
 
-        if (distance > stopDistance)
+        if (distance > waypointTolerance)
         {
             Vector2 direction = (_currentTarget - _rb.position).normalized;
-            _rb.linearVelocity = direction * speed;
+            Vector2 desiredVelocity = direction * speed;
+            
+            _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, desiredVelocity, acceleration * Time.fixedDeltaTime);
             
             HandleSwimmingRotation(direction); // Call the shared rotation logic
         }
+        else if (Random.value < pauseChance)
+        {
+            _isWaiting = true;
+            _waitTimer = Random.Range(0.5f, 1.5f);
+        }
         else
         {
-            _rb.linearVelocity = Vector2.zero;
-            _isWaiting = true;
-            _waitTimer = Random.Range(0.5f, 2f);
+            PickNewTarget();
         }
     }
 
@@ -103,18 +111,17 @@ public class PiranhaMovement1 : MonoBehaviour
     {
         float distance = Vector2.Distance(_rb.position, playerLoc.position);
 
-        if (distance > stopDistance)
+        if (distance > waypointTolerance)
         {
             Vector2 direction = ((Vector2)playerLoc.position - _rb.position).normalized;
-            _rb.linearVelocity = direction * speed;
-
+            Vector2 desiredVelocity = direction * speed;
+            
+            _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, desiredVelocity, acceleration * Time.fixedDeltaTime);
             HandleSwimmingRotation(direction); // Call the shared rotation logic
         }
         else
         {
-            _rb.linearVelocity = Vector2.zero;
-            _isWaiting = true;
-            _waitTimer = Random.Range(0.5f, 2f);
+            _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, Vector2.zero, acceleration * Time.fixedDeltaTime);
         }
     }
 
@@ -148,13 +155,10 @@ public class PiranhaMovement1 : MonoBehaviour
     // Handle the Collision (Same as before)
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Player"))
-        {
-            BounceBack(collision);
-        }
-        
-        if (collision.gameObject.transform.parent != null && 
-            collision.gameObject.transform.parent.TryGetComponent(out PlayerAirSupply airSupply))
+        BounceBack(collision);
+            
+        PlayerAirSupply airSupply = collision.gameObject.GetComponentInParent<PlayerAirSupply>();
+        if (airSupply != null)
         {
             airSupply.UseAirSupply(damage);
             // Fix the copy-paste artifact in your log! :)
