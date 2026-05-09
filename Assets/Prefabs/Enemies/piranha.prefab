@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3280226180475841278}
   - component: {fileID: 3569376227130238125}
   - component: {fileID: 7454964915181795357}
+  - component: {fileID: 2316831004880522506}
   m_Layer: 0
   m_Name: piranha
   m_TagString: Untagged
@@ -164,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7347458072743474435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02cd2315d5953f640853bd701b33e239, type: 3}
   m_Name: 
@@ -182,3 +183,31 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1
+  rotationLerpSpeed: 6
+  requiredFacingAngleToMove: 8
+--- !u!114 &2316831004880522506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347458072743474435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f309bcfe8f4a578ad2d3d0cb847595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PiranhaMovement1
+  speed: 3
+  rotationSpeed: 6
+  damage: 15
+  nestingGround: {fileID: 0}
+  nestingGroundRadius: 3
+  nestingGroundBuffer: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  playerDetectionRadius: 2
+  stopDistance: 0.05
+  bounceForce: 5
+  bounceRecoveryTime: 2
+  bounceRotationDamping: 5
