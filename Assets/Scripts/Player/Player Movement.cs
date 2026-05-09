@@ -36,6 +36,9 @@ namespace Player
         
         private float _lastDashTime;
         private PlayerAirSupply _airSupply;
+        
+        
+        private static readonly int Speed = Animator.StringToHash("Speed");
 
         public float MaxSpeed
         {
@@ -46,6 +49,7 @@ namespace Player
         // Components
         private Rigidbody2D _rb;
         private SpriteRenderer _spriteRenderer;
+        private Animator _animator;
     
 
 
@@ -55,6 +59,7 @@ namespace Player
             _spawnPosition = transform.position;
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             _airSupply = GetComponent<PlayerAirSupply>();
+            _animator = GetComponentInChildren<Animator>();
             
             if (_spriteRenderer == null)
             {
@@ -138,6 +143,8 @@ namespace Player
                     {
                         _spriteRenderer.flipY = _currentInput.x < 0;
                     }
+                    
+                    _animator.SetFloat(Speed, _targetInput.magnitude);
                  
                 }
             }
