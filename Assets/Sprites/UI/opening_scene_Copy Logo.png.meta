@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd96a047df8d90342bfa1d8bae011d91
+guid: c8792b35011f7456fbda8a86755716de
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -121,7 +121,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -140,12 +140,12 @@ TextureImporter:
       name: opening_scene_Copy Logo_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 511
-        width: 240
-        height: 477
+        x: 0
+        y: 0
+        width: 1418
+        height: 988
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,187 +158,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_1
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 520
-        width: 256
-        height: 285
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0a3acbbeda6d3c30800000000000000
-      internalID: 4340743120720902666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_2
-      rect:
-        serializedVersion: 2
-        x: 606
-        y: 449
-        width: 272
-        height: 539
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e65bea9363b6c5a20800000000000000
-      internalID: 3052432528090510702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_3
-      rect:
-        serializedVersion: 2
-        x: 878
-        y: 486
-        width: 196
-        height: 337
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 822a2120cd223fc80800000000000000
-      internalID: -8290244160736026072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_4
-      rect:
-        serializedVersion: 2
-        x: 1079
-        y: 474
-        width: 214
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 200a02b9b2851ca70800000000000000
-      internalID: 8845448087441809410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 24
-        width: 629
-        height: 495
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8dfcfc61759617b40800000000000000
-      internalID: 5436242047978688472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_6
-      rect:
-        serializedVersion: 2
-        x: 636
-        y: 95
-        width: 243
-        height: 330
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d3c56fed9ca1eea0800000000000000
-      internalID: -5845201047023926315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_7
-      rect:
-        serializedVersion: 2
-        x: 879
-        y: 86
-        width: 243
-        height: 324
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9726c87e2987b590800000000000000
-      internalID: -7658501808632485987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: opening_scene_Copy Logo_8
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 330
-        height: 451
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23d5ce0a32641f810800000000000000
-      internalID: 1797294845135183154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bbe75cbbeb6b44e40afbc455301c28ce
     internalID: 0
     vertices: []
     indices: 
@@ -346,17 +170,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1418.0,"y":988.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       opening_scene_Copy Logo_0: 8813840630350555948
-      opening_scene_Copy Logo_1: 4340743120720902666
-      opening_scene_Copy Logo_2: 3052432528090510702
-      opening_scene_Copy Logo_3: -8290244160736026072
-      opening_scene_Copy Logo_4: 8845448087441809410
-      opening_scene_Copy Logo_5: 5436242047978688472
-      opening_scene_Copy Logo_6: -5845201047023926315
-      opening_scene_Copy Logo_7: -7658501808632485987
-      opening_scene_Copy Logo_8: 1797294845135183154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

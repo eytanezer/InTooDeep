@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a06d28e0178564497ab08d1e75eaeb65
+guid: cb08e4793bf0a499e972aa188da215e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5094100939094699205
-    second: opening_scene_Wooden_0
+      213: -8116874172299773923
+    second: mini_map_only_white_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: opening_scene_Wooden_0
+      name: mini_map_only_white_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2459
-        height: 2430
+        x: 139
+        y: 50
+        width: 3875
+        height: 1629
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cc29bc70d1e1b640800000000000000
-      internalID: 5094100939094699205
+      spriteID: d18778102f11b5f80800000000000000
+      internalID: -8116874172299773923
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      opening_scene_Wooden_0: 5094100939094699205
+      mini_map_only_white_0: -8116874172299773923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
