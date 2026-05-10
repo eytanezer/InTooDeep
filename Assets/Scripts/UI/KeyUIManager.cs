@@ -73,6 +73,11 @@ namespace UI
         
         private void StartKeyFlyEffect(int currentKeysCollected, Vector3 worldSpawnPosition)
         {
+            if (worldSpawnPosition == Vector3.zero) {
+                UpdateKeyDisplay(currentKeysCollected);
+                return;
+            }
+            
             Vector2 screenPosition = _mainCamera.WorldToScreenPoint(worldSpawnPosition);
             
             Transform rootCanvas = GetComponentInParent<Canvas>().transform;
