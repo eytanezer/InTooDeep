@@ -56,6 +56,7 @@ public class PiranhaMovement1 : MonoBehaviour
             if (_bounceTimer <= 0f)
             {
                 _isBouncing = false;
+                PickNewTarget();
             }
             _rb.angularVelocity = Mathf.Lerp(_rb.angularVelocity, 0f, bounceRotationDamping * Time.fixedDeltaTime);
             return; 
@@ -135,11 +136,11 @@ public class PiranhaMovement1 : MonoBehaviour
 
         if (direction.x > 0.05f) 
         {
-            _spriteRenderer.flipY = true;
+            _spriteRenderer.flipY = false;
         }
         else if (direction.x < -0.05f)
         {
-            _spriteRenderer.flipY = false;
+            _spriteRenderer.flipY = true;
         }
     }
 
