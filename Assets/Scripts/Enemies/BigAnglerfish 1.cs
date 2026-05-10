@@ -51,6 +51,9 @@ public class BigAnglerfish1 : MonoBehaviour
         switch (_state)
         {
             case FishState.Sleep:
+                _rb.linearVelocity = Vector2.zero;
+                _rb.angularVelocity = 0f;
+                _rb.rotation = 0f;
                 break;
             case FishState.Chasing:
                 if (playerCol == null)

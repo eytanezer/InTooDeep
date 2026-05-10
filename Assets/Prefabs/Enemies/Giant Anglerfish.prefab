@@ -254,13 +254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75da408e55b24ca7922f18a2ca04907c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigAnglerfish1
-  speed: 10
-  acceleration: 3
+  speed: 8
+  acceleration: 4
   rotationSpeed: 6
   playerDetectionOffset: {x: 2.5, y: -0.36}
   playerDetectionRadius: 6.14
   awakePlayerDetectionRadius: 8.54
-  damage: 15
+  damage: 40
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
