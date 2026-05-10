@@ -11,7 +11,7 @@ public class EventManager : MonoBehaviour
 
     public static event Action<float> OnAirSupplyChanged;
     public static event Action<float> OnMaxAirSupplyChanged;
-    public static event Action<int> OnKeyCollected;
+    public static event Action<int, Vector3> OnKeyCollected;
     public static event Action OnDash;
 
     public static event Action OnStartGame;
@@ -42,8 +42,8 @@ public class EventManager : MonoBehaviour
     public static void RaiseMaxAirSupplyChanged(float newMaxAirSupply) =>
         OnMaxAirSupplyChanged?.Invoke(newMaxAirSupply);
     
-    public static void RaiseKeyCollected(int totalKeys) =>
-        OnKeyCollected?.Invoke(totalKeys);
+    public static void RaiseKeyCollected(int totalKeys, Vector3 position) =>
+        OnKeyCollected?.Invoke(totalKeys,  position);
     
     public static void RaiseDash() =>
         OnDash?.Invoke();

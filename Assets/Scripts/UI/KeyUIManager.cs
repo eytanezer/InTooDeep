@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Collectables;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,19 @@ namespace UI
         [SerializeField] private Sprite EmptyKeySprites;
         [SerializeField] private Sprite LitKeySprite;
         
+        [Header("Flying Effect")]
+        [SerializeField] private GameObject flyingKeyPrefab;
+        [SerializeField] private float flyDuration = 0.6f;
+        
+        private Camera _mainCamera;
+        
         private List<Image> _keyUIImages =  new List<Image>();
 
+        void Awake()
+        {
+            _mainCamera = Camera.main;
+        }
+        
         void Start()
         {
             InitializeUI();
@@ -58,15 +70,47 @@ namespace UI
                 }
             }
         }
+        
+        private void StartKeyFlyEffect(int currentKeysCollected, Vector3 worldSpawnPosition)
+        {
+            Vector2 screenPosition = _mainCamera.WorldToScreenPoint(worldSpawnPosition);
+            
+            Transform rootCanvas = GetComponentInParent<Canvas>().transform;
+            
+            GameObject flyingKey = Instantiate(flyingKeyPrefab, rootCanvas);
+            
+            Image image = flyingKey.GetComponent<Image>();
+            if(image){
+                image.sprite = LitKeySprite;
+            }
+            flyingKey.transform.SetAsLastSibling();
+            flyingKey.transform.position = screenPosition;
+            
+            
+            int targetKeysCollected = currentKeysCollected - 1;
+            if (targetKeysCollected >= 0 && targetKeysCollected < _keyUIImages.Count)
+            {
+                Transform targetUITransform = _keyUIImages[targetKeysCollected].transform;
+                
+                flyingKey.transform.DOMove(targetUITransform.position, flyDuration)
+                    .SetEase(Ease.InBack)
+                    .OnComplete(() =>
+                {
+                    Destroy(flyingKey);
+                    UpdateKeyDisplay(currentKeysCollected);
+                });
+            }        
+        }
+        
 
         private void OnEnable()
         {
-            EventManager.OnKeyCollected += UpdateKeyDisplay;
+            EventManager.OnKeyCollected += StartKeyFlyEffect;
         }
 
         private void OnDisable()
         {
-            EventManager.OnKeyCollected -= UpdateKeyDisplay;
+            EventManager.OnKeyCollected -= StartKeyFlyEffect;
         }
     }
 }

@@ -70,9 +70,8 @@ namespace Collectables
                 Player.PlayerInventory playerInventory = other.GetComponent<Player.PlayerInventory>();
                 if (playerInventory != null)
                 {
-                    playerInventory.AddKey();
+                    playerInventory.AddKey(transform.position);
                     
-                    // TODO: add sound and light effects
                     CollectKey();
                 }
             }

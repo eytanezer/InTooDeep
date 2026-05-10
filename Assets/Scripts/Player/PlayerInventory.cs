@@ -6,17 +6,17 @@ namespace Player
     {
         public int KeyCount { get; private set; } = 0;
     
-        public void AddKey()
+        public void AddKey(Vector3 position)
         {
             KeyCount++;
             Debug.Log("Key collected! Total keys: " + KeyCount);
-            EventManager.RaiseKeyCollected(KeyCount);
+            EventManager.RaiseKeyCollected(KeyCount,  position);
         }
 
         public void ResetKeyCount()
         {
             KeyCount = 0;
-            EventManager.RaiseKeyCollected(KeyCount);
+            EventManager.RaiseKeyCollected(KeyCount, Vector3.zero);
         }
         
         private void OnEnable()

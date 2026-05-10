@@ -6459,19 +6459,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99967885
+      value: 0.9659259
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.025341002
+      value: -0.258819
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6483,23 +6483,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -928600008384271592, guid: c7cfba6cff7934c28bd4e9a5c5f808c0, type: 3}
+      objectReference: {fileID: 5557926880403484084, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.g
-      value: 0.21833143
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.r
-      value: 0.2924528
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8943,6 +8943,7 @@ GameObject:
   - component: {fileID: 472907158}
   - component: {fileID: 472907159}
   - component: {fileID: 472907160}
+  - component: {fileID: 472907161}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9041,6 +9042,18 @@ MonoBehaviour:
   prefab: {fileID: -4196057745386228185, guid: e6b49da5f03e64d7baf966417ee723b3, type: 3}
   initialSize: 10
   increaseSize: 10
+--- !u!114 &472907161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472907155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dcbde5782918243b1034facf7170c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Managment.Cheats
 --- !u!1001 &474170421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20280,6 +20293,8 @@ MonoBehaviour:
   KeyUIParent: {fileID: 1019470766}
   EmptyKeySprites: {fileID: 1898548517924997889, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
   LitKeySprite: {fileID: 5557926880403484084, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
+  flyingKeyPrefab: {fileID: 5348769641629183891, guid: d2efc2603d52b423da7cad7e91f1df48, type: 3}
+  flyDuration: 0.6
 --- !u!114 &1019470768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21346,19 +21361,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9659259
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.258819
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21370,23 +21385,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -928600008384271592, guid: c7cfba6cff7934c28bd4e9a5c5f808c0, type: 3}
+      objectReference: {fileID: 5557926880403484084, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.g
-      value: 0.21833143
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.r
-      value: 0.2924528
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28328,19 +28343,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9659259
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.258819
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28352,23 +28367,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872671773410131627, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -928600008384271592, guid: c7cfba6cff7934c28bd4e9a5c5f808c0, type: 3}
+      objectReference: {fileID: 5557926880403484084, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.g
-      value: 0.21833143
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513073228960154544, guid: 75f444d7e50354dc19906342e12d73de, type: 3}
       propertyPath: m_Color.r
-      value: 0.2924528
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

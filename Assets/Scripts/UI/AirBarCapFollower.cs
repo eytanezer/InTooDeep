@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,5 +19,18 @@ namespace UI
     
         [Tooltip("The Y position of the cap when the bar is at 0%")]
         [SerializeField] private float emptyYPosition;
+
+        private void Update()
+        {
+            if (!fillImage || !capRect) return;
+        
+            float fillAmount = fillImage.fillAmount;
+            
+            float newY = Mathf.Lerp(emptyYPosition, fullYPosition, fillAmount);
+            
+            Vector2 capPos = capRect.anchoredPosition;
+            capPos.y = newY;
+            capRect.anchoredPosition = capPos;
+        }
     }
 }
