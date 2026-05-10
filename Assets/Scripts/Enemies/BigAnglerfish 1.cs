@@ -11,10 +11,12 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private float acceleration = 1f;
     [SerializeField] private float rotationSpeed = 6f;
-    
-    [Header("Detection Settings")]
+
+    [Header("Detection Settings")] [SerializeField]
+    private Vector2 playerDetectionOffset;
     [SerializeField] private float playerDetectionRadius = 2f;
     [SerializeField] private float awakePlayerDetectionRadius = 6f;
+    [SerializeField] private float maxChaseRadius = 40f;
     [SerializeField] private float damage = 15f;
     [SerializeField] private LayerMask playerLayer;
     
@@ -34,7 +36,7 @@ public class BigAnglerfish1 : MonoBehaviour
         _startPosition = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         HandleStateMachine();
     }
@@ -50,18 +52,28 @@ public class BigAnglerfish1 : MonoBehaviour
         switch (_state)
         {
             case FishState.Sleep:
+                _rb.linearVelocity = Vector2.zero;
+                _rb.angularVelocity = 0f;
+                _rb.rotation = 0f;
                 break;
             case FishState.Chasing:
                 if (playerCol == null)
                 {
                     _state = FishState.Returning;
                 }
-                ChasePlayer(playerCol.transform);
+                else
+                {
+                    ChasePlayer(playerCol.transform);
+                }
                 break;
             case FishState.Returning:
-                if (((Vector2)transform.position - _startPosition).sqrMagnitude <= 0.01f)
+                if (((Vector2)transform.position - _startPosition).sqrMagnitude <= 0.25f)
                 {
                     _state = FishState.Sleep;
+                }
+                else
+                {
+                    ReturningToCave();
                 }
                 break;
         }
@@ -70,8 +82,12 @@ public class BigAnglerfish1 : MonoBehaviour
     Collider2D LookForPlayer()
     {
         float awarenessRadius = _state == FishState.Sleep ? playerDetectionRadius : awakePlayerDetectionRadius; 
-        Collider2D playerCol = Physics2D.OverlapCircle(transform.position, awarenessRadius, playerLayer);
-        
+        Collider2D playerCol = Physics2D.OverlapCircle((Vector2)transform.position + playerDetectionOffset, awarenessRadius, playerLayer);
+
+        if (((Vector2)transform.position - _startPosition).magnitude > maxChaseRadius)
+        {
+            return null;
+        }
         if (playerCol != null)
         {
             _detectedPlayer = true;
@@ -137,12 +153,32 @@ public class BigAnglerfish1 : MonoBehaviour
             Debug.Log("Piranha hit player, oxygen reduced by: " + damage); 
         }
     }
+
+    void ReturningToCave()
+    {
+        // 1. Handle Movement (Move towards the start position)
+        Vector2 direction = (_startPosition - _rb.position).normalized;
+        Vector2 targetVelocity = direction * speed;
+    
+        _rb.linearVelocity = Vector2.MoveTowards(_rb.linearVelocity, targetVelocity, acceleration * 50f * Time.fixedDeltaTime);
+
+        // 2. Handle Rotation (Smoothly transition back to 0 degrees)
+        float smoothedAngle = Mathf.LerpAngle(_rb.rotation, 0f, rotationSpeed * Time.fixedDeltaTime);
+        _rb.MoveRotation(smoothedAngle);
+
+        // 3. Reset the sprite flip so the fish isn't upside down when it goes to sleep
+        _spriteRenderer.flipY = false;
+    }
     
     private void OnDrawGizmos()
     {
+        Vector2 spawnPoint = Application.isPlaying ? _startPosition : (Vector2)transform.position;
+        
         Gizmos.color = Color.red;
-
-        float visualizationRadius = _state != FishState.Sleep ? awakePlayerDetectionRadius : playerDetectionRadius;
-        Gizmos.DrawWireSphere(transform.position, visualizationRadius);
+        Gizmos.DrawWireSphere((Vector2)transform.position + playerDetectionOffset, playerDetectionRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere((Vector2)transform.position + playerDetectionOffset, awakePlayerDetectionRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(spawnPoint, maxChaseRadius);
     }
 }

@@ -12,6 +12,10 @@ public class PufferfishEnemy : MonoBehaviour
     [SerializeField] private float inflateSpeed = 5f;
     [SerializeField] private float deflateSpeed = 3f;
 
+    [Header("sprites")]
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite inflatedSprite;
+    
     [Header("Damage")]
     [SerializeField] private float damage = 15f;
 
@@ -26,6 +30,7 @@ public class PufferfishEnemy : MonoBehaviour
     [SerializeField] private float swimSpeed = 1;
     private Vector3 _originalLocation;
     private Rigidbody2D _rb;
+    private SpriteRenderer _spriteRenderer;
     private float _waitTimer;
     private bool _isWaiting;
     private bool _isReturning;
@@ -36,6 +41,8 @@ public class PufferfishEnemy : MonoBehaviour
         
         _originalLocation = transform.position;
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.sprite = normalSprite;
     }
 
     private void Update()
@@ -82,11 +89,13 @@ public class PufferfishEnemy : MonoBehaviour
         {
             _targetScale = _inflatedScale;
             _scalingSpeed = inflateSpeed;
+            _spriteRenderer.sprite = inflatedSprite;
         }
         else
         {
             _targetScale = _normalScale;
             _scalingSpeed = deflateSpeed;
+            _spriteRenderer.sprite = normalSprite;
         }
     }
 
