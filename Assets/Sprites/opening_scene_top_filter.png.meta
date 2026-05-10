@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9f87b139b5a56d649a75ecf8cfa81b7e
+guid: a0b2b559a0c14f94fa6c9f54bd8c0797
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -690050181864477905
-    second: opening_scene_2gether_wout_lght_0
+      213: 8988704383267407992
+    second: opening_scene_top_filter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: opening_scene_2gether_wout_lght_0
+      name: opening_scene_top_filter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5760
+        width: 4477
         height: 3240
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2b26c004037c66f0800000000000000
-      internalID: -690050181864477905
+      spriteID: 87886ab230b4ebc70800000000000000
+      internalID: 8988704383267407992
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      opening_scene_2gether_wout_lght_0: -690050181864477905
+      opening_scene_top_filter_0: 8988704383267407992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
