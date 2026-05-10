@@ -159,7 +159,6 @@ public class PiranhaMovement1 : MonoBehaviour
         if (airSupply != null)
         {
             airSupply.UseAirSupply(damage);
-            // Fix the copy-paste artifact in your log! :)
             Debug.Log("Piranha hit player, oxygen reduced by: " + damage); 
         }
     }
