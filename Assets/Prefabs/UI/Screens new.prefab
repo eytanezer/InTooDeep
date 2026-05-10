@@ -468,15 +468,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -690050181864477905, guid: 9f87b139b5a56d649a75ecf8cfa81b7e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -497,6 +497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8a32638d89a0d4c847fc1309712eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartScreenUI
+  startButton: {fileID: 6746941908088416469}
+  quitButton: {fileID: 6350874462149199736}
 --- !u!1 &2436226640212867354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,8 +1292,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseScreenUI
   pausePanel: {fileID: 7523933497572987657}
-  pauseButton: {fileID: 2956041535565718637}
-  firstPausePanelButton: {fileID: 7928720653407547488}
+  pauseButton: {fileID: 372681374231711458}
+  resumeButton: {fileID: 7730808585706275920}
+  quitButton: {fileID: 4406696335027440327}
 --- !u!114 &2642224486501338162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenUI
   gameOverPanel: {fileID: 6868573279189706257}
   resultText: {fileID: 4767985327462743585}
-  firstSelectedButton: {fileID: 5863168847284337561}
+  quitButton: {fileID: 6892099167015407310}
 --- !u!1 &5371009128609199729
 GameObject:
   m_ObjectHideFlags: 0
