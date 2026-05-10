@@ -3,12 +3,13 @@ using Managment;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameOverScreenUI : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_Text resultText;
-    [SerializeField] private GameObject firstSelectedButton;
+    [SerializeField] private Button quitButton;
 
     private void OnEnable()
     {
@@ -28,18 +29,23 @@ public class GameOverScreenUI : MonoBehaviour
         if (shouldShow)
         {
             UpdateResultText();
-            StartCoroutine(SelectButtonNextFrame());
+            StartCoroutine(SelectQuitButtonNextFrame());
         }
     }
 
-    private IEnumerator SelectButtonNextFrame()
+    private IEnumerator SelectQuitButtonNextFrame()
     {
         yield return null;
 
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
+        Navigation quitNav = new Navigation
+        {
+            mode = Navigation.Mode.Explicit
+        };
+        quitButton.navigation = quitNav;
 
-        Debug.Log("Selected button: " + EventSystem.current.currentSelectedGameObject);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(quitButton.gameObject);
+        quitButton.Select();
     }
 
     private void UpdateResultText()

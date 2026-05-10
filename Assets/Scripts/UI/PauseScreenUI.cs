@@ -1,12 +1,15 @@
+using System.Collections;
 using Managment;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseScreenUI : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject pauseButton;
-    [SerializeField] private GameObject firstPausePanelButton;
+    [SerializeField] private Button pauseButton;
+    [SerializeField] private Button quitButton;
+    [SerializeField] private Button resumeButton;
 
     private void OnEnable()
     {
@@ -21,18 +24,56 @@ public class PauseScreenUI : MonoBehaviour
     private void HandleStateChanged(GameManager.GameState state)
     {
         bool isPaused = state == GameManager.GameState.Paused;
-        pausePanel.SetActive(isPaused);
+        bool isGameplay = state == GameManager.GameState.Gameplay;
 
-        EventSystem.current.SetSelectedGameObject(null);
+        pausePanel.SetActive(isPaused);
+        pauseButton.gameObject.SetActive(isGameplay);
 
         if (isPaused)
         {
-            EventSystem.current.SetSelectedGameObject(firstPausePanelButton);
+            StartCoroutine(SelectQuitNextFrame());
         }
-        else if (state == GameManager.GameState.Gameplay)
+        else if (isGameplay)
         {
-            EventSystem.current.SetSelectedGameObject(pauseButton);
+            StartCoroutine(SelectPauseNextFrame());
         }
+    }
+
+    private IEnumerator SelectQuitNextFrame()
+    {
+        yield return null;
+
+        SetVerticalNavigation(quitButton, resumeButton);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(quitButton.gameObject);
+        quitButton.Select();
+    }
+
+    private IEnumerator SelectPauseNextFrame()
+    {
+        yield return null;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
+        pauseButton.Select();
+    }
+
+    private void SetVerticalNavigation(Button topButton, Button bottomButton)
+    {
+        Navigation topNav = new Navigation
+        {
+            mode = Navigation.Mode.Explicit,
+            selectOnDown = bottomButton
+        };
+        topButton.navigation = topNav;
+
+        Navigation bottomNav = new Navigation
+        {
+            mode = Navigation.Mode.Explicit,
+            selectOnUp = topButton
+        };
+        bottomButton.navigation = bottomNav;
     }
 
     public void OnPauseClicked()
