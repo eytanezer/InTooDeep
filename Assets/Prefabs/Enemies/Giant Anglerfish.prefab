@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6916682800214423797}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.5, y: 8.9, z: 0}
+  m_LocalPosition: {x: -10.58, y: 6.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -214,7 +214,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 12.76, y: -1.8}
-  m_Radius: 21.91
+  m_Radius: 20.8
 --- !u!50 &3569376227130238125
 Rigidbody2D:
   serializedVersion: 5
@@ -254,11 +254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75da408e55b24ca7922f18a2ca04907c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigAnglerfish1
-  speed: 8
-  acceleration: 1
+  speed: 10
+  acceleration: 3
   rotationSpeed: 6
-  playerDetectionRadius: 2
-  awakePlayerDetectionRadius: 6
+  playerDetectionOffset: {x: 2.5, y: -0.36}
+  playerDetectionRadius: 6.14
+  awakePlayerDetectionRadius: 8.54
   damage: 15
   playerLayer:
     serializedVersion: 2
