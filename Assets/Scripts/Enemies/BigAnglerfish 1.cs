@@ -34,7 +34,7 @@ public class BigAnglerfish1 : MonoBehaviour
         _startPosition = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         HandleStateMachine();
     }
@@ -52,13 +52,14 @@ public class BigAnglerfish1 : MonoBehaviour
             case FishState.Sleep:
                 break;
             case FishState.Chasing:
+                ChasePlayer(playerCol.transform);
                 if (playerCol == null)
                 {
                     _state = FishState.Returning;
                 }
-                ChasePlayer(playerCol.transform);
                 break;
             case FishState.Returning:
+                ReturningToCave();
                 if (((Vector2)transform.position - _startPosition).sqrMagnitude <= 0.01f)
                 {
                     _state = FishState.Sleep;
@@ -136,6 +137,11 @@ public class BigAnglerfish1 : MonoBehaviour
             airSupply.UseAirSupply(damage);
             Debug.Log("Piranha hit player, oxygen reduced by: " + damage); 
         }
+    }
+
+    void ReturningToCave()
+    {
+        
     }
     
     private void OnDrawGizmos()
