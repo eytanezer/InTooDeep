@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5886726527898019534}
   - component: {fileID: 3280226180475841278}
   - component: {fileID: 3569376227130238125}
-  - component: {fileID: 7454964915181795357}
   - component: {fileID: 2316831004880522506}
   m_Layer: 0
   m_Name: piranha A
@@ -158,33 +157,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7454964915181795357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347458072743474435}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cd2315d5953f640853bd701b33e239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PiranhaMovement
-  speed: 4
-  playerDetectionRadius: 1
-  nestingGround: {fileID: 0}
-  nestingGroundRadius: 5
-  nestingGroundBuffer: 2
-  minChooseTargetTime: 0.5
-  maxChooseTargetTime: 2
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  rotationLerpSpeed: 6
-  requiredFacingAngleToMove: 8
 --- !u!114 &2316831004880522506
 MonoBehaviour:
   m_ObjectHideFlags: 0

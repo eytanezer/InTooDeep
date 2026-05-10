@@ -128,10 +128,7 @@ public class PiranhaMovement1 : MonoBehaviour
     private void HandleSwimmingRotation(Vector2 direction)
     {
         //Calculate the base angle pointing towards the direction
-        float baseAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        //Add 180 degrees because the sprite is drawn facing LEFT
-        float targetAngle = baseAngle + 180f;
+        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         float smoothedAngle = Mathf.LerpAngle(_rb.rotation, targetAngle, rotationSpeed * Time.fixedDeltaTime);
         _rb.MoveRotation(smoothedAngle);
