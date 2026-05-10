@@ -1838,6 +1838,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4155887676261583124, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8116874172299773923, guid: cb08e4793bf0a499e972aa188da215e1, type: 3}
     - target: {fileID: 5185785660433395856, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -33346,27 +33350,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 73.28
+      value: 74.41
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.24
+      value: -34.39
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1143511417431440176, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -33397,9 +33401,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4062849359843211334, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062849359843211334, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062849359843211334, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -638935470065371011, guid: c7cfba6cff7934c28bd4e9a5c5f808c0, type: 3}
+      objectReference: {fileID: -6834524911116659543, guid: 8cc4762a0c7a4419085c45adb210aaae, type: 3}
     - target: {fileID: 6270967673000285086, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_Name
       value: Chest
