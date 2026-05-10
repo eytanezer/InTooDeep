@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 776234805437555001, guid: 0f2415b24d382a1428d6071db28f2482, type: 3}
   m_Color: {r: 0.8553459, g: 0.3003919, b: 0.029587338, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   inflationMultiplier: 3
   inflateSpeed: 5
   deflateSpeed: 3
-  normalSprite: {fileID: -8911852711261807789, guid: 3af58ee8e7537124887046028b475819, type: 3}
-  inflatedSprite: {fileID: -7103474869183817287, guid: 3af58ee8e7537124887046028b475819, type: 3}
+  normalSprite: {fileID: 776234805437555001, guid: 0f2415b24d382a1428d6071db28f2482, type: 3}
+  inflatedSprite: {fileID: 21300000, guid: 947e4916f3efd4d4580691f733e19de8, type: 3}
   damage: 15
   swimSpeed: 1
 --- !u!58 &8624691715456140775

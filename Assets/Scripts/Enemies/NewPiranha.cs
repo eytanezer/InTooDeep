@@ -10,7 +10,7 @@ public class PiranhaMovement1 : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float acceleration = 3f;
     [SerializeField] private float rotationSpeed = 6f;
-    [SerializeField] private float damage = 15f;
+    [SerializeField] private float damage = 5f;
     [SerializeField] private Transform nestingGround;
     [SerializeField] private float nestingGroundRadius = 3;
     [SerializeField] private float nestingGroundBuffer = 2;
