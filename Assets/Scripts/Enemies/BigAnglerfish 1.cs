@@ -16,6 +16,7 @@ public class BigAnglerfish1 : MonoBehaviour
     private Vector2 playerDetectionOffset;
     [SerializeField] private float playerDetectionRadius = 2f;
     [SerializeField] private float awakePlayerDetectionRadius = 6f;
+    [SerializeField] private float maxChaseRadius = 40f;
     [SerializeField] private float damage = 15f;
     [SerializeField] private LayerMask playerLayer;
     
@@ -82,7 +83,11 @@ public class BigAnglerfish1 : MonoBehaviour
     {
         float awarenessRadius = _state == FishState.Sleep ? playerDetectionRadius : awakePlayerDetectionRadius; 
         Collider2D playerCol = Physics2D.OverlapCircle((Vector2)transform.position + playerDetectionOffset, awarenessRadius, playerLayer);
-        
+
+        if (((Vector2)transform.position - _startPosition).magnitude > maxChaseRadius)
+        {
+            return null;
+        }
         if (playerCol != null)
         {
             _detectedPlayer = true;
@@ -167,9 +172,13 @@ public class BigAnglerfish1 : MonoBehaviour
     
     private void OnDrawGizmos()
     {
+        Vector2 spawnPoint = Application.isPlaying ? _startPosition : (Vector2)transform.position;
+        
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere((Vector2)transform.position + playerDetectionOffset, playerDetectionRadius);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere((Vector2)transform.position + playerDetectionOffset, awakePlayerDetectionRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(spawnPoint, maxChaseRadius);
     }
 }

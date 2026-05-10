@@ -255,11 +255,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigAnglerfish1
   speed: 8
-  acceleration: 4
+  acceleration: 6
   rotationSpeed: 6
   playerDetectionOffset: {x: 2.5, y: -0.36}
   playerDetectionRadius: 6.14
   awakePlayerDetectionRadius: 8.54
+  maxChaseRadius: 38.1
   damage: 40
   playerLayer:
     serializedVersion: 2

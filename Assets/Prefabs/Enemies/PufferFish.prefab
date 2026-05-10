@@ -113,6 +113,8 @@ MonoBehaviour:
   inflationMultiplier: 3
   inflateSpeed: 5
   deflateSpeed: 3
+  normalSprite: {fileID: -8911852711261807789, guid: 3af58ee8e7537124887046028b475819, type: 3}
+  inflatedSprite: {fileID: -7103474869183817287, guid: 3af58ee8e7537124887046028b475819, type: 3}
   damage: 15
   swimSpeed: 1
 --- !u!58 &8624691715456140775
