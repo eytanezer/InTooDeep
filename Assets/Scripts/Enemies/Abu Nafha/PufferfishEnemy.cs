@@ -1,3 +1,4 @@
+using Managment.SoundScripts;
 using Player;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ public class PufferfishEnemy : MonoBehaviour
     
     [Header("Damage")]
     [SerializeField] private float damage = 15f;
+    
+    [Header("Audio Settings")] 
+    [SerializeField] private AudioClip detectionSound;
+    [SerializeField] private float soundVolume = 0.1f;
 
     private static Vector3 _normalScale = Vector3.one;
     private Vector3 _inflatedScale;
@@ -105,6 +110,8 @@ public class PufferfishEnemy : MonoBehaviour
         if (playerCol && !_isInflated)
         {
             _isInflated = true;
+            
+            if(detectionSound != null) SoundManager.Instance.PlaySoundFXClip(detectionSound, transform, soundVolume);
         }
         else if (playerCol == null && _isInflated)
         {

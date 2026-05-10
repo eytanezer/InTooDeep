@@ -265,3 +265,5 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  detectionSound: {fileID: 8300000, guid: 4363319c30c1845ba91c266aa8d73d65, type: 3}
+  soundVolume: 0.1

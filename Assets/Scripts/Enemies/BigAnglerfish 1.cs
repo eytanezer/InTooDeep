@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managment.SoundScripts;
+using UnityEngine;
 using Player;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -19,6 +20,10 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private float maxChaseRadius = 40f;
     [SerializeField] private float damage = 15f;
     [SerializeField] private LayerMask playerLayer;
+    
+    [Header("Audio Settings")] 
+    [SerializeField] private AudioClip detectionSound;
+    [SerializeField] private float soundVolume = 0.1f;
     
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
@@ -46,6 +51,10 @@ public class BigAnglerfish1 : MonoBehaviour
         Collider2D playerCol = LookForPlayer();
         if (playerCol != null)
         {
+            if (_state == FishState.Chasing)
+            {
+                if(detectionSound != null) SoundManager.Instance.PlaySoundFXClip(detectionSound, transform, soundVolume);
+            }
             _state = FishState.Chasing;
         }
         

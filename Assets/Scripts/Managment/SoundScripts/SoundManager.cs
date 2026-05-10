@@ -150,7 +150,7 @@ namespace Managment.SoundScripts
 
         private void OnDisable()
         {
-            // GameManager.OnTitleScreen -= TriggerTitleMusic;
+            // EventManager.OnStartGame -= TriggerTitleMusic;
             EventManager.OnStartGame -= TriggerGameplayMusic;
             // EventManager.OnPauseGame -= ;
             // EventManager.OnResumeGame -= ;

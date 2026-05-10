@@ -57,7 +57,7 @@ public class GameOverScreenUI : MonoBehaviour
 
         resultText.text =
             GameManager.Instance.CurrentResult == GameManager.GameResult.Win
-                ? "You Win!"
+                ? "winner"
                 : "Game Over";
     }
 
