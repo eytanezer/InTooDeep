@@ -106,11 +106,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fef1fff512ece4e97b0cb2b5704e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PufferfishEnemy
-  inflatedScaleMultiplier: 1.8
+  playerDetectionRadius: 1.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  inflationMultiplier: 3
   inflateSpeed: 5
   deflateSpeed: 3
-  normalDamage: 5
-  inflatedDamage: 15
+  damage: 15
+  swimSpeed: 1
 --- !u!58 &8624691715456140775
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +163,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
