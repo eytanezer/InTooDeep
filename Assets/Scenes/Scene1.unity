@@ -3093,6 +3093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3347,6 +3351,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
@@ -5310,6 +5318,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1973455239}
@@ -5375,6 +5387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -6962,6 +6978,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
@@ -9513,6 +9533,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -10272,6 +10296,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -10337,6 +10365,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
@@ -10490,6 +10522,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -10625,6 +10661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -12475,6 +12515,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1973455239}
@@ -13048,6 +13092,10 @@ PrefabInstance:
     - target: {fileID: 7515266751178140602, guid: e63778c939839794299256b096f2476f, type: 3}
       propertyPath: m_Name
       value: PufferFish (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16452,6 +16500,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -17149,6 +17201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
@@ -18116,6 +18172,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
@@ -21085,6 +21145,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -21811,8 +21875,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: maxChaseRadius
+      value: 33.1
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: playerDetectionRadius
@@ -22337,8 +22409,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: maxChaseRadius
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: playerDetectionRadius
@@ -23768,6 +23848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25090,6 +25174,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
@@ -27301,6 +27389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27394,6 +27486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -27696,6 +27792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -29381,6 +29481,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -30216,6 +30320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30309,6 +30417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -32582,6 +32694,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1973455239}
@@ -33263,6 +33379,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -33969,6 +34089,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -34517,6 +34641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
@@ -36222,6 +36350,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
       value: 
       objectReference: {fileID: 1437463323}
@@ -36712,6 +36844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
@@ -39498,6 +39634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39892,6 +40032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1437463323}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
       value: 
@@ -40649,6 +40793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PufferFish
       objectReference: {fileID: 0}
+    - target: {fileID: 7647530787334701217, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41339,6 +41487,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
       value: 

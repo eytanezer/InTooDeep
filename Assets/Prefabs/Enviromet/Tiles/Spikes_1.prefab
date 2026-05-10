@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5969892154906069340}
   - component: {fileID: 5838718346232404149}
   - component: {fileID: 5553260787772436303}
+  - component: {fileID: -4121085599613313244}
   m_Layer: 0
   m_Name: Spikes_1
   m_TagString: Untagged
@@ -149,3 +150,16 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-4121085599613313244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515166196759416955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce88bb18504b483e89116198f77cf13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.Spikes
+  damage: 10
