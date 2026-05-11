@@ -20264,7 +20264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 130, y: 40}
+  m_AnchoredPosition: {x: 160, y: 40}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1019470767
@@ -38669,14 +38669,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3698185885582895954, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698185885582895954, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
-      propertyPath: airSupplyMax
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3698185885582895954, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: airProgressBar
       value: 
       objectReference: {fileID: 372911805}
@@ -38715,6 +38707,10 @@ PrefabInstance:
     - target: {fileID: 8199818934842874066, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: rotationSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8531588679964344869, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer
@@ -42774,11 +42770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125128348093696767, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4125128348093696767, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 210
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4125128348093696767, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42866,15 +42862,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6321084286302548249, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321084286302548249, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 6321084286302548249, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6321084286302548249, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6419440711928987005, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_Sprite
@@ -42907,6 +42907,10 @@ PrefabInstance:
     - target: {fileID: 6431875255927730228, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
       propertyPath: m_Color.r
       value: 0.53960484
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002074066989851638, guid: a213e7b165ac54461b847f0258a3194f, type: 3}
+      propertyPath: BarProgress
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
