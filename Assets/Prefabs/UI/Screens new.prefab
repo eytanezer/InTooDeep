@@ -209,7 +209,7 @@ RectTransform:
   m_GameObject: {fileID: 258436705287573037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3295787905057766280}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 265e2273798434427aa819435fc7bdc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fdaec34fe5cd4f5ea5ef5fa0845e8ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -287,9 +287,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 3980168229369012863, guid: dac0ec8e5b0c64dc99e2c295cedfc608, type: 3}
-    m_PressedSprite: {fileID: 3980168229369012863, guid: dac0ec8e5b0c64dc99e2c295cedfc608, type: 3}
-    m_SelectedSprite: {fileID: 3980168229369012863, guid: dac0ec8e5b0c64dc99e2c295cedfc608, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: ae8cf0614c275405698f362bd6f24117, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: ae8cf0614c275405698f362bd6f24117, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: ae8cf0614c275405698f362bd6f24117, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1789,9 +1789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenUI
   gameOverPanel: {fileID: 6868573279189706257}
-  resultText: {fileID: 0}
+  resultText: {fileID: 5225571073277267038}
   quitButton: {fileID: 6892099167015407310}
-  restartButton: {fileID: 0}
+  restartButton: {fileID: 2803990367643257574}
 --- !u!1 &5371009128609199729
 GameObject:
   m_ObjectHideFlags: 0

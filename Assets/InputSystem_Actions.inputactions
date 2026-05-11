@@ -493,7 +493,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -850,6 +850,17 @@
                 {
                     "name": "",
                     "id": "08e4d63f-15b6-4a0b-b827-f4739244ddb7",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fba9786d-7cbb-446f-9b39-a996b5e5260b",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",

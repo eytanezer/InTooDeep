@@ -189,17 +189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3949303728486581574, guid: 45d47ead104f241b0a3127cd833c5010, type: 3}
   m_PrefabInstance: {fileID: 16360572}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &23301337 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2803990367643257574, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
-  m_PrefabInstance: {fileID: 1744299550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &29158845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1847,6 +1836,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217447345792705021, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155887676261583124, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1688366860116806660, guid: 82bda79ed59bd4c2cbbfbe06eeb6d5b1, type: 3}
+    - target: {fileID: 4155887676261583124, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155887676261583124, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155887676261583124, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5185785660433395856, guid: 87ceab37d89bcfd4884fde585bf6e2b4, type: 3}
@@ -15510,17 +15515,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5507266426076847291, guid: a314cb4fadbb1404da9c0de46a99a5c4, type: 3}
   m_PrefabInstance: {fileID: 1390584716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &809628124 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5225571073277267038, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
-  m_PrefabInstance: {fileID: 1744299550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &824843331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35110,14 +35104,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2642224486501338162, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
-      propertyPath: resultText
-      value: 
-      objectReference: {fileID: 809628124}
-    - target: {fileID: 2642224486501338162, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
-      propertyPath: restartButton
-      value: 
-      objectReference: {fileID: 23301337}
     - target: {fileID: 2642224486501338162, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: firstSelectedButton
       value: 
