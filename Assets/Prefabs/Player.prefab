@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd491d10b4394b4daf7e6b862754873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerAirSupply
-  airSupplyMax: 100
+  airSupplyMax: 150
   airLossSpeed: 5
   airLossAmount: 5
   airGainSpeed: 20

@@ -46,11 +46,11 @@ public class GameOverScreenUI : MonoBehaviour
         // };
         // quitButton.navigation = quitNav;
         
-        SetVerticalNavigation(quitButton, restartButton);
+        SetVerticalNavigation(restartButton, quitButton);
 
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(quitButton.gameObject);
-        quitButton.Select();
+        EventSystem.current.SetSelectedGameObject(restartButton.gameObject);
+        restartButton.Select();
     }
     
     private void SetVerticalNavigation(Button topButton, Button bottomButton)

@@ -43,11 +43,11 @@ public class PauseScreenUI : MonoBehaviour
     {
         yield return null;
 
-        SetVerticalNavigation(quitButton, resumeButton);
+        SetVerticalNavigation(resumeButton, quitButton);
 
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(quitButton.gameObject);
-        quitButton.Select();
+        EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+        resumeButton.Select();
     }
 
     private IEnumerator SelectPauseNextFrame()
