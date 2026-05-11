@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 5205416243423469325}
   - component: {fileID: 3922519489517757360}
   - component: {fileID: 8985453816818474161}
+  - component: {fileID: 4497971215301383253}
   m_Layer: 0
   m_Name: Spot Light - Short Range
   m_TagString: Untagged
@@ -335,6 +336,25 @@ MonoBehaviour:
   controlAngles: 0
   maxAngles: 0
   minAngles: 0
+--- !u!114 &4497971215301383253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877568509612691355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e13344cf0a0440908ca5fdb562ae791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Effects.EnvironmentLightEffect
+  enableFlicker: 0
+  flickerSpeed: 5
+  flickerIntensityVariation: 0.5
+  enablePulse: 1
+  pulseSpeed: 2.68
+  pulseIntensityVariation: 1
+  pulseSizeVariation: 0.2
 --- !u!1 &5049870029652413704
 GameObject:
   m_ObjectHideFlags: 0

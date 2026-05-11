@@ -9093,7 +9093,7 @@ Transform:
   m_GameObject: {fileID: 472907155}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.2, y: 30.6, z: -10}
+  m_LocalPosition: {x: -71.39, y: 35.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18822,7 +18822,7 @@ Transform:
   m_GameObject: {fileID: 965510732}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.2, y: 30.6, z: -10}
+  m_LocalPosition: {x: -71.39, y: 35.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38880,11 +38880,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -66.2
+      value: -71.39
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.6
+      value: 35.02
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38916,6 +38916,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 684980333150956337, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920110883875324084, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2199792147120370066, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
@@ -38957,6 +38961,14 @@ PrefabInstance:
     - target: {fileID: 4877568509612691355, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039957588562656571, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039957588562656571, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5049870029652413704, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Name
