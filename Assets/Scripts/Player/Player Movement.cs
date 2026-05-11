@@ -158,16 +158,16 @@ namespace Player
                 Vector2 dashDirection = transform.right;
                 
                 Debug.Log("DASH HAPPENED. direction = " + dashDirection);
+                //
+                // DashBubbleEffect_2 bubbleEffect = GetComponent<DashBubbleEffect_2>();
+                //
+                // if (bubbleEffect == null)
+                // {
+                //     Debug.LogError("NO DashBubbleEffect ON PLAYER");
+                //     return;
+                // }
 
-                DashBubbleEffect bubbleEffect = GetComponent<DashBubbleEffect>();
-
-                if (bubbleEffect == null)
-                {
-                    Debug.LogError("NO DashBubbleEffect ON PLAYER");
-                    return;
-                }
-
-                bubbleEffect.PlayDashBubbles(dashDirection);
+                // bubbleEffect.PlayDashBubbles(dashDirection);
 
                 _rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
 

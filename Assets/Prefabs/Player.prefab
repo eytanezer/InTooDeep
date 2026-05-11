@@ -371,7 +371,6 @@ GameObject:
   - component: {fileID: 3698185885582895954}
   - component: {fileID: 3729090350602663048}
   - component: {fileID: 2868224085088233651}
-  - component: {fileID: 1920110883875324084}
   - component: {fileID: 429471401056996877}
   m_Layer: 0
   m_Name: Player
@@ -573,22 +572,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerBreathingManager
   breathingClip: {fileID: 8300000, guid: 9b7b3b7cc00d04665a7548f01d1f32de, type: 3}
   breathingVolume: 1
---- !u!114 &1920110883875324084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5049870029652413704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc5cdbc21ab4c64ab2be050d08350a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DashBubbleEffect
-  dashBubblePrefab: {fileID: 965073559526331005, guid: 0b04a024cef62eb4aa4354995f3bce94, type: 3}
-  dashBubblePoint: {fileID: 0}
-  bubbleSpeed: 4
-  destroyAfterSeconds: 2
 --- !u!114 &429471401056996877
 MonoBehaviour:
   m_ObjectHideFlags: 0
