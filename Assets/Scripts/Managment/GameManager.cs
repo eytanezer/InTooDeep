@@ -34,6 +34,7 @@ namespace Managment
             EventManager.OnPauseGame += PauseGame;
             EventManager.OnResumeGame += ResumeGame;
             EventManager.OnQuitGame += QuitGame;
+            EventManager.OnResetGame += StartGame;
 
             EventManager.OnGameOver += LoseGame;
             EventManager.OnLoseGame += LoseGame;
@@ -46,6 +47,7 @@ namespace Managment
             EventManager.OnPauseGame -= PauseGame;
             EventManager.OnResumeGame -= ResumeGame;
             EventManager.OnQuitGame -= QuitGame;
+            EventManager.OnResetGame -= StartGame;
 
             EventManager.OnGameOver -= LoseGame;
             EventManager.OnLoseGame -= LoseGame;

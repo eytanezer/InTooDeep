@@ -10,6 +10,7 @@ public class GameOverScreenUI : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_Text resultText;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Button restartButton;
 
     private void OnEnable()
     {
@@ -24,6 +25,8 @@ public class GameOverScreenUI : MonoBehaviour
     private void HandleStateChanged(GameManager.GameState state)
     {
         bool shouldShow = state == GameManager.GameState.GameOver;
+        bool isGameplay = state == GameManager.GameState.Gameplay;
+
         gameOverPanel.SetActive(shouldShow);
 
         if (shouldShow)
@@ -37,15 +40,30 @@ public class GameOverScreenUI : MonoBehaviour
     {
         yield return null;
 
-        Navigation quitNav = new Navigation
-        {
-            mode = Navigation.Mode.Explicit
-        };
-        quitButton.navigation = quitNav;
+        // Navigation quitNav = new Navigation
+        // {
+        //     mode = Navigation.Mode.Explicit
+        // };
+        // quitButton.navigation = quitNav;
+        
+        SetVerticalNavigation(quitButton, restartButton);
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(quitButton.gameObject);
         quitButton.Select();
+    }
+    
+    private void SetVerticalNavigation(Button topButton, Button bottomButton)
+    {
+        Navigation topNav = new Navigation();
+        topNav.mode = Navigation.Mode.Explicit;
+        topNav.selectOnDown = bottomButton;
+        topButton.navigation = topNav;
+
+        Navigation bottomNav = new Navigation();
+        bottomNav.mode = Navigation.Mode.Explicit;
+        bottomNav.selectOnUp = topButton;
+        bottomButton.navigation = bottomNav;
     }
 
     private void UpdateResultText()
@@ -64,5 +82,10 @@ public class GameOverScreenUI : MonoBehaviour
     public void OnQuitClicked()
     {
         EventManager.RaiseQuitGame();
+    }
+
+    public void OnRestartClicked()
+    {
+        EventManager.RaiseResetGame();
     }
 }
