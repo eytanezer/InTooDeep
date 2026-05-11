@@ -20277,7 +20277,7 @@ MonoBehaviour:
   KeyUIParent: {fileID: 1019470766}
   EmptyKeySprites: {fileID: 1898548517924997889, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
   LitKeySprite: {fileID: 5557926880403484084, guid: f83e8d172a7ad48c6acb39e11632fcc0, type: 3}
-  flyingKeyPrefab: {fileID: 5348769641629183891, guid: d2efc2603d52b423da7cad7e91f1df48, type: 3}
+  flyingKeyPrefab: {fileID: 4563505724618828303, guid: b384036f609ad4372877abcf074e5936, type: 3}
   flyDuration: 0.6
 --- !u!114 &1019470768
 MonoBehaviour:
