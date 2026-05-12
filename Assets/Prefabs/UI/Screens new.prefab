@@ -830,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartScreenUI
   startButton: {fileID: 6746941908088416469}
   quitButton: {fileID: 6350874462149199736}
+  startPanel: {fileID: 1447122054196291501}
 --- !u!1 &2330477122179827775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1743,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1363299381114300484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreenUI
   gameOverPanel: {fileID: 6868573279189706257}
-  resultText: {fileID: 5225571073277267038}
+  resultText: {fileID: 3858433082397952961}
   quitButton: {fileID: 6892099167015407310}
   restartButton: {fileID: 2803990367643257574}
 --- !u!1 &5371009128609199729

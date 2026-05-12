@@ -12,6 +12,7 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private float speed = 8f;
     [SerializeField] private float acceleration = 1f;
     [SerializeField] private float rotationSpeed = 6f;
+    [SerializeField] private float returnSpeed = 2f;
 
     [Header("Detection Settings")] [SerializeField]
     private Vector2 playerDetectionOffset;
@@ -19,6 +20,9 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private float awakePlayerDetectionRadius = 6f;
     [SerializeField] private float maxChaseRadius = 40f;
     [SerializeField] private float damage = 15f;
+    
+    [SerializeField] private float chaseDuration = 5f;
+    
     [SerializeField] private LayerMask playerLayer;
     
     [Header("Audio Settings")] 
@@ -33,6 +37,8 @@ public class BigAnglerfish1 : MonoBehaviour
     
     private Vector2 _startPosition;
     private FishState _state = FishState.Sleep;
+    
+    private float _chaseTimer;
 
     void Start()
     {
@@ -48,16 +54,24 @@ public class BigAnglerfish1 : MonoBehaviour
 
     private void HandleStateMachine()
     {
-        Collider2D playerCol = LookForPlayer();
-        if (playerCol != null)
+        Collider2D playerCol = null;
+
+        if (_state == FishState.Sleep)
         {
-            if (_state == FishState.Chasing)
+            playerCol = LookForPlayer();
+
+            if (playerCol != null)
             {
-                if(detectionSound != null) SoundManager.Instance.PlaySoundFXClip(detectionSound, transform, soundVolume);
+                _state = FishState.Chasing;
+                _chaseTimer = chaseDuration;
+
+                if (detectionSound != null)
+                {
+                    SoundManager.Instance.PlaySoundFXClip(detectionSound, transform, soundVolume);
+                }
             }
-            _state = FishState.Chasing;
         }
-        
+
         switch (_state)
         {
             case FishState.Sleep:
@@ -65,8 +79,13 @@ public class BigAnglerfish1 : MonoBehaviour
                 _rb.angularVelocity = 0f;
                 _rb.rotation = 0f;
                 break;
+
             case FishState.Chasing:
-                if (playerCol == null)
+                _chaseTimer -= Time.fixedDeltaTime;
+
+                playerCol = LookForPlayer();
+
+                if (_chaseTimer <= 0f || playerCol == null)
                 {
                     _state = FishState.Returning;
                 }
@@ -75,9 +94,13 @@ public class BigAnglerfish1 : MonoBehaviour
                     ChasePlayer(playerCol.transform);
                 }
                 break;
+
             case FishState.Returning:
                 if (((Vector2)transform.position - _startPosition).sqrMagnitude <= 0.25f)
                 {
+                    _rb.linearVelocity = Vector2.zero;
+                    _rb.angularVelocity = 0f;
+                    transform.position = _startPosition;
                     _state = FishState.Sleep;
                 }
                 else
@@ -167,14 +190,16 @@ public class BigAnglerfish1 : MonoBehaviour
     {
         // 1. Handle Movement (Move towards the start position)
         Vector2 direction = (_startPosition - _rb.position).normalized;
-        Vector2 targetVelocity = direction * speed;
-    
-        _rb.linearVelocity = Vector2.MoveTowards(_rb.linearVelocity, targetVelocity, acceleration * 50f * Time.fixedDeltaTime);
+        _rb.linearVelocity = direction * returnSpeed;
 
         // 2. Handle Rotation (Smoothly transition back to 0 degrees)
-        float smoothedAngle = Mathf.LerpAngle(_rb.rotation, 0f, rotationSpeed * Time.fixedDeltaTime);
-        _rb.MoveRotation(smoothedAngle);
+        float smoothedAngle = Mathf.LerpAngle(
+            _rb.rotation,
+            0f,
+            rotationSpeed * Time.fixedDeltaTime
+        );
 
+        _rb.MoveRotation(smoothedAngle);
         // 3. Reset the sprite flip so the fish isn't upside down when it goes to sleep
         _spriteRenderer.flipY = false;
     }

@@ -56,6 +56,7 @@ namespace Managment
 
         private void ChangeState(GameState newState)
         {
+            Debug.Log("STATE CHANGED TO: " + newState);
             CurrentState = newState;
 
             Time.timeScale =

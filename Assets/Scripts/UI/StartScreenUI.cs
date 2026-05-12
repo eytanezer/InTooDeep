@@ -8,6 +8,7 @@ public class StartScreenUI : MonoBehaviour
 {
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
+    
 
     private void OnEnable()
     {
