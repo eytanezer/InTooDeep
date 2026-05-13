@@ -209,11 +209,25 @@ namespace Player
         [Tooltip("Teleports the player back to their original spawn position")]
         public void ResetToSpawn()
         {
-            // Reset position
             transform.position = _spawnPosition;
             transform.rotation = Quaternion.identity;
 
-            // If the player has a Rigidbody, kill any leftover movement/momentum
+            _targetInput = Vector2.zero;
+            _currentInput = Vector2.zero;
+            _inputChanged = false;
+            _isAtSurface = false;
+
+            if (_spriteRenderer != null)
+            {
+                _spriteRenderer.flipX = false;
+                _spriteRenderer.flipY = false;
+            }
+
+            if (_animator != null)
+            {
+                _animator.SetFloat(Speed, 0f);
+            }
+
             if (_rb)
             {
                 _rb.linearVelocity = Vector3.zero;
