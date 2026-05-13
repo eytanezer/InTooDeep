@@ -205,7 +205,7 @@ MonoBehaviour:
   detectionSound: {fileID: 0}
   soundVolume: 0.1
   pufferLight: {fileID: 8025950018001863549}
-  inflatedLightColor: {r: 1, g: 0, b: 0, a: 1}
+  inflatedLightColor: {r: 0.6431373, g: 0.12156863, b: 0.83137256, a: 1}
   deflationLightColor: {r: 1, g: 1, b: 1, a: 1}
   inflatedLightIntensity: 2
   inflatedLightRadius: 3
