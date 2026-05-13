@@ -1,6 +1,7 @@
 using Managment.SoundScripts;
 using Player;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PufferfishEnemy : MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class PufferfishEnemy : MonoBehaviour
     [Header("Audio Settings")] 
     [SerializeField] private AudioClip detectionSound;
     [SerializeField] private float soundVolume = 0.1f;
+    
+    [Header("Light Settings")]
+    [SerializeField] private Light2D pufferLight;
+
+    [SerializeField] private Color inflatedLightColor = Color.red;
+
+    [SerializeField] private float inflatedLightIntensity = 2f;
+
+    [SerializeField] private float inflatedLightRadius = 3f;
 
     private static Vector3 _normalScale = Vector3.one;
     private Vector3 _inflatedScale;
@@ -105,12 +115,32 @@ public class PufferfishEnemy : MonoBehaviour
             _targetScale = _inflatedScale;
             _scalingSpeed = inflateSpeed;
             _spriteRenderer.sprite = inflatedSprite;
+
+            pufferLight.color = inflatedLightColor;
+
+            pufferLight.intensity = Mathf.Lerp(
+                pufferLight.intensity,
+                inflatedLightIntensity,
+                inflateSpeed * Time.deltaTime
+            );
+
+            pufferLight.pointLightOuterRadius = Mathf.Lerp(
+                pufferLight.pointLightOuterRadius,
+                inflatedLightRadius,
+                inflateSpeed * Time.deltaTime
+            );
         }
         else
         {
             _targetScale = _normalScale;
             _scalingSpeed = deflateSpeed;
             _spriteRenderer.sprite = normalSprite;
+
+            pufferLight.intensity = Mathf.Lerp(
+                pufferLight.intensity,
+                0f,
+                deflateSpeed * Time.deltaTime
+            );
         }
     }
 
