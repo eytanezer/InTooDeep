@@ -7,6 +7,7 @@ public class PufferfishEnemy : MonoBehaviour
 {
     [Header("Player Detection")]
     [SerializeField] private float playerDetectionRadius = 2f;
+    [SerializeField] private float playerDetectionRadiusInflated = 4f;
     [SerializeField] private LayerMask playerLayer;
     
     [Header("Inflation")]
@@ -29,6 +30,8 @@ public class PufferfishEnemy : MonoBehaviour
     [SerializeField] private Light2D pufferLight;
 
     [SerializeField] private Color inflatedLightColor = Color.red;
+    
+    [SerializeField] private Color deflationLightColor = Color.white;
 
     [SerializeField] private float inflatedLightIntensity = 2f;
 
@@ -37,9 +40,10 @@ public class PufferfishEnemy : MonoBehaviour
     private static Vector3 _normalScale = Vector3.one;
     private Vector3 _inflatedScale;
     
-    private Vector3 _targetScale;
-    private float _scalingSpeed;
     private bool _isInflated;
+    private float _scalingSpeed;
+    private Vector3 _targetScale;
+    private Color _targetColor;
 
     //returning to original location variables
     [SerializeField] private float swimSpeed = 1;
@@ -62,8 +66,6 @@ public class PufferfishEnemy : MonoBehaviour
     
     void Start()
     {
-        _inflatedScale = _normalScale * inflationMultiplier;
-        
         _originalLocation = transform.position;
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -72,14 +74,20 @@ public class PufferfishEnemy : MonoBehaviour
 
     private void Update()
     {
-        ScanForPlayer();
-        UpdateAttributes();
+        Collider2D playerCol = ScanForPlayer();
+        bool playerDetected = playerCol != null;
+        ManageScale();
+        ManageLight(playerDetected);
         
-        transform.localScale = Vector3.Lerp(
-            transform.localScale,
-            _targetScale,
-            _scalingSpeed * Time.deltaTime
-        );
+        if (_isInflated)
+        {
+            _spriteRenderer.sprite = inflatedSprite;
+        }
+
+        if (transform.localScale == _normalScale)
+        {
+            _spriteRenderer.sprite = normalSprite;
+        }
     }
 
     private void FixedUpdate()
@@ -108,45 +116,54 @@ public class PufferfishEnemy : MonoBehaviour
         }
     }
 
-    void UpdateAttributes()
+    void ManageScale()
     {
-        if (_isInflated)
-        {
-            _targetScale = _inflatedScale;
-            _scalingSpeed = inflateSpeed;
-            _spriteRenderer.sprite = inflatedSprite;
+        // 1. Determine the target scale based on detection
+        Vector3 targetScale = _isInflated ? _normalScale * inflationMultiplier : _normalScale;
 
-            pufferLight.color = inflatedLightColor;
+        // 2. Determine which speed to use
+        float currentSpeed = _isInflated ? inflateSpeed : deflateSpeed;
 
-            pufferLight.intensity = Mathf.Lerp(
-                pufferLight.intensity,
-                inflatedLightIntensity,
-                inflateSpeed * Time.deltaTime
-            );
+        // 3. Move linearly towards the target
+        transform.localScale = Vector3.MoveTowards(
+            transform.localScale, 
+            targetScale, 
+            currentSpeed * Time.deltaTime
+        );
+    }
+    
+    void ManageLight(bool playerDetected)
+    {
+        float currentSpeed = _isInflated ? inflateSpeed : deflateSpeed;
 
-            pufferLight.pointLightOuterRadius = Mathf.Lerp(
-                pufferLight.pointLightOuterRadius,
-                inflatedLightRadius,
-                inflateSpeed * Time.deltaTime
-            );
-        }
-        else
-        {
-            _targetScale = _normalScale;
-            _scalingSpeed = deflateSpeed;
-            _spriteRenderer.sprite = normalSprite;
+        Color targetColor = playerDetected ? inflatedLightColor : deflationLightColor;
+        float targetIntensity = _isInflated ? inflatedLightIntensity : 0f;
+        float targetRadius = _isInflated ? inflatedLightRadius : 0f;
+        
+        pufferLight.color = Vector4.MoveTowards(
+            pufferLight.color, 
+            targetColor, 
+            currentSpeed * Time.deltaTime 
+        );
+        
+        pufferLight.intensity = Mathf.MoveTowards(
+            pufferLight.intensity, 
+            targetIntensity, 
+            currentSpeed * Time.deltaTime
+        );
 
-            pufferLight.intensity = Mathf.Lerp(
-                pufferLight.intensity,
-                0f,
-                deflateSpeed * Time.deltaTime
-            );
-        }
+        pufferLight.pointLightOuterRadius = Mathf.MoveTowards(
+            pufferLight.pointLightOuterRadius, 
+            targetRadius, 
+            currentSpeed * Time.deltaTime
+        );
     }
 
-    void ScanForPlayer()
+    Collider2D ScanForPlayer()
     {
-        Collider2D playerCol = Physics2D.OverlapCircle(transform.position, playerDetectionRadius, playerLayer);
+        float detectRadius = _isInflated ? playerDetectionRadiusInflated : playerDetectionRadius;
+        Collider2D playerCol = Physics2D.OverlapCircle(transform.position, detectRadius, playerLayer);
+        
         if (playerCol && !_isInflated)
         {
             _isInflated = true;
@@ -157,6 +174,7 @@ public class PufferfishEnemy : MonoBehaviour
         {
             _isInflated = false;
         }
+        return playerCol;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -180,6 +198,8 @@ public class PufferfishEnemy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
+        Gizmos.color = Color.orangeRed;
+        Gizmos.DrawWireSphere(transform.position, playerDetectionRadiusInflated);
     }
     
     private void ResetEnemy()

@@ -41114,6 +41114,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5221231411015562177, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221231411015562177, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221231411015562177, guid: e63778c939839794299256b096f2476f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7515266751178140602, guid: e63778c939839794299256b096f2476f, type: 3}
       propertyPath: m_Name
       value: PufferFish
