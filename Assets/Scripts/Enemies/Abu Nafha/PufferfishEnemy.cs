@@ -1,3 +1,4 @@
+using Managment;
 using Managment.SoundScripts;
 using Player;
 using UnityEngine;
@@ -44,6 +45,7 @@ public class PufferfishEnemy : MonoBehaviour
     private float _scalingSpeed;
     private Vector3 _targetScale;
     private Color _targetColor;
+    private bool _gameplayStarted;
 
     //returning to original location variables
     [SerializeField] private float swimSpeed = 1;
@@ -57,11 +59,28 @@ public class PufferfishEnemy : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnResetGame += ResetEnemy;
+        EventManager.OnGameStateChanged += HandleGameStateChanged;
     }
 
     private void OnDisable()
     {
         EventManager.OnResetGame -= ResetEnemy;
+        EventManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+    
+    private void HandleGameStateChanged(GameManager.GameState state)
+    {
+        _gameplayStarted = state == GameManager.GameState.Gameplay;
+
+        if (!_gameplayStarted)
+        {
+            _isInflated = false;
+
+            if (pufferLight != null)
+            {
+                pufferLight.intensity = 0f;
+            }
+        }
     }
     
     void Start()
@@ -74,6 +93,10 @@ public class PufferfishEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (!_gameplayStarted)
+        {
+            return;
+        }
         Collider2D playerCol = ScanForPlayer();
         bool playerDetected = playerCol != null;
         ManageScale();
@@ -92,6 +115,10 @@ public class PufferfishEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_gameplayStarted)
+        {
+            return;
+        }
         if (_isWaiting)
         {
             _waitTimer -= Time.fixedDeltaTime;

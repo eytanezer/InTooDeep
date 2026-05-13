@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5137232156103944912}
   - component: {fileID: 2787786339558903938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light - long range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5171017228824543833}
   - component: {fileID: 3865160881032758942}
   - component: {fileID: 5494117339047412424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8305714861412993409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DashBubblePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3922519489517757360}
   - component: {fileID: 8985453816818474161}
   - component: {fileID: 4497971215301383253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light - Short Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,6 +336,10 @@ MonoBehaviour:
   controlAngles: 0
   maxAngles: 0
   minAngles: 0
+  breathingPulse: 1
+  normalPulseInterval: 3
+  lowOxygenPulseInterval: 0.7
+  pulseAmount: 0.15
 --- !u!114 &4497971215301383253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +376,7 @@ GameObject:
   - component: {fileID: 3729090350602663048}
   - component: {fileID: 2868224085088233651}
   - component: {fileID: 429471401056996877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -597,7 +601,7 @@ GameObject:
   - component: {fileID: 7130667825066159446}
   - component: {fileID: 2675465770735287251}
   - component: {fileID: 84946539600367484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light - beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,6 +696,10 @@ MonoBehaviour:
   controlAngles: 1
   maxAngles: 16
   minAngles: 3
+  breathingPulse: 0
+  normalPulseInterval: 3
+  lowOxygenPulseInterval: 0.7
+  pulseAmount: 0.15
 --- !u!1 &8531588679964344869
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +711,7 @@ GameObject:
   - component: {fileID: 4387806437914776050}
   - component: {fileID: 8062276700369459138}
   - component: {fileID: 7955396041774082099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightRadiusTrigger
   m_TagString: PlayerLight
   m_Icon: {fileID: 0}
@@ -787,9 +795,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 1867379167089723115, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301242071272284930, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
+      propertyPath: ShapeModule.type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3301242071272284930, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
       propertyPath: moveWithTransform
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301242071272284930, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301242071272284930, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301242071272284930, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3548107111408435322, guid: 3c176e9fc12b444f5836a667649a1bd5, type: 3}
       propertyPath: m_LocalPosition.x
