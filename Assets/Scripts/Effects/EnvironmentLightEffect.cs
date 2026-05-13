@@ -25,6 +25,12 @@ namespace Effects
         [SerializeField] float pulseIntensityVariation = 1;
         [SerializeField] float pulseSizeVariation = 0.2f;
         
+        // [Tooltip("Defines the pulse shape. X-axis is time (0 to 1), Y-axis is multiplier (-1 to 1)")]
+        // [SerializeField] AnimationCurve pulseCurve = new AnimationCurve(new Keyframe(0f, 0f),       // Start at 0
+        //     new Keyframe(0.25f, 1f),    // Peak positive at 25%
+        //     new Keyframe(0.75f, -1f),   // Peak negative at 75%
+        //     new Keyframe(1f, 0f));
+
         
         void  Awake()
         {
@@ -48,9 +54,13 @@ namespace Effects
 
             if (enablePulse)
             {
-                float sinWave = Mathf.Sin((Time.time + _randomTimeOffset) * pulseSpeed);
-                targetRadius += sinWave * pulseSizeVariation;
-                targetIntensity += sinWave * pulseIntensityVariation;
+                // float looptime = Mathf.Repeat((Time.time + _randomTimeOffset) * pulseSpeed, 1f);
+                //
+                // float curveValue = pulseCurve.Evaluate(looptime);
+                //
+                float curveValue = Mathf.Sin((Time.time + _randomTimeOffset) * pulseSpeed);
+                targetRadius += curveValue * pulseSizeVariation;
+                targetIntensity += curveValue * pulseIntensityVariation;
             }
             
             _light.intensity = Mathf.Max(0f, targetIntensity);
