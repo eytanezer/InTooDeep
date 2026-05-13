@@ -1,6 +1,7 @@
 ﻿using Managment.SoundScripts;
 using UnityEngine;
 using Player;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -29,6 +30,15 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private AudioClip detectionSound;
     [SerializeField] private float soundVolume = 0.1f;
     
+    [Header("Light Settings")]
+    [SerializeField] private Light2D anglerLight;
+
+    [SerializeField] private Color fakeKeyColor = Color.yellow;
+
+    [SerializeField] private Color dangerColor = Color.magenta;
+
+    [SerializeField] private float revealDistance = 4f;
+    
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
     private Collider2D _playerCol;
@@ -39,6 +49,16 @@ public class BigAnglerfish1 : MonoBehaviour
     private FishState _state = FishState.Sleep;
     
     private float _chaseTimer;
+    
+    private void OnEnable()
+    {
+        EventManager.OnResetGame += ResetEnemy;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnResetGame -= ResetEnemy;
+    }
 
     void Start()
     {
@@ -50,6 +70,7 @@ public class BigAnglerfish1 : MonoBehaviour
     void FixedUpdate()
     {
         HandleStateMachine();
+        UpdateLightColor();
     }
 
     private void HandleStateMachine()
@@ -204,6 +225,29 @@ public class BigAnglerfish1 : MonoBehaviour
         _spriteRenderer.flipY = false;
     }
     
+    void UpdateLightColor()
+    {
+        if (anglerLight == null)
+        {
+            return;
+        }
+
+        Collider2D playerCol = Physics2D.OverlapCircle(
+            transform.position,
+            revealDistance,
+            playerLayer
+        );
+
+        if (playerCol != null)
+        {
+            anglerLight.color = dangerColor;
+        }
+        else
+        {
+            anglerLight.color = fakeKeyColor;
+        }
+    }
+    
     private void OnDrawGizmos()
     {
         Vector2 spawnPoint = Application.isPlaying ? _startPosition : (Vector2)transform.position;
@@ -214,5 +258,26 @@ public class BigAnglerfish1 : MonoBehaviour
         Gizmos.DrawWireSphere((Vector2)transform.position + playerDetectionOffset, awakePlayerDetectionRadius);
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(spawnPoint, maxChaseRadius);
+    }
+    
+    private void ResetEnemy()
+    {
+        transform.position = _startPosition;
+        transform.rotation = Quaternion.identity;
+
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
+
+        _state = FishState.Sleep;
+        _chaseTimer = 0f;
+        _detectedPlayer = false;
+        _playerCol = null;
+
+        _spriteRenderer.flipY = false;
+
+        if (anglerLight != null)
+        {
+            anglerLight.color = fakeKeyColor;
+        }
     }
 }

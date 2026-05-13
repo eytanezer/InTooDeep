@@ -33,6 +33,8 @@ public class PiranhaMovement1 : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _currentTarget;
+    private Vector3 _startPosition;
+    private Quaternion _startRotation;
 
     // State trackers
     private bool _isBouncing = false;
@@ -45,7 +47,19 @@ public class PiranhaMovement1 : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _startPosition = transform.position;
+        _startRotation = transform.rotation;
         PickNewTarget();
+    }
+    
+    private void OnEnable()
+    {
+        EventManager.OnResetGame += ResetEnemy;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnResetGame -= ResetEnemy;
     }
 
     void FixedUpdate()
@@ -172,6 +186,28 @@ public class PiranhaMovement1 : MonoBehaviour
         _rb.linearVelocity = Vector2.zero;
         Vector2 bounceDirection = collision.GetContact(0).normal;
         _rb.AddForce(bounceDirection * bounceForce, ForceMode2D.Impulse);
+    }
+    
+    private void ResetEnemy()
+    {
+        transform.position = _startPosition;
+        transform.rotation = _startRotation;
+
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
+
+        _isBouncing = false;
+        _bounceTimer = 0f;
+
+        _isWaiting = false;
+        _waitTimer = 0f;
+
+        _detectedPlayer = false;
+        _playerCol = null;
+
+        _spriteRenderer.flipY = false;
+
+        PickNewTarget();
     }
     
     Collider2D LookForPlayer()

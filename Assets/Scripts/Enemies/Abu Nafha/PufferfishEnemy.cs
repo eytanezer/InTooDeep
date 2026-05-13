@@ -40,6 +40,16 @@ public class PufferfishEnemy : MonoBehaviour
     private bool _isWaiting;
     private bool _isReturning;
     
+    private void OnEnable()
+    {
+        EventManager.OnResetGame += ResetEnemy;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnResetGame -= ResetEnemy;
+    }
+    
     void Start()
     {
         _inflatedScale = _normalScale * inflationMultiplier;
@@ -140,5 +150,27 @@ public class PufferfishEnemy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
+    }
+    
+    private void ResetEnemy()
+    {
+        transform.position = _originalLocation;
+        transform.localScale = _normalScale;
+
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
+
+        _isInflated = false;
+        _isWaiting = false;
+        _isReturning = false;
+        _waitTimer = 0f;
+
+        _targetScale = _normalScale;
+        _scalingSpeed = deflateSpeed;
+
+        if (_spriteRenderer != null)
+        {
+            _spriteRenderer.sprite = normalSprite;
+        }
     }
 }
