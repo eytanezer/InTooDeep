@@ -35,7 +35,19 @@ public class PauseScreenUI : MonoBehaviour
         }
         else if (isGameplay)
         {
-            StartCoroutine(SelectPauseNextFrame());
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
+    
+    public void OnPause()
+    {
+        if (GameManager.Instance.CurrentState == GameManager.GameState.Gameplay)
+        {
+            EventManager.RaisePauseGame();
+        }
+        else if (GameManager.Instance.CurrentState == GameManager.GameState.Paused)
+        {
+            EventManager.RaiseResumeGame();
         }
     }
 
@@ -78,6 +90,7 @@ public class PauseScreenUI : MonoBehaviour
 
     public void OnPauseClicked()
     {
+        Debug.Log("PAUSE CLICKED FROM UI BUTTON");
         EventManager.RaisePauseGame();
     }
 

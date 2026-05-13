@@ -377,17 +377,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c315e192-c4b9-4655-8405-5aa59bfb1e87",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b3f6bd4e-1707-44a8-ac1f-904ad2d29da1",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -404,6 +393,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1f3e6cf-390e-4d15-9a0e-6929dc447687",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false

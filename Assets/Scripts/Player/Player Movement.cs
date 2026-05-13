@@ -36,6 +36,7 @@ namespace Player
         
         private float _lastDashTime;
         private PlayerAirSupply _airSupply;
+        private float _dashBlockedUntil;
         
         
         private static readonly int Speed = Animator.StringToHash("Speed");
@@ -77,10 +78,25 @@ namespace Player
 
         void OnJump(InputValue value)
         {
+            if (GameManager.Instance.CurrentState != GameManager.GameState.Gameplay)
+            {
+                return;
+            }
+
+            if (Time.unscaledTime < _dashBlockedUntil)
+            {
+                return;
+            }
+
             if (value.isPressed && Time.time >= _lastDashTime + dashCooldown)
             {
                 Dash();
             }
+        }
+        
+        private void BlockDashAfterResume()
+        {
+            _dashBlockedUntil = Time.unscaledTime + 0.2f;
         }
     
 
@@ -209,12 +225,14 @@ namespace Player
         {
             Cheats.OnResetPlayersPosition += ResetToSpawn;
             EventManager.OnResetGame += ResetToSpawn;
+            EventManager.OnResumeGame += BlockDashAfterResume;
         }
 
         void OnDisable()
         {
             Cheats.OnResetPlayersPosition -= ResetToSpawn;
-            EventManager.OnResetGame += ResetToSpawn;
+            EventManager.OnResetGame -= ResetToSpawn;
+            EventManager.OnResumeGame -= BlockDashAfterResume;
         }
     }
 }
