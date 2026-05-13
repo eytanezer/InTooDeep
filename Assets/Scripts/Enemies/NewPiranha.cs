@@ -147,15 +147,22 @@ public class PiranhaMovement1 : MonoBehaviour
 
         float smoothedAngle = Mathf.LerpAngle(_rb.rotation, targetAngle, rotationSpeed * Time.fixedDeltaTime);
         _rb.MoveRotation(smoothedAngle);
+        
+        Vector3 currentScale = transform.localScale;
 
         if (direction.x > 0.05f) 
         {
-            _spriteRenderer.flipY = false;
+            // _spriteRenderer.flipY = false
+            currentScale.y = Mathf.Abs(currentScale.y);
         }
+        
         else if (direction.x < -0.05f)
         {
-            _spriteRenderer.flipY = true;
+            // _spriteRenderer.flipY = true;
+            currentScale.y = -Mathf.Abs(currentScale.y);
         }
+        
+        transform.localScale = currentScale;
     }
 
     void PickNewTarget()

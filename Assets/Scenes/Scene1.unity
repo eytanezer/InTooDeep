@@ -8722,6 +8722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LitParticles (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9088265161494404737, guid: c6453e121b73d41c7b19db97675feae9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23944,6 +23948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LitParticles (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9088265161494404737, guid: c6453e121b73d41c7b19db97675feae9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27492,6 +27500,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1973455239}
     m_Modifications:
+    - target: {fileID: 1138978942351616861, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138978942351616861, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138978942351616861, guid: b11c08dd595ede246982d35d68258d52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
       value: 5
@@ -41838,11 +41858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7572997851094554533, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.92
+      value: -2.904
       objectReference: {fileID: 0}
     - target: {fileID: 7572997851094554533, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.29
+      value: 8.287
       objectReference: {fileID: 0}
     - target: {fileID: 7572997851094554533, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: m_LocalPosition.z

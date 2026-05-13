@@ -83,7 +83,6 @@ public class PiranhaMovement : MonoBehaviour
         // Rotate
         float lerpedAngle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.fixedDeltaTime * rotationLerpSpeed);
         transform.rotation = Quaternion.Euler(0, 0, lerpedAngle);
-
         // Only move if sufficiently aligned
         if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, desiredAngle)) < requiredFacingAngleToMove)
         {
