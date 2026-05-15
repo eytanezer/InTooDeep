@@ -43,12 +43,12 @@ namespace Player
 
         void OnEnable()
         {
-            EventManager.OnResetGame += ResetAirSupply;
+            EventManager.OnStartNewRun += ResetAirSupply;
         }
 
         void OnDisable()
         {
-            EventManager.OnResetGame -= ResetAirSupply;
+            EventManager.OnStartNewRun -= ResetAirSupply;
         }
 
         void Update()

@@ -78,6 +78,8 @@ namespace Managment
         private void StartGame()
         {
             CurrentResult = GameResult.None;
+            EventManager.RaiseStartNewRun();
+            
             ChangeState(GameState.OpeningSequence);
             StartCoroutine(PlayOpeningSequence());
         }
@@ -85,6 +87,8 @@ namespace Managment
         private void ResetGame()
         {
             CurrentResult = GameResult.None;
+            EventManager.RaiseStartNewRun();
+            
             ChangeState(GameState.Gameplay);
         }
 

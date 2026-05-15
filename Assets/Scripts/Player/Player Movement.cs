@@ -238,14 +238,14 @@ namespace Player
         void OnEnable()
         {
             Cheats.OnResetPlayersPosition += ResetToSpawn;
-            EventManager.OnResetGame += ResetToSpawn;
+            EventManager.OnStartNewRun += ResetToSpawn;
             EventManager.OnResumeGame += BlockDashAfterResume;
         }
 
         void OnDisable()
         {
             Cheats.OnResetPlayersPosition -= ResetToSpawn;
-            EventManager.OnResetGame -= ResetToSpawn;
+            EventManager.OnStartNewRun -= ResetToSpawn;
             EventManager.OnResumeGame -= BlockDashAfterResume;
         }
     }

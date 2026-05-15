@@ -21,10 +21,10 @@ namespace Player
         
         private void OnEnable()
         {
-            EventManager.OnResetGame += ResetKeyCount;
+            EventManager.OnStartNewRun += ResetKeyCount;
         }
         private void OnDisable(){
-            EventManager.OnResetGame -= ResetKeyCount;
+            EventManager.OnStartNewRun -= ResetKeyCount;
             
         }
     }

@@ -54,12 +54,12 @@ public class PiranhaMovement1 : MonoBehaviour
     
     private void OnEnable()
     {
-        EventManager.OnResetGame += ResetEnemy;
+        EventManager.OnStartNewRun += ResetEnemy;
     }
 
     private void OnDisable()
     {
-        EventManager.OnResetGame -= ResetEnemy;
+        EventManager.OnStartNewRun -= ResetEnemy;
     }
 
     void FixedUpdate()

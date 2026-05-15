@@ -58,13 +58,13 @@ public class PufferfishEnemy : MonoBehaviour
     
     private void OnEnable()
     {
-        EventManager.OnResetGame += ResetEnemy;
+        EventManager.OnStartNewRun += ResetEnemy;
         EventManager.OnGameStateChanged += HandleGameStateChanged;
     }
 
     private void OnDisable()
     {
-        EventManager.OnResetGame -= ResetEnemy;
+        EventManager.OnStartNewRun -= ResetEnemy;
         EventManager.OnGameStateChanged -= HandleGameStateChanged;
     }
     
