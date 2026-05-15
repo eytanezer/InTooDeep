@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managment;
+using UnityEngine;
 using Player;
 
 
@@ -42,6 +43,9 @@ public class PiranhaMovement1 : MonoBehaviour
     
     private bool _isWaiting = false;
     private float _waitTimer = 0f;
+    
+    private bool _canMove = false;
+
 
     void Start()
     {
@@ -55,15 +59,24 @@ public class PiranhaMovement1 : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnStartNewRun += ResetEnemy;
+        EventManager.OnGameStateChanged += HandleGameStateChanged;
     }
 
     private void OnDisable()
     {
         EventManager.OnStartNewRun -= ResetEnemy;
+        EventManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
+    private void HandleGameStateChanged(GameManager.GameState state)
+    {
+        _canMove = state == GameManager.GameState.Gameplay;
     }
 
     void FixedUpdate()
     {
+        if(!_canMove) return;
+        
         if (_isBouncing)
         {
             _bounceTimer -= Time.fixedDeltaTime;

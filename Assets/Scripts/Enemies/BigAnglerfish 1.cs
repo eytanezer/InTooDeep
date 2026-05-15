@@ -1,4 +1,5 @@
-﻿using Managment.SoundScripts;
+﻿using Managment;
+using Managment.SoundScripts;
 using UnityEngine;
 using Player;
 using UnityEngine.Rendering.Universal;
@@ -50,14 +51,19 @@ public class BigAnglerfish1 : MonoBehaviour
     
     private float _chaseTimer;
     
+    private bool _canMove = false;
+
+    
     private void OnEnable()
     {
         EventManager.OnStartNewRun += ResetEnemy;
+        EventManager.OnGameStateChanged += HandleGameStateChanged;
     }
 
     private void OnDisable()
     {
         EventManager.OnStartNewRun -= ResetEnemy;
+        EventManager.OnGameStateChanged -= HandleGameStateChanged;
     }
 
     void Start()
@@ -66,9 +72,15 @@ public class BigAnglerfish1 : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
     }
+    
+    private void HandleGameStateChanged(GameManager.GameState state)
+    {
+        _canMove = state == GameManager.GameState.Gameplay;
+    }
 
     void FixedUpdate()
     {
+        if (!_canMove) return;
         HandleStateMachine();
         UpdateLightColor();
     }
