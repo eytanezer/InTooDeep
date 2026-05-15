@@ -9,7 +9,14 @@ public class GameOverScreenUI : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TMP_Text resultText;
-    [SerializeField] private Button quitButton;
+    
+    [Header("Visuals")]
+    [SerializeField] private Image backgroundImage;
+    [SerializeField] private Sprite winBackgroundSprite;
+    [SerializeField] private Sprite loseBackgroundSprite;
+    
+    [Header("Buttons")]
+    [SerializeField] private Button menuButton;
     [SerializeField] private Button restartButton;
 
     private void OnEnable()
@@ -25,67 +32,59 @@ public class GameOverScreenUI : MonoBehaviour
     private void HandleStateChanged(GameManager.GameState state)
     {
         bool shouldShow = state == GameManager.GameState.GameOver;
-        bool isGameplay = state == GameManager.GameState.Gameplay;
 
         gameOverPanel.SetActive(shouldShow);
 
         if (shouldShow)
         {
-            UpdateResultText();
+            UpdateVisuals();
             StartCoroutine(SelectQuitButtonNextFrame());
         }
     }
 
     private IEnumerator SelectQuitButtonNextFrame()
     {
-        yield return null;
-
-        // Navigation quitNav = new Navigation
-        // {
-        //     mode = Navigation.Mode.Explicit
-        // };
-        // quitButton.navigation = quitNav;
+        yield return new WaitForSecondsRealtime(0.1f);
         
-        SetVerticalNavigation(restartButton, quitButton);
+        SetVerticalNavigation(restartButton, menuButton);
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(restartButton.gameObject);
-        restartButton.Select();
+        // restartButton.Select();
     }
     
     private void SetVerticalNavigation(Button topButton, Button bottomButton)
     {
-        Navigation topNav = new Navigation();
-        topNav.mode = Navigation.Mode.Explicit;
-        topNav.selectOnDown = bottomButton;
+        Navigation topNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnDown = bottomButton};
         topButton.navigation = topNav;
 
-        Navigation bottomNav = new Navigation();
-        bottomNav.mode = Navigation.Mode.Explicit;
-        bottomNav.selectOnUp = topButton;
+        Navigation bottomNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = topButton};
         bottomButton.navigation = bottomNav;
     }
 
-    private void UpdateResultText()
+    private void UpdateVisuals()
     {
-        if (resultText == null)
+        var result = GameManager.Instance.CurrentResult;
+        if (resultText)
         {
-            return;
+            resultText.text =
+                result == GameManager.GameResult.Win
+                    ? "winner"
+                    : "Game Over";;
         }
 
-        resultText.text =
-            GameManager.Instance.CurrentResult == GameManager.GameResult.Win
-                ? "winner"
-                : "Game Over";
+        if (backgroundImage)
+        {
+            backgroundImage.sprite = result == GameManager.GameResult.Win
+                ? winBackgroundSprite
+                : loseBackgroundSprite;
+        }
+        
     }
 
-    public void OnQuitClicked()
-    {
-        EventManager.RaiseQuitGame();
-    }
+    public void OnMenuClicked() => EventManager.RaiseReturnToMenu();
+    
 
-    public void OnRestartClicked()
-    {
-        EventManager.RaiseResetGame();
-    }
+    public void OnRestartClicked() => EventManager.RaiseResetGame();
+    
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Managment
@@ -9,7 +10,9 @@ namespace Managment
             Title,
             Gameplay,
             Paused,
-            GameOver
+            GameOver,
+            OpeningSequence,
+            WinSequence
         }
 
         public enum GameResult
@@ -34,11 +37,14 @@ namespace Managment
             EventManager.OnPauseGame += PauseGame;
             EventManager.OnResumeGame += ResumeGame;
             EventManager.OnQuitGame += QuitGame;
-            EventManager.OnResetGame += StartGame;
+            
+            EventManager.OnResetGame += ResetGame;
 
             EventManager.OnGameOver += LoseGame;
             EventManager.OnLoseGame += LoseGame;
             EventManager.OnWinGame += WinGame;
+            
+            EventManager.OnReturnToMenu += ReturnToMenu;
         }
 
         private void OnDisable()
@@ -47,11 +53,13 @@ namespace Managment
             EventManager.OnPauseGame -= PauseGame;
             EventManager.OnResumeGame -= ResumeGame;
             EventManager.OnQuitGame -= QuitGame;
-            EventManager.OnResetGame -= StartGame;
+            EventManager.OnResetGame -= ResetGame;
 
             EventManager.OnGameOver -= LoseGame;
             EventManager.OnLoseGame -= LoseGame;
             EventManager.OnWinGame -= WinGame;
+            
+            EventManager.OnReturnToMenu -= ReturnToMenu;
         }
 
         private void ChangeState(GameState newState)
@@ -59,8 +67,10 @@ namespace Managment
             Debug.Log("STATE CHANGED TO: " + newState);
             CurrentState = newState;
 
-            Time.timeScale =
-                newState == GameState.Gameplay ? 1f : 0f;
+            Time.timeScale = 
+                (newState == GameState.Gameplay || 
+                 newState == GameState.OpeningSequence || 
+                 newState == GameState.WinSequence) ? 1f : 0f;
 
             EventManager.RaiseGameStateChanged(newState);
         }
@@ -68,35 +78,45 @@ namespace Managment
         private void StartGame()
         {
             CurrentResult = GameResult.None;
+            ChangeState(GameState.OpeningSequence);
+            StartCoroutine(PlayOpeningSequence());
+        }
+
+        private void ResetGame()
+        {
+            CurrentResult = GameResult.None;
             ChangeState(GameState.Gameplay);
         }
 
         private void PauseGame()
         {
-            if (CurrentState == GameState.Gameplay)
-            {
-                ChangeState(GameState.Paused);
-            }
+            if (CurrentState == GameState.Gameplay) ChangeState(GameState.Paused);
+            
         }
 
         private void ResumeGame()
         {
-            if (CurrentState == GameState.Paused)
-            {
-                ChangeState(GameState.Gameplay);
-            }
+            if (CurrentState == GameState.Paused) ChangeState(GameState.Gameplay);
+            
         }
 
         private void WinGame()
         {
             CurrentResult = GameResult.Win;
-            ChangeState(GameState.GameOver);
+            ChangeState(GameState.WinSequence);
+            StartCoroutine(PlayWinSequence());
         }
 
         private void LoseGame()
         {
             CurrentResult = GameResult.Lose;
             ChangeState(GameState.GameOver);
+        }
+
+        private void ReturnToMenu()
+        {
+            CurrentResult = GameResult.None;
+            ChangeState(GameState.Title);
         }
 
         private void QuitGame()
@@ -108,6 +128,22 @@ namespace Managment
 #else
             Application.Quit();
 #endif
+        }
+
+        private IEnumerator PlayOpeningSequence()
+        {
+            //TODO:ADD SEQUENCE
+            Debug.Log("Playing Opening Sequence...");
+            yield return new WaitForSeconds(3f);
+            ChangeState(GameState.Gameplay);
+        }
+        
+        private IEnumerator PlayWinSequence()
+        {
+            //TODO:ADD SEQUENCE
+            Debug.Log("Playing Winning Sequence...");
+            yield return new WaitForSeconds(3f);
+            ChangeState(GameState.GameOver);
         }
     }
 }

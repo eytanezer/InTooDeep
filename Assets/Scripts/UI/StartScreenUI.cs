@@ -6,8 +6,17 @@ using UnityEngine.UI;
 
 public class StartScreenUI : MonoBehaviour
 {
+    [Header("Panels")]
+    [SerializeField] private GameObject startPanel;
+    [SerializeField] private GameObject controlsPanel;
+    
+    [Header("Buttons")]
     [SerializeField] private Button startButton;
+    [SerializeField] private Button controlsButton;
     [SerializeField] private Button quitButton;
+    
+    [Header("Controls Menu Buttons")]
+    [SerializeField] private Button backButton;
     
 
     private void OnEnable()
@@ -23,45 +32,66 @@ public class StartScreenUI : MonoBehaviour
     private void HandleStateChanged(GameManager.GameState state)
     {
         bool shouldShow = state == GameManager.GameState.Title;
-        gameObject.SetActive(shouldShow);
-
+        
         if (shouldShow)
         {
-            StartCoroutine(SelectButtonNextFrame());
+            startPanel.SetActive(true);
+            controlsPanel.SetActive(false);
+            StartCoroutine(SelectButtonNextFrame(startButton));
+            SetUpMainMenuNavigation();
+        }
+        else
+        {
+            startPanel.SetActive(false);
+            controlsPanel.SetActive(false);
         }
     }
 
-    private IEnumerator SelectButtonNextFrame()
+    private IEnumerator SelectButtonNextFrame(Button buttonToSelect)
     {
-        yield return null;
-
-        SetVerticalNavigation(startButton, quitButton);
+        yield return new WaitForSecondsRealtime(0.1f);
 
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(startButton.gameObject);
-        startButton.Select();
+        EventSystem.current.SetSelectedGameObject(buttonToSelect.gameObject);
     }
 
     private void SetVerticalNavigation(Button topButton, Button bottomButton)
     {
-        Navigation topNav = new Navigation();
-        topNav.mode = Navigation.Mode.Explicit;
-        topNav.selectOnDown = bottomButton;
+        Navigation topNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnDown = bottomButton};
         topButton.navigation = topNav;
 
-        Navigation bottomNav = new Navigation();
-        bottomNav.mode = Navigation.Mode.Explicit;
-        bottomNav.selectOnUp = topButton;
+        Navigation bottomNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = topButton};
         bottomButton.navigation = bottomNav;
     }
 
-    public void OnStartClicked()
+    public void OpenControls()
     {
-        EventManager.RaiseStartGame();
+        startPanel.SetActive(false);
+        controlsPanel.SetActive(true);
+        StartCoroutine(SelectButtonNextFrame(backButton));
     }
 
-    public void OnQuitClicked()
+    public void CloseControls()
     {
-        EventManager.RaiseQuitGame();
+        controlsPanel.SetActive(false);
+        startPanel.SetActive(true);
+        StartCoroutine(SelectButtonNextFrame(controlsButton));
     }
+    
+    public void SetUpMainMenuNavigation()
+    {
+        Navigation startNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = quitButton, selectOnDown = controlsButton};
+        startButton.navigation = startNav;
+        
+        Navigation controlsNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = startButton, selectOnDown = quitButton};
+        controlsButton.navigation = controlsNav;
+        
+        Navigation quitNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = controlsButton, selectOnDown = startButton};
+        quitButton.navigation = quitNav;
+    }
+    
+    
+    public void OnStartClicked() => EventManager.RaiseStartGame();
+    public void OnQuitClicked() => EventManager.RaiseQuitGame();
+    
 }

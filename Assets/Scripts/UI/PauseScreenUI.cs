@@ -8,7 +8,7 @@ public class PauseScreenUI : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button pauseButton;
-    [SerializeField] private Button quitButton;
+    [SerializeField] private Button menuButton;
     [SerializeField] private Button resumeButton;
 
     private void OnEnable()
@@ -27,13 +27,14 @@ public class PauseScreenUI : MonoBehaviour
         bool isGameplay = state == GameManager.GameState.Gameplay;
 
         pausePanel.SetActive(isPaused);
-        pauseButton.gameObject.SetActive(isGameplay);
+        
+        if(pauseButton) pauseButton.gameObject.SetActive(isGameplay);
 
         if (isPaused)
         {
-            StartCoroutine(SelectQuitNextFrame());
+            StartCoroutine(SelectResumeNextFrame());
         }
-        else if (isGameplay)
+        else
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
@@ -51,24 +52,13 @@ public class PauseScreenUI : MonoBehaviour
         }
     }
 
-    private IEnumerator SelectQuitNextFrame()
+    private IEnumerator SelectResumeNextFrame()
     {
-        yield return null;
-
-        SetVerticalNavigation(resumeButton, quitButton);
-
+        yield return new WaitForSecondsRealtime(0.1f);
+        
+        SetVerticalNavigation(resumeButton, menuButton);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
-        resumeButton.Select();
-    }
-
-    private IEnumerator SelectPauseNextFrame()
-    {
-        yield return null;
-
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
-        pauseButton.Select();
     }
 
     private void SetVerticalNavigation(Button topButton, Button bottomButton)
@@ -99,8 +89,8 @@ public class PauseScreenUI : MonoBehaviour
         EventManager.RaiseResumeGame();
     }
 
-    public void OnQuitClicked()
+    public void OnMenuClicked()
     {
-        EventManager.RaiseQuitGame();
+        EventManager.RaiseReturnToMenu();
     }
 }

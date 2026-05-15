@@ -24,6 +24,9 @@ public class EventManager : MonoBehaviour
     public static event Action OnWinGame;
     public static event Action OnLoseGame;
 
+    public static event Action OnOpeningSequence;
+    public static event Action OnWinSequence;
+    public static event Action OnReturnToMenu;
     public static event Action<GameManager.GameState> OnGameStateChanged;
 
     #endregion
@@ -81,4 +84,13 @@ public class EventManager : MonoBehaviour
         OnGameStateChanged?.Invoke(state);
 
     #endregion
+
+    private static void RaiseOpeningSequence() => 
+        OnOpeningSequence?.Invoke();
+    
+    private static void RaiseWinSequence() =>
+        OnWinSequence?.Invoke();
+  
+    public static void RaiseReturnToMenu() =>
+        OnReturnToMenu?.Invoke();
 }
