@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Managment;
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -27,6 +28,8 @@ namespace Player
         private float _timePassed;
         private bool _underWater;
         private PlayerBreathingManager _breathingManager;
+        
+        private bool _breathingEnabled;
 
         public float CurrentAirSupply => _currentAirSupply;
 
@@ -44,15 +47,23 @@ namespace Player
         void OnEnable()
         {
             EventManager.OnStartNewRun += ResetAirSupply;
+            EventManager.OnGameStateChanged += HandleGameStateChanged;
         }
 
         void OnDisable()
         {
             EventManager.OnStartNewRun -= ResetAirSupply;
+            EventManager.OnGameStateChanged -= HandleGameStateChanged;
+        }
+        
+        private void HandleGameStateChanged(GameManager.GameState state)
+        {
+            _breathingEnabled = state == GameManager.GameState.Gameplay;
         }
 
         void Update()
         {
+            if (!_breathingEnabled) return;
             if (!_underWater)
             {
                 IncreaseAirSupply();

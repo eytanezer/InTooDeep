@@ -37,6 +37,9 @@ namespace Player
         private float _lastDashTime;
         private PlayerAirSupply _airSupply;
         private float _dashBlockedUntil;
+
+        private bool _canMove = false;
+        private float _defaultGravity;
         
         
         private static readonly int Speed = Animator.StringToHash("Speed");
@@ -62,9 +65,29 @@ namespace Player
             _airSupply = GetComponent<PlayerAirSupply>();
             _animator = GetComponentInChildren<Animator>();
             
+            _defaultGravity = _rb.gravityScale;
+            
             if (_spriteRenderer == null)
             {
                 Debug.LogError("PlayerMovement: No SpriteRenderer found in children.");
+            }
+        }
+
+        private void HandleGameStateChanged(GameManager.GameState state)
+        {
+            _canMove = state == GameManager.GameState.Gameplay;
+            
+            if (_rb)
+            {
+                if (!_canMove)
+                {
+                    _rb.linearVelocity = Vector2.zero;
+                    _rb.gravityScale = 0f; 
+                }
+                else
+                {
+                    _rb.gravityScale = _defaultGravity; 
+                }
             }
         }
 
@@ -102,6 +125,7 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if(!_canMove) return;
             if(_lastDashTime > 0) {_lastDashTime -= Time.fixedDeltaTime;}
 
 
@@ -168,6 +192,8 @@ namespace Player
 
         private void Dash()
         {
+            if(!_canMove) return;
+            
             if(_airSupply && _airSupply.UseAirSupply(dashAirCost))
             {
                 EventManager.RaiseDash();
@@ -240,6 +266,7 @@ namespace Player
             Cheats.OnResetPlayersPosition += ResetToSpawn;
             EventManager.OnStartNewRun += ResetToSpawn;
             EventManager.OnResumeGame += BlockDashAfterResume;
+            EventManager.OnGameStateChanged += HandleGameStateChanged;
         }
 
         void OnDisable()
@@ -247,6 +274,7 @@ namespace Player
             Cheats.OnResetPlayersPosition -= ResetToSpawn;
             EventManager.OnStartNewRun -= ResetToSpawn;
             EventManager.OnResumeGame -= BlockDashAfterResume;
+            EventManager.OnGameStateChanged -= HandleGameStateChanged;
         }
     }
 }
