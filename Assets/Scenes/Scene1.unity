@@ -19429,9 +19429,9 @@ MonoBehaviour:
   Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 1
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
+    Time: 1
+    Smoothing: 17
+    IgnoreY: 1
 --- !u!1001 &965594203
 PrefabInstance:
   m_ObjectHideFlags: 0
