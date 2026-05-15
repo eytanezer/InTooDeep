@@ -45,6 +45,7 @@ namespace Managment
             EventManager.OnWinGame += WinGame;
             
             EventManager.OnReturnToMenu += ReturnToMenu;
+            EventManager.OnSequenceComplete += HandleSequenceComplete;
         }
 
         private void OnDisable()
@@ -60,6 +61,7 @@ namespace Managment
             EventManager.OnWinGame -= WinGame;
             
             EventManager.OnReturnToMenu -= ReturnToMenu;
+            EventManager.OnSequenceComplete -= HandleSequenceComplete;
         }
 
         private void ChangeState(GameState newState)
@@ -81,7 +83,7 @@ namespace Managment
             EventManager.RaiseStartNewRun();
             
             ChangeState(GameState.OpeningSequence);
-            StartCoroutine(PlayOpeningSequence());
+            // StartCoroutine(PlayOpeningSequence());
         }
 
         private void ResetGame()
@@ -108,7 +110,7 @@ namespace Managment
         {
             CurrentResult = GameResult.Win;
             ChangeState(GameState.WinSequence);
-            StartCoroutine(PlayWinSequence());
+            // StartCoroutine(PlayWinSequence());
         }
 
         private void LoseGame()
@@ -148,6 +150,18 @@ namespace Managment
             Debug.Log("Playing Winning Sequence...");
             yield return new WaitForSeconds(3f);
             ChangeState(GameState.GameOver);
+        }
+        
+        private void HandleSequenceComplete()
+        {
+            if (CurrentState == GameState.OpeningSequence)
+            {
+                ChangeState(GameState.Gameplay);
+            }
+            else if (CurrentState == GameState.WinSequence)
+            {
+                ChangeState(GameState.GameOver);
+            }
         }
     }
 }

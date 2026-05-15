@@ -25,6 +25,7 @@ public class EventManager : MonoBehaviour
     public static event Action OnLoseGame;
 
     public static event Action OnOpeningSequence;
+    public static event Action OnSequenceComplete;
     public static event Action OnWinSequence;
     public static event Action OnReturnToMenu;
     public static event Action OnStartNewRun;
@@ -96,4 +97,6 @@ public class EventManager : MonoBehaviour
         OnReturnToMenu?.Invoke();
     
     public static void RaiseStartNewRun() => OnStartNewRun?.Invoke();
+    
+    public static void RaiseSequenceComplete() => OnSequenceComplete?.Invoke();
 }
