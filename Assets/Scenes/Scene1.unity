@@ -41238,8 +41238,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: dashCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: rotationSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513666419542470942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: minimumAirLeftForDash
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8531588679964344869, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer

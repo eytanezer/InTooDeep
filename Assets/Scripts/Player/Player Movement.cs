@@ -24,6 +24,7 @@ namespace Player
         public float dashAirCost = 10f;
         public float dashCooldown = 1f;
         [SerializeField] private AudioClip dashClip;
+        [SerializeField] private float minimumAirLeftForDash = 15;
         
         // Surface snapping
         private bool _isAtSurface = false;
@@ -111,7 +112,7 @@ namespace Player
                 return;
             }
 
-            if (value.isPressed && Time.time >= _lastDashTime + dashCooldown)
+            if (value.isPressed && _lastDashTime <= 0f && _airSupply.CurrentAirSupply >= minimumAirLeftForDash)
             {
                 Dash();
             }
