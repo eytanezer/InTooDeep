@@ -30,6 +30,7 @@ public class EventManager : MonoBehaviour
     public static event Action OnReturnToMenu;
     public static event Action OnStartNewRun;
     public static event Action<GameManager.GameState> OnGameStateChanged;
+    public static event Action OnPlayerHit;
 
     #endregion
 
@@ -52,6 +53,10 @@ public class EventManager : MonoBehaviour
     
     public static void RaiseDash() =>
         OnDash?.Invoke();
+    
+    public static void RaisePlayerHit() =>
+        OnPlayerHit?.Invoke();
+    
     #endregion
     
     
