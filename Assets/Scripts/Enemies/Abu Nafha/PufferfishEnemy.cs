@@ -218,6 +218,7 @@ public class PufferfishEnemy : MonoBehaviour
             return;
         }
         airSupply.UseAirSupply(damage);
+        EventManager.RaisePlayerHit();
 
         Debug.Log("Pufferfish hit player, oxygen reduced by: " + damage);
     }
