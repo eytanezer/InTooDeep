@@ -14,6 +14,14 @@ public class CameraShake : MonoBehaviour
     private void Awake()
     {
         _noise = GetComponent<CinemachineBasicMultiChannelPerlin>();
+
+        if (_noise == null)
+        {
+            Debug.LogError("CameraShake: No CinemachineBasicMultiChannelPerlin found on this object");
+            return;
+        }
+
+        Debug.Log("CameraShake: Noise found");
         StopShake();
     }
 
