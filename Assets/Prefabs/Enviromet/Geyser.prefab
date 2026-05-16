@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4545135329326526119}
   - component: {fileID: 7583546197186852621}
   - component: {fileID: 7079644610282316273}
+  - component: {fileID: 7757437929996722909}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -5005,3 +5006,17 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &7757437929996722909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957746325965049734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b9b56c2fe64b7a9e323111fc77a55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Effects.Geyser
+  clip: {fileID: 8300000, guid: a9aa4b33a2f5440fd90206e8ae73de9f, type: 3}
+  volume: 1
