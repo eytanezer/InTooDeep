@@ -41962,7 +41962,7 @@ PrefabInstance:
     - target: {fileID: 3865160881032758942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5996189324772215426, guid: 3a289c75af00a4ba486512076211322a, type: 3}
+      objectReference: {fileID: 1698198688543383935, guid: 835e002a24c2c4429ac38be04f6fde99, type: 3}
     - target: {fileID: 4497971215301383253, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: pulseCurve.m_Curve.Array.size
       value: 5
@@ -42086,6 +42086,30 @@ PrefabInstance:
     - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.044035655
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -5.048
       objectReference: {fileID: 0}
     - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_ConstrainProportionsScale
