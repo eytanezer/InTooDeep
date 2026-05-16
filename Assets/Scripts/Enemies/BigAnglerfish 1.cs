@@ -40,13 +40,16 @@ public class BigAnglerfish1 : MonoBehaviour
     
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
-    private Collider2D _playerCol;
-    private Vector2 _currentTarget;
-    private bool _detectedPlayer;
-    private float _lightFlickerTimer;
-    
+
     private Vector2 _startPosition;
     private FishState _state = FishState.Sleep;
+    private Vector2 _currentTarget;
+    private bool _detectedPlayer;
+    
+    //light variables
+    private float _lightIntensity;
+    private float _lightFlickerTimer;
+
     
     private bool _canMove = false;
 
@@ -68,6 +71,8 @@ public class BigAnglerfish1 : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
+        
+        _lightIntensity = anglerLight.intensity;
         _lightFlickerTimer = lightFlickerCycleTime;
     }
     
@@ -246,7 +251,7 @@ public class BigAnglerfish1 : MonoBehaviour
             _lightFlickerTimer -= Time.deltaTime;
             if (_lightFlickerTimer <= 0)
             {
-                if (anglerLight.intensity == 0) {anglerLight.intensity = 1f;}
+                if (anglerLight.intensity == 0) {anglerLight.intensity = _lightIntensity;}
                 else {anglerLight.intensity = 0f;}
                 _lightFlickerTimer = lightFlickerCycleTime;
             }
@@ -279,7 +284,6 @@ public class BigAnglerfish1 : MonoBehaviour
 
         _state = FishState.Sleep;
         _detectedPlayer = false;
-        _playerCol = null;
 
         _spriteRenderer.flipY = false;
 

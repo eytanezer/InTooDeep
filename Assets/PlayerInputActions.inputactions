@@ -37,7 +37,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "def8046d-e7d3-409b-bedb-c30ec6076721",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": false
@@ -83,6 +83,15 @@
                     "type": "Button",
                     "id": "10fc668f-cad4-44ef-982f-bc2cb973d01f",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkipAction",
+                    "type": "Button",
+                    "id": "5b2624ce-b444-4341-b6c9-538c1970b9b7",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -471,6 +480,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e349fd6-915d-4a36-b555-1d3ef4a2860e",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
