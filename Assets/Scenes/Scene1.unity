@@ -9676,7 +9676,9 @@ MonoBehaviour:
   normalIntensity: 0
   wayPoints:
   - target: {fileID: 201397728}
-    textToType: ...
+    textToType: 
+  - target: {fileID: 634558517}
+    textToType: 
   - target: {fileID: 140103650}
     textToType: COLLECT THE KEYS,
   - target: {fileID: 1735591498}
@@ -35785,20 +35787,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: m_LightType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 8.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.05619991
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.010650039
+      value: -0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 2.6697001
+      value: 0.9985302
       objectReference: {fileID: 0}
     - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 2.1849499
+      value: 0.99853027
       objectReference: {fileID: 0}
     - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_ShapePath.Array.data[0].x
@@ -36603,7 +36613,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f59a2e5d6cb4c450d8f0612af90dd1a1, type: 2}
-  m_sharedMaterial: {fileID: 636002926599495053, guid: f59a2e5d6cb4c450d8f0612af90dd1a1, type: 2}
+  m_sharedMaterial: {fileID: -5046523010251640564, guid: f59a2e5d6cb4c450d8f0612af90dd1a1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37520,7 +37530,7 @@ PrefabInstance:
     - target: {fileID: 3882604841441641588, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 636002926599495053, guid: f59a2e5d6cb4c450d8f0612af90dd1a1, type: 2}
+      objectReference: {fileID: -5046523010251640564, guid: f59a2e5d6cb4c450d8f0612af90dd1a1, type: 2}
     - target: {fileID: 3882604841441641588, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: m_characterSpacing
       value: -0.9

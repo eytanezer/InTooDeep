@@ -71,7 +71,7 @@ namespace Managment
             
             float camZ = mainCamera.transform.position.z;
             
-            mainCamera.transform.position = GetPos(wayPoints[0].target, camZ);
+            mainCamera.transform.position = GetPos(wayPoints[1].target, camZ);
             
             Sequence sequence = DOTween.Sequence();
             sequence.SetUpdate(UpdateType.Late);
@@ -84,11 +84,10 @@ namespace Managment
                     globalLight.intensity, x => globalLight.intensity = x, lightIntensity, 1));
             }
 
-            for (int i = 1; i < wayPoints.Count; i++)
+            for (int i = 2; i < wayPoints.Count; i++)
             {
                 if(!wayPoints[i].target) continue;
                 
-                // CRITICAL FIX: Cache the value of 'i' so the DOTween callback remembers it!
                 int currentIndex = i; 
                 
                 sequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, camZ), travelTime, false).SetEase(Ease.InOutSine));
@@ -103,7 +102,7 @@ namespace Managment
                         sequenceText.maxVisibleCharacters = 0; 
                         sequenceText.alpha = 1f; 
                     });
-    
+     
                     // typewriter effect
                     sequence.Append(DOTween.To(
                         () => sequenceText.maxVisibleCharacters, 
@@ -122,47 +121,9 @@ namespace Managment
                         textFadeDuration));
                 }
                 
-                sequence.AppendInterval(lockTime);
+                sequence.AppendInterval(lockTime*0.75f);
             }
-            
-            // for (int i = 1; i < wayPoints.Count; i++)
-            // {
-            //     if(!wayPoints[i].target) continue;
-            //     
-            //     sequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[i].target, camZ), travelTime, false).SetEase(Ease.InOutSine));
-            //
-            //     if (sequenceText && !string.IsNullOrWhiteSpace(wayPoints[i].textToType))
-            //     {
-            //         // reset the text and hide
-            //         sequence.AppendCallback(() => 
-            //         {
-            //             sequenceText.text = wayPoints[i].textToType; 
-            //             sequenceText.maxVisibleCharacters = 0; // Hides everything
-            //             sequenceText.alpha = 1f; 
-            //         });
-            //
-            //         // typewriter effect
-            //         sequence.Append(DOTween.To(
-            //             () => sequenceText.maxVisibleCharacters, 
-            //             x => sequenceText.maxVisibleCharacters = x, 
-            //             wayPoints[i].textToType.Length, 
-            //             typeDuration).SetEase(Ease.Linear));
-            //
-            //         //wait
-            //         sequence.AppendInterval(lockTime);
-            //
-            //         // fadeout
-            //         sequence.Append(DOTween.To(
-            //             () => sequenceText.alpha, 
-            //             x => sequenceText.alpha = x, 
-            //             0f, 
-            //             textFadeDuration));
-            //     }
-            //     
-            //     sequence.AppendInterval(lockTime);
-            // }
-            
-            
+       
             
             
             //return to player
