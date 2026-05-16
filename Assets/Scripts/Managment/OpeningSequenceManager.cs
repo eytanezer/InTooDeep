@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.InputSystem;
 
 namespace Managment
 {
@@ -33,6 +34,8 @@ namespace Managment
         
         [Header("UI Settings")] // NEW
         [SerializeField] private TMP_Text sequenceText; // Drag your UI Text here
+        [SerializeField] private TMP_Text skipIntroHint;
+        [SerializeField] private InputActionReference Shift;
         [SerializeField] private float typeDuration = 1.0f; // How long it takes to type out the sentence
         [SerializeField] private float textFadeDuration = 0.5f;
         
@@ -40,15 +43,24 @@ namespace Managment
         [SerializeField] private float travelTime = 1.5f;
         [SerializeField] private float lockTime = 0.5f;
 
-        private void OnEnable() => EventManager.OnGameStateChanged += HandleGameState;
-        private void OnDisable() => EventManager.OnGameStateChanged -= HandleGameState;
-        
-        
+        private void OnEnable()
+        {
+            EventManager.OnGameStateChanged += HandleGameState;
+            Shift.action.Enable();
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnGameStateChanged -= HandleGameState;
+            Shift.action.Disable();
+        }
+
         private void HandleGameState(GameManager.GameState state)
         {
             if (state == GameManager.GameState.OpeningSequence)
             {
                 PlayOpeningMovie();
+                CheckSkipIntro();
             }
         }
         
@@ -59,10 +71,12 @@ namespace Managment
 
         private void PlayOpeningMovie()
         {
+            skipIntroHint.gameObject.SetActive(true);
             Debug.Log("Playing Opening Movie");
             if (wayPoints == null || wayPoints.Count <= 0)
             {
                 Debug.LogWarning("Sequence Manager has no waypoints! Skipping sequence.");
+                skipIntroHint.gameObject.SetActive(false);
                 EventManager.RaiseSequenceComplete();
                 return;
             }
@@ -123,8 +137,6 @@ namespace Managment
                 
                 sequence.AppendInterval(lockTime*0.75f);
             }
-       
-            
             
             //return to player
             if (wayPoints.Count > 1) sequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, camZ), travelTime).SetEase(Ease.InOutSine));
@@ -142,6 +154,15 @@ namespace Managment
                 if(cinemachineBrain) cinemachineBrain.enabled = true;
                 EventManager.RaiseSequenceComplete();
             });
+        }
+        
+        void CheckSkipIntro()
+        {
+            if (Shift.action.WasPressedThisFrame())
+            {
+                Debug.Log("pressed shift to skip intro");
+                wayPoints.Clear();
+            }
         }
     }
 }
