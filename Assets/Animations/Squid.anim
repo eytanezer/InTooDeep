@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Flower
+  m_Name: Squid
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 8153093183043319444, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
-    - time: 0.96666664
-      value: {fileID: 4010133629955048740, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
-    - time: 1.45
-      value: {fileID: 8153093183043319444, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+      value: {fileID: -5545361812017798726, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+    - time: 0.5
+      value: {fileID: -2077000898831026987, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+    - time: 0.6666667
+      value: {fileID: -5545361812017798726, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 8153093183043319444, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
-    - {fileID: 4010133629955048740, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
-    - {fileID: 8153093183043319444, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+    - {fileID: -5545361812017798726, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+    - {fileID: -2077000898831026987, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
+    - {fileID: -5545361812017798726, guid: 5bb4339004e2a43a58428ddf2140bb95, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4666667
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
