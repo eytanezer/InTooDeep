@@ -41117,6 +41117,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3865160881032758942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5996189324772215426, guid: 3a289c75af00a4ba486512076211322a, type: 3}
     - target: {fileID: 4497971215301383253, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: pulseCurve.m_Curve.Array.size
       value: 5
@@ -41228,6 +41232,22 @@ PrefabInstance:
     - target: {fileID: 5049870029652413704, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171017228824543833, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5296532380652259081, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: m_Layer
