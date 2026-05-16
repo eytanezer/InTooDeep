@@ -72,11 +72,20 @@ public class GameOverScreenUI : MonoBehaviour
         var result = GameManager.Instance.CurrentResult;
         if (resultText)
         {
-            string gameOverPrompt = gameOverPrompts.OrderBy(x => Guid.NewGuid()).Take(1).ToString();
+            string randomLosePrompt = "Game Over";
+            
+            if (gameOverPrompts != null && gameOverPrompts.Count > 0)
+            {
+                // Random.Range for integers is EXCLUSIVE on the top end, 
+                // so passing gameOverPrompts.Count is perfectly safe!
+                int randomIndex = UnityEngine.Random.Range(0, gameOverPrompts.Count);
+                randomLosePrompt = gameOverPrompts[randomIndex];
+            }
+            
             resultText.text =
                 result == GameManager.GameResult.Win
                     ? "winner"
-                    : gameOverPrompt;;
+                    : randomLosePrompt;;
         }
 
         if (backgroundImage)
