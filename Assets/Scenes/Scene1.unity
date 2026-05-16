@@ -9858,7 +9858,7 @@ MonoBehaviour:
     textToType: AND DO NOT RUN OUT OF AIR
   sequenceText: {fileID: 1715713579}
   skipIntroHint: {fileID: 1462611593}
-  Shift: {fileID: 0}
+  Shift: {fileID: 5758000459443388024, guid: bc902b7037c8d43f69ce35e462a2b9f8, type: 3}
   typeDuration: 1
   textFadeDuration: 0.3
   travelTime: 1.3
