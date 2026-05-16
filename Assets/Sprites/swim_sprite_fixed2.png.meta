@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 835e002a24c2c4429ac38be04f6fde99
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1698198688543383935
+    second: swim_sprite_fixed2_0
+  - first:
+      213: -2604570165801676474
+    second: swim_sprite_fixed2_1
+  - first:
+      213: 5836080677489752490
+    second: swim_sprite_fixed2_2
+  - first:
+      213: 318378939481680544
+    second: swim_sprite_fixed2_3
+  - first:
+      213: 723908656785247269
+    second: swim_sprite_fixed2_4
+  - first:
+      213: -4816256693999215872
+    second: swim_sprite_fixed2_5
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 5243
+        width: 2275
+        height: 777
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7289511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71a9a4b5b6319710800000000000000
+      internalID: 1698198688543383935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 4306
+        width: 2256
+        height: 754
+      alignment: 9
+      pivot: {x: 0.49142888, y: 0.72054833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6419fcadb35badbd0800000000000000
+      internalID: -2604570165801676474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3244
+        width: 2282
+        height: 856
+      alignment: 9
+      pivot: {x: 0.4932213, y: 0.64005375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa93c4e847cedf050800000000000000
+      internalID: 5836080677489752490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2190
+        width: 2307
+        height: 739
+      alignment: 9
+      pivot: {x: 0.5013433, y: 0.7222618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa65c765fb1b6400800000000000000
+      internalID: 318378939481680544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1329
+        width: 2254
+        height: 651
+      alignment: 9
+      pivot: {x: 0.49175045, y: 0.6856596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cc3818617db0a00800000000000000
+      internalID: 723908656785247269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swim_sprite_fixed2_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 290
+        width: 2276
+        height: 704
+      alignment: 9
+      pivot: {x: 0.4940914, y: 0.7101282}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b541fed08392db0800000000000000
+      internalID: -4816256693999215872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 04b472ab1332b46e8bbbb57c47fcb235
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      swim_sprite_fixed2_0: 1698198688543383935
+      swim_sprite_fixed2_1: -2604570165801676474
+      swim_sprite_fixed2_2: 5836080677489752490
+      swim_sprite_fixed2_3: 318378939481680544
+      swim_sprite_fixed2_4: 723908656785247269
+      swim_sprite_fixed2_5: -4816256693999215872
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
