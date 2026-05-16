@@ -2,6 +2,7 @@
 using Managment.SoundScripts;
 using UnityEngine;
 using Player;
+using UnityEditor.Timeline;
 using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -23,8 +24,6 @@ public class BigAnglerfish1 : MonoBehaviour
     [SerializeField] private float maxChaseRadius = 40f;
     [SerializeField] private float damage = 15f;
     
-    [SerializeField] private float chaseDuration = 5f;
-    
     [SerializeField] private LayerMask playerLayer;
     
     [Header("Audio Settings")] 
@@ -36,20 +35,18 @@ public class BigAnglerfish1 : MonoBehaviour
 
     [SerializeField] private Color fakeKeyColor = Color.yellow;
 
-    [SerializeField] private Color dangerColor = Color.magenta;
-
-    [SerializeField] private float revealDistance = 4f;
+    [SerializeField] private Color dangerColor = Color.red;
+    [SerializeField] private float lightFlickerCycleTime = 0.5f;
     
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
     private Collider2D _playerCol;
     private Vector2 _currentTarget;
     private bool _detectedPlayer;
+    private float _lightFlickerTimer;
     
     private Vector2 _startPosition;
     private FishState _state = FishState.Sleep;
-    
-    private float _chaseTimer;
     
     private bool _canMove = false;
 
@@ -71,6 +68,7 @@ public class BigAnglerfish1 : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
+        _lightFlickerTimer = lightFlickerCycleTime;
     }
     
     private void HandleGameStateChanged(GameManager.GameState state)
@@ -96,8 +94,6 @@ public class BigAnglerfish1 : MonoBehaviour
             if (playerCol != null)
             {
                 _state = FishState.Chasing;
-                _chaseTimer = chaseDuration;
-
                 if (detectionSound != null)
                 {
                     SoundManager.Instance.PlaySoundFXClip(detectionSound, transform, soundVolume);
@@ -114,11 +110,10 @@ public class BigAnglerfish1 : MonoBehaviour
                 break;
 
             case FishState.Chasing:
-                _chaseTimer -= Time.fixedDeltaTime;
 
                 playerCol = LookForPlayer();
 
-                if (_chaseTimer <= 0f || playerCol == null)
+                if (playerCol == null)
                 {
                     _state = FishState.Returning;
                 }
@@ -245,15 +240,16 @@ public class BigAnglerfish1 : MonoBehaviour
             return;
         }
 
-        Collider2D playerCol = Physics2D.OverlapCircle(
-            transform.position,
-            revealDistance,
-            playerLayer
-        );
-
-        if (playerCol != null)
+        if (_detectedPlayer)
         {
             anglerLight.color = dangerColor;
+            _lightFlickerTimer -= Time.deltaTime;
+            if (_lightFlickerTimer <= 0)
+            {
+                if (anglerLight.intensity == 0) {anglerLight.intensity = 1f;}
+                else {anglerLight.intensity = 0f;}
+                _lightFlickerTimer = lightFlickerCycleTime;
+            }
         }
         else
         {
@@ -282,7 +278,6 @@ public class BigAnglerfish1 : MonoBehaviour
         _rb.angularVelocity = 0f;
 
         _state = FishState.Sleep;
-        _chaseTimer = 0f;
         _detectedPlayer = false;
         _playerCol = null;
 

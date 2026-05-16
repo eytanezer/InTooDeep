@@ -262,7 +262,7 @@ MonoBehaviour:
   playerDetectionRadius: 6.14
   awakePlayerDetectionRadius: 8.54
   maxChaseRadius: 38.1
-  damage: 40
+  damage: 0
   chaseDuration: 5
   playerLayer:
     serializedVersion: 2
