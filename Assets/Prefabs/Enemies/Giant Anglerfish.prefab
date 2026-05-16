@@ -270,5 +270,5 @@ MonoBehaviour:
   soundVolume: 0.1
   anglerLight: {fileID: 2692828654820107797}
   fakeKeyColor: {r: 0.8627451, g: 0.9529412, b: 0, a: 1}
-  dangerColor: {r: 0.6431373, g: 0.12156863, b: 0.83137256, a: 1}
-  lightFlickerCycleTime: 0.5
+  dangerColor: {r: 1, g: 0, b: 0, a: 1}
+  lightFlickerCycleTime: 0.05
