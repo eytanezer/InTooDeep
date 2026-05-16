@@ -110,7 +110,7 @@ namespace Managment
         {
             CurrentResult = GameResult.Win;
             ChangeState(GameState.WinSequence);
-            // StartCoroutine(PlayWinSequence());
+            StartCoroutine(PlayWinSequence());
         }
 
         private void LoseGame()
@@ -134,14 +134,6 @@ namespace Managment
 #else
             Application.Quit();
 #endif
-        }
-
-        private IEnumerator PlayOpeningSequence()
-        {
-            //TODO:ADD SEQUENCE
-            Debug.Log("Playing Opening Sequence...");
-            yield return new WaitForSeconds(3f);
-            ChangeState(GameState.Gameplay);
         }
         
         private IEnumerator PlayWinSequence()
