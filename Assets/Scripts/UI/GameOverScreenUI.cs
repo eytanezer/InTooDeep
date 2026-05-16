@@ -60,10 +60,10 @@ public class GameOverScreenUI : MonoBehaviour
     
     private void SetVerticalNavigation(Button topButton, Button bottomButton)
     {
-        Navigation topNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnDown = bottomButton};
+        Navigation topNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnDown = bottomButton, selectOnUp = bottomButton};
         topButton.navigation = topNav;
 
-        Navigation bottomNav = new Navigation{mode = Navigation.Mode.Explicit, selectOnUp = topButton};
+        Navigation bottomNav = new Navigation{mode = Navigation.Mode.Explicit,selectOnDown = topButton, selectOnUp = topButton};
         bottomButton.navigation = bottomNav;
     }
 

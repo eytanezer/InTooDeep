@@ -9843,7 +9843,7 @@ MonoBehaviour:
   mainCamera: {fileID: 965510734}
   cinemachineBrain: {fileID: 472907156}
   globalLight: {fileID: 1118833977}
-  lightIntensity: 0.01
+  lightIntensity: 0.005
   normalIntensity: 0
   wayPoints:
   - target: {fileID: 201397728}
@@ -37667,6 +37667,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5944479208311619989, guid: 594f789b89fe248b4915185af1eb9bad, type: 3}
+    - target: {fileID: 4814026284261558184, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1306516156079992726, guid: e44e0903a49fc4f49b2489c873932e55, type: 3}
     - target: {fileID: 4908160163908984970, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1000
@@ -37677,7 +37681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908160163908984970, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 5371009128609199729, guid: 54613634bc7cf5e4c8c981d85dee2b48, type: 3}
       propertyPath: m_IsActive

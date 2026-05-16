@@ -279,7 +279,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.88394445, g: 0.9669652, b: 0.9811321, a: 1}
+    m_NormalColor: {r: 0.85490197, g: 1, b: 0.99607843, a: 1}
     m_HighlightedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
     m_PressedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
     m_SelectedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 6868573279189706257}
   resultText: {fileID: 5225571073277267038}
   backgroundImage: {fileID: 4814026284261558184}
-  winBackgroundSprite: {fileID: -2743105548532860171, guid: 3ebeaadbca2784238b9f5b4b5b8be04a, type: 3}
+  winBackgroundSprite: {fileID: -1306516156079992726, guid: e44e0903a49fc4f49b2489c873932e55, type: 3}
   loseBackgroundSprite: {fileID: -8229813914812679271, guid: 0f0933b26593543e0a885ce2783a2d4f, type: 3}
   gameOverPrompts:
   - it was all in vain
@@ -2311,7 +2311,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.88394445, g: 0.9669652, b: 0.9811321, a: 1}
+    m_NormalColor: {r: 0.85490197, g: 1, b: 0.99607843, a: 1}
     m_HighlightedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
     m_PressedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
     m_SelectedColor: {r: 0.67058825, g: 0.72156864, b: 0.007843138, a: 1}
@@ -3255,8 +3255,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278368427
-  m_fontColor: {r: 0.6688823, g: 0.72156864, b: 0.007843136, a: 1}
+    rgba: 4294901722
+  m_fontColor: {r: 0.85490197, g: 1, b: 0.99607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3273,8 +3273,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
