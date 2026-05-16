@@ -1,4 +1,7 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Managment;
 using TMPro;
 using UnityEngine;
@@ -14,6 +17,8 @@ public class GameOverScreenUI : MonoBehaviour
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Sprite winBackgroundSprite;
     [SerializeField] private Sprite loseBackgroundSprite;
+
+    [SerializeField] private List<string> gameOverPrompts;
     
     [Header("Buttons")]
     [SerializeField] private Button menuButton;
@@ -67,10 +72,11 @@ public class GameOverScreenUI : MonoBehaviour
         var result = GameManager.Instance.CurrentResult;
         if (resultText)
         {
+            string gameOverPrompt = gameOverPrompts.OrderBy(x => Guid.NewGuid()).Take(1).ToString();
             resultText.text =
                 result == GameManager.GameResult.Win
                     ? "winner"
-                    : "Game Over";;
+                    : gameOverPrompt;;
         }
 
         if (backgroundImage)
