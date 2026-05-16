@@ -1,0 +1,1352 @@
+fileFormatVersion: 2
+guid: dea10fb266fc847f6ae6bda279870f03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6181180387242007878
+    second: Untitled_Artwork_151 teal_0
+  - first:
+      213: 8722185103523653520
+    second: Untitled_Artwork_151 teal_1
+  - first:
+      213: 496907729789909582
+    second: Untitled_Artwork_151 teal_2
+  - first:
+      213: -7259912562901593133
+    second: Untitled_Artwork_151 teal_3
+  - first:
+      213: 6189020338969674262
+    second: Untitled_Artwork_151 teal_4
+  - first:
+      213: -2800037513623594613
+    second: Untitled_Artwork_151 teal_5
+  - first:
+      213: 4471692245646008875
+    second: Untitled_Artwork_151 teal_6
+  - first:
+      213: -336452679201263659
+    second: Untitled_Artwork_151 teal_7
+  - first:
+      213: 6389241145566357810
+    second: Untitled_Artwork_151 teal_8
+  - first:
+      213: -5154062042981791545
+    second: Untitled_Artwork_151 teal_9
+  - first:
+      213: -5516886299413446737
+    second: Untitled_Artwork_151 teal_10
+  - first:
+      213: 6608452020334943876
+    second: Untitled_Artwork_151 teal_11
+  - first:
+      213: -2900347772508828939
+    second: Untitled_Artwork_151 teal_12
+  - first:
+      213: -4096043388328327253
+    second: Untitled_Artwork_151 teal_13
+  - first:
+      213: -1476475251710975075
+    second: Untitled_Artwork_151 teal_14
+  - first:
+      213: -1392594798846267803
+    second: Untitled_Artwork_151 teal_15
+  - first:
+      213: 2545671688065472465
+    second: Untitled_Artwork_151 teal_16
+  - first:
+      213: -7316936919733146629
+    second: Untitled_Artwork_151 teal_17
+  - first:
+      213: -5523815851869012151
+    second: Untitled_Artwork_151 teal_18
+  - first:
+      213: -2494468868496260722
+    second: Untitled_Artwork_151 teal_19
+  - first:
+      213: 4205435652610663010
+    second: Untitled_Artwork_151 teal_20
+  - first:
+      213: 4829988027436321386
+    second: Untitled_Artwork_151 teal_21
+  - first:
+      213: -8709891784747086800
+    second: Untitled_Artwork_151 teal_22
+  - first:
+      213: -6610166912733538930
+    second: Untitled_Artwork_151 teal_23
+  - first:
+      213: -4684545733321605016
+    second: Untitled_Artwork_151 teal_24
+  - first:
+      213: 5683924732371805986
+    second: Untitled_Artwork_151 teal_25
+  - first:
+      213: -9195484743329610073
+    second: Untitled_Artwork_151 teal_26
+  - first:
+      213: -5456538559898126240
+    second: Untitled_Artwork_151 teal_27
+  - first:
+      213: -6317553077656613606
+    second: Untitled_Artwork_151 teal_28
+  - first:
+      213: 6827638625454776897
+    second: Untitled_Artwork_151 teal_29
+  - first:
+      213: 3356590485531540253
+    second: Untitled_Artwork_151 teal_30
+  - first:
+      213: 6837235426292270655
+    second: Untitled_Artwork_151 teal_31
+  - first:
+      213: -2570725904877137195
+    second: Untitled_Artwork_151 teal_32
+  - first:
+      213: -8552338521390973601
+    second: Untitled_Artwork_151 teal_33
+  - first:
+      213: -3531161750414479355
+    second: Untitled_Artwork_151 teal_34
+  - first:
+      213: -6576388899600448106
+    second: Untitled_Artwork_151 teal_35
+  - first:
+      213: 7501896561887562351
+    second: Untitled_Artwork_151 teal_36
+  - first:
+      213: 8388624450236436116
+    second: Untitled_Artwork_151 teal_37
+  - first:
+      213: -778415542018617194
+    second: Untitled_Artwork_151 teal_38
+  - first:
+      213: -6232967425714691033
+    second: Untitled_Artwork_151 teal_39
+  - first:
+      213: 5232465229281122197
+    second: Untitled_Artwork_151 teal_40
+  - first:
+      213: -6654445763471934963
+    second: Untitled_Artwork_151 teal_41
+  - first:
+      213: -7731099758482662552
+    second: Untitled_Artwork_151 teal_42
+  - first:
+      213: -3567602258872672513
+    second: Untitled_Artwork_151 teal_43
+  - first:
+      213: -7859710826409527657
+    second: Untitled_Artwork_151 teal_44
+  - first:
+      213: 2485759111325006885
+    second: Untitled_Artwork_151 teal_45
+  - first:
+      213: -2206497272281630865
+    second: Untitled_Artwork_151 teal_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_0
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 836
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ddb2a10d6f7c550800000000000000
+      internalID: 6181180387242007878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_1
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 845
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0972bb8b32d6b0970800000000000000
+      internalID: 8722185103523653520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_2
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 846
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4af54092fe55e600800000000000000
+      internalID: 496907729789909582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_3
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 849
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3dadb1dfb9f3b90800000000000000
+      internalID: -7259912562901593133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_4
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 844
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61284fb1531d3e550800000000000000
+      internalID: 6189020338969674262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_5
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 856
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8992b277b44429d0800000000000000
+      internalID: -2800037513623594613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 826
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b226996c764ae0e30800000000000000
+      internalID: 4471692245646008875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 833
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfea74221ea45bf0800000000000000
+      internalID: -336452679201263659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_8
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 819
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239eac168f42ba850800000000000000
+      internalID: 6389241145566357810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_9
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 814
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c80fb911e71978b0800000000000000
+      internalID: -5154062042981791545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_10
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 816
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faffd31f3251073b0800000000000000
+      internalID: -5516886299413446737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_11
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 836
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ed6437910f5bb50800000000000000
+      internalID: 6608452020334943876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_12
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 839
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa048e4115efb7d0800000000000000
+      internalID: -2900347772508828939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_13
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 783
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba74a167d3ee727c0800000000000000
+      internalID: -4096043388328327253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_14
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 817
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d93ac1ec491828be0800000000000000
+      internalID: -1476475251710975075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_15
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 822
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e26b2a8628cace0800000000000000
+      internalID: -1392594798846267803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_16
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 827
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d759e9a9ea045320800000000000000
+      internalID: 2545671688065472465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_17
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 822
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb6d5763a4057a90800000000000000
+      internalID: -7316936919733146629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_18
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 806
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ffca8cfb67753b0800000000000000
+      internalID: -5523815851869012151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_19
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 804
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e818206c7cdd16dd0800000000000000
+      internalID: -2494468868496260722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_20
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 809
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2622f97d175bc5a30800000000000000
+      internalID: 4205435652610663010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_21
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 815
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a4bb44580970340800000000000000
+      internalID: 4829988027436321386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_22
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 808
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c8e0a919f302780800000000000000
+      internalID: -8709891784747086800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_23
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 795
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e851a7c0738f344a0800000000000000
+      internalID: -6610166912733538930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 766
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8604b4fa9762dfeb0800000000000000
+      internalID: -4684545733321605016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_25
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 762
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 227241bed6b51ee40800000000000000
+      internalID: 5683924732371805986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_26
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 788
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a680508853136080800000000000000
+      internalID: -9195484743329610073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_27
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 792
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068fc0af61b7644b0800000000000000
+      internalID: -5456538559898126240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_28
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 800
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d0a9c92fa8358a0800000000000000
+      internalID: -6317553077656613606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_29
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 762
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142e7fcc725a0ce50800000000000000
+      internalID: 6827638625454776897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_30
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 779
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b309a3341059e20800000000000000
+      internalID: 3356590485531540253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_31
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 766
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f360edd156db2ee50800000000000000
+      internalID: 6837235426292270655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_32
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 763
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d257e8e862f25cd0800000000000000
+      internalID: -2570725904877137195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_33
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 758
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5df9915d6dff4980800000000000000
+      internalID: -8552338521390973601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_34
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 264
+        width: 309
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500391ec81bcefec0800000000000000
+      internalID: -3531161750414479355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_35
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 613
+        width: 31
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6954e769329fbb4a0800000000000000
+      internalID: -6576388899600448106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_36
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 610
+        width: 75
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a48012d271c1860800000000000000
+      internalID: 7501896561887562351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_37
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 605
+        width: 132
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ecf7e1e716a6470800000000000000
+      internalID: 8388624450236436116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_38
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 465
+        width: 80
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690565250338235f0800000000000000
+      internalID: -778415542018617194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_39
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 454
+        width: 115
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724e1b5662d0089a0800000000000000
+      internalID: -6232967425714691033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_40
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 491
+        width: 42
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59752ea37637d9840800000000000000
+      internalID: 5232465229281122197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_41
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 370
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0af62bb5d8a6a3a0800000000000000
+      internalID: -6654445763471934963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_42
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 339
+        width: 66
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b58841bbd95b490800000000000000
+      internalID: -7731099758482662552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_43
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 318
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe5304c5a45d7ec0800000000000000
+      internalID: -3567602258872672513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_44
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 286
+        width: 53
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796719a55a2bce290800000000000000
+      internalID: -7859710826409527657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_45
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 325
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cb7bbddb03f7220800000000000000
+      internalID: 2485759111325006885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork_151 teal_46
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 269
+        width: 80
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67f8cfdb62f061e0800000000000000
+      internalID: -2206497272281630865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Untitled_Artwork_151 teal_0: 6181180387242007878
+      Untitled_Artwork_151 teal_1: 8722185103523653520
+      Untitled_Artwork_151 teal_10: -5516886299413446737
+      Untitled_Artwork_151 teal_11: 6608452020334943876
+      Untitled_Artwork_151 teal_12: -2900347772508828939
+      Untitled_Artwork_151 teal_13: -4096043388328327253
+      Untitled_Artwork_151 teal_14: -1476475251710975075
+      Untitled_Artwork_151 teal_15: -1392594798846267803
+      Untitled_Artwork_151 teal_16: 2545671688065472465
+      Untitled_Artwork_151 teal_17: -7316936919733146629
+      Untitled_Artwork_151 teal_18: -5523815851869012151
+      Untitled_Artwork_151 teal_19: -2494468868496260722
+      Untitled_Artwork_151 teal_2: 496907729789909582
+      Untitled_Artwork_151 teal_20: 4205435652610663010
+      Untitled_Artwork_151 teal_21: 4829988027436321386
+      Untitled_Artwork_151 teal_22: -8709891784747086800
+      Untitled_Artwork_151 teal_23: -6610166912733538930
+      Untitled_Artwork_151 teal_24: -4684545733321605016
+      Untitled_Artwork_151 teal_25: 5683924732371805986
+      Untitled_Artwork_151 teal_26: -9195484743329610073
+      Untitled_Artwork_151 teal_27: -5456538559898126240
+      Untitled_Artwork_151 teal_28: -6317553077656613606
+      Untitled_Artwork_151 teal_29: 6827638625454776897
+      Untitled_Artwork_151 teal_3: -7259912562901593133
+      Untitled_Artwork_151 teal_30: 3356590485531540253
+      Untitled_Artwork_151 teal_31: 6837235426292270655
+      Untitled_Artwork_151 teal_32: -2570725904877137195
+      Untitled_Artwork_151 teal_33: -8552338521390973601
+      Untitled_Artwork_151 teal_34: -3531161750414479355
+      Untitled_Artwork_151 teal_35: -6576388899600448106
+      Untitled_Artwork_151 teal_36: 7501896561887562351
+      Untitled_Artwork_151 teal_37: 8388624450236436116
+      Untitled_Artwork_151 teal_38: -778415542018617194
+      Untitled_Artwork_151 teal_39: -6232967425714691033
+      Untitled_Artwork_151 teal_4: 6189020338969674262
+      Untitled_Artwork_151 teal_40: 5232465229281122197
+      Untitled_Artwork_151 teal_41: -6654445763471934963
+      Untitled_Artwork_151 teal_42: -7731099758482662552
+      Untitled_Artwork_151 teal_43: -3567602258872672513
+      Untitled_Artwork_151 teal_44: -7859710826409527657
+      Untitled_Artwork_151 teal_45: 2485759111325006885
+      Untitled_Artwork_151 teal_46: -2206497272281630865
+      Untitled_Artwork_151 teal_5: -2800037513623594613
+      Untitled_Artwork_151 teal_6: 4471692245646008875
+      Untitled_Artwork_151 teal_7: -336452679201263659
+      Untitled_Artwork_151 teal_8: 6389241145566357810
+      Untitled_Artwork_151 teal_9: -5154062042981791545
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
