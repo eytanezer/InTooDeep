@@ -1,61 +1,50 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
-using Managment;
 
 public class CameraShake : MonoBehaviour
 {
-    [Header("Shake Settings")]
-    [SerializeField] private float shakeDuration = 0.15f;
-    [SerializeField] private float shakeIntensity = 0.12f;
+    [SerializeField] private float shakeDuration = 0.25f;
+    [SerializeField] private float shakeAmplitude = 2f;
+    [SerializeField] private float shakeFrequency = 2f;
 
-    private Vector3 _originalPosition;
+    private CinemachineBasicMultiChannelPerlin _noise;
     private Coroutine _shakeCoroutine;
 
     private void Awake()
     {
-        _originalPosition = transform.localPosition;
+        _noise = GetComponent<CinemachineBasicMultiChannelPerlin>();
+        StopShake();
     }
 
-    private void OnEnable()
-    {
-        EventManager.OnPlayerHit += Shake;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.OnPlayerHit -= Shake;
-    }
-
-    private void Shake()
+    public void Shake()
     {
         if (_shakeCoroutine != null)
         {
             StopCoroutine(_shakeCoroutine);
         }
 
-        _shakeCoroutine = StartCoroutine(
-            ShakeRoutine()
-        );
+        _shakeCoroutine = StartCoroutine(ShakeRoutine());
     }
 
     private IEnumerator ShakeRoutine()
     {
-        float elapsed = 0f;
+        _noise.AmplitudeGain = shakeAmplitude;
+        _noise.FrequencyGain = shakeFrequency;
 
-        while (elapsed < shakeDuration)
+        yield return new WaitForSeconds(shakeDuration);
+
+        StopShake();
+    }
+
+    private void StopShake()
+    {
+        if (_noise == null)
         {
-            Vector2 randomOffset =
-                Random.insideUnitCircle * shakeIntensity;
-
-            transform.localPosition =
-                _originalPosition +
-                new Vector3(randomOffset.x, randomOffset.y, 0f);
-
-            elapsed += Time.deltaTime;
-
-            yield return null;
+            return;
         }
 
-        transform.localPosition = _originalPosition;
+        _noise.AmplitudeGain = 0f;
+        _noise.FrequencyGain = 0f;
     }
 }
