@@ -173,7 +173,7 @@ MonoBehaviour:
   speed: 3
   acceleration: 5
   rotationSpeed: 6
-  damage: 0
+  damage: 5
   nestingGround: {fileID: 0}
   nestingGroundRadius: 12
   nestingGroundBuffer: 4
