@@ -55,12 +55,16 @@ namespace Managment
             Shift.action.Disable();
         }
 
+        private void Update()
+        {
+            CheckSkipIntro();
+        }
+
         private void HandleGameState(GameManager.GameState state)
         {
             if (state == GameManager.GameState.OpeningSequence)
             {
                 PlayOpeningMovie();
-                CheckSkipIntro();
             }
         }
         
