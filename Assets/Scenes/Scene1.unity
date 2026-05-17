@@ -5920,7 +5920,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
@@ -10542,7 +10542,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
@@ -11305,7 +11305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
@@ -11531,7 +11531,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
@@ -11671,7 +11671,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
@@ -14866,7 +14866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -17786,7 +17786,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
@@ -22708,7 +22708,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
@@ -23392,6 +23392,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1786649485}
     m_Modifications:
+    - target: {fileID: 497624630536522837, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569376227130238125, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569376227130238125, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886726527898019534, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7347458072743474435, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: m_Name
       value: Giant Anglerfish
@@ -23438,7 +23454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -23972,7 +23988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -27186,7 +27202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
@@ -32019,7 +32035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: f1588f780530a444b8460756e78cc670, type: 3}
       propertyPath: nestingGround
@@ -37193,7 +37209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
@@ -40243,7 +40259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: b11c08dd595ede246982d35d68258d52, type: 3}
       propertyPath: nestingGround
@@ -40847,7 +40863,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
@@ -43038,6 +43054,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1698198688543383935, guid: 835e002a24c2c4429ac38be04f6fde99, type: 3}
+    - target: {fileID: 3865160881032758942, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4497971215301383253, guid: d7b7072c4afd84258a049aa77b375071, type: 3}
       propertyPath: pulseCurve.m_Curve.Array.size
       value: 5
@@ -44637,7 +44657,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: damage
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2316831004880522506, guid: e6d2abaf4ae41864a96535599c8edd85, type: 3}
       propertyPath: nestingGround
