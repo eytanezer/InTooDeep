@@ -216,7 +216,10 @@ public class BigAnglerfish1 : MonoBehaviour
         {
             airSupply.UseAirSupply(damage);
             Debug.Log("Piranha hit player, oxygen reduced by: " + damage); 
-            EventManager.RaisePlayerHit();
+            PlayerHitShake hitShake =
+                collision.gameObject.GetComponentInParent<PlayerHitShake>();
+
+            hitShake?.ShakeCamera();
         }
     }
 
