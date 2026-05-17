@@ -6469,6 +6469,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1723624239414284850, guid: 44a86f6ce99d4405989a5f6c65e66ff9, type: 3}
   m_PrefabInstance: {fileID: 307211056}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &307610877 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3701235015493049350, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+  m_PrefabInstance: {fileID: 1679420955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &311924681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36670,6 +36675,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2853486976869703825, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: managedReferences[7001404570344620120].Active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853486976869703825, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: managedReferences[7001404570344620144].BoundParticleSystem
+      value: 
+      objectReference: {fileID: 307610877}
     - target: {fileID: 6270967673000285086, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -36790,62 +36803,6 @@ PrefabInstance:
       propertyPath: pulseCurve.m_Curve.Array.data[4].outWeight
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_LightType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 8.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_LocalBounds.m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_LocalBounds.m_Center.y
-      value: -0.00000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_LocalBounds.m_Extent.x
-      value: 0.9985302
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.99853027
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[0].x
-      value: -1.5361254
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[0].y
-      value: -1.0048754
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[1].x
-      value: 1.4233158
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[1].y
-      value: -0.9494732
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[2].x
-      value: 1.4244875
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[2].y
-      value: 0.98411113
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[3].x
-      value: -1.5342559
-      objectReference: {fileID: 0}
-    - target: {fileID: 7280194203001318296, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
-      propertyPath: m_ShapePath.Array.data[3].y
-      value: 0.89138156
-      objectReference: {fileID: 0}
     - target: {fileID: 7715342806486604851, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.68237793
@@ -36857,6 +36814,10 @@ PrefabInstance:
     - target: {fileID: 7715342806486604851, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.68237793
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665255028283028756, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9136100985537004706, guid: 37ecc369729bb46069b9bacb21ee9a1b, type: 3}
       propertyPath: m_Enabled
