@@ -20,8 +20,9 @@ namespace Managment
     public class OpeningSequenceManager : MonoBehaviour
     {
         [Header("Camera Settings")]
-        [SerializeField] private Camera mainCamera;
-        [SerializeField] private CinemachineBrain cinemachineBrain;
+        [SerializeField] private CinemachineCamera sequenceCamera;
+        // [SerializeField] private Camera mainCamera;
+        // [SerializeField] private CinemachineBrain cinemachineBrain;
         
         [Header("Light Settings")]
         [SerializeField] private Light2D globalLight;
@@ -33,10 +34,10 @@ namespace Managment
         [SerializeField] private List<SequencePoint> wayPoints;
         
         [Header("UI Settings")] // NEW
-        [SerializeField] private TMP_Text sequenceText; // Drag your UI Text here
+        [SerializeField] private TMP_Text sequenceText; 
         [SerializeField] private TMP_Text skipIntroHint;
         [SerializeField] private InputActionReference Shift;
-        [SerializeField] private float typeDuration = 1.0f; // How long it takes to type out the sentence
+        [SerializeField] private float typeDuration = 1.0f; //how long it takes to type out the sentence
         [SerializeField] private float textFadeDuration = 0.5f;
         
         [Header("Movement Settings")]
@@ -86,7 +87,7 @@ namespace Managment
             sequenceText.gameObject.SetActive(true);
             skipIntroHint.gameObject.SetActive(true);
             Debug.Log("Playing Opening Movie");
-            if (wayPoints == null || wayPoints.Count <= 0)
+            if (wayPoints == null || wayPoints.Count <= 0 || !sequenceCamera)
             {
                 Debug.LogWarning("Sequence Manager has no waypoints! Skipping sequence.");
                 skipIntroHint.gameObject.SetActive(false);
@@ -94,10 +95,11 @@ namespace Managment
                 return;
             }
             
-            if(cinemachineBrain) cinemachineBrain.enabled = false;
+            // if(cinemachineBrain) cinemachineBrain.enabled = false;
+            sequenceCamera.gameObject.SetActive(true);
             
-            _camZ = mainCamera.transform.position.z;
-            mainCamera.transform.position = GetPos(wayPoints[1].target, _camZ);
+            _camZ = sequenceCamera.transform.position.z;
+            sequenceCamera.transform.position = GetPos(wayPoints[1].target, _camZ);
             
             _openingSequence?.Kill();
             
@@ -118,7 +120,7 @@ namespace Managment
                 
                 int currentIndex = i; 
                 
-                _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, _camZ), travelTime, false).SetEase(Ease.InOutSine));
+                _openingSequence.Append(sequenceCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, _camZ), travelTime, false).SetEase(Ease.InOutSine));
 
                 if (sequenceText && !string.IsNullOrWhiteSpace(wayPoints[currentIndex].textToType))
                 {
@@ -153,7 +155,7 @@ namespace Managment
             }
             
             //return to player
-            if (wayPoints.Count > 1) _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, _camZ), travelTime).SetEase(Ease.InOutSine));
+            if (wayPoints.Count > 1) _openingSequence.Append(sequenceCamera.transform.DOMove(GetPos(wayPoints[0].target, _camZ), travelTime).SetEase(Ease.InOutSine));
 
             //light off
             if(globalLight)
@@ -165,7 +167,10 @@ namespace Managment
             
             _openingSequence.OnComplete(() =>
             {
-                if(cinemachineBrain) cinemachineBrain.enabled = true;
+                // if(cinemachineBrain) cinemachineBrain.enabled = true;
+                sequenceCamera.gameObject.SetActive(false);
+                _openingSequence = null;
+                
                 EventManager.RaiseSequenceComplete();
                 skipIntroHint.gameObject.SetActive(false);
             });
@@ -178,22 +183,19 @@ namespace Managment
                 Debug.Log("pressed shift to skip intro");
 
                 _openingSequence?.Kill();
-                _openingSequence = DOTween.Sequence();
+                _openingSequence = null;
                 
                 //light off
-                if(globalLight)
-                {
-                    _openingSequence.Join(DOTween.To(() =>
-                        globalLight.intensity, x => globalLight.intensity = x, normalIntensity, 1));
-                }
+                if(globalLight) globalLight.intensity = normalIntensity;
                 
                 //turn off texts
                 skipIntroHint.gameObject.SetActive(false);
                 sequenceText.gameObject.SetActive(false);
                 
                 //camera
-                mainCamera.transform.position = GetPos(wayPoints[0].target, _camZ);
-                if(cinemachineBrain) cinemachineBrain.enabled = true;
+                // mainCamera.transform.position = GetPos(wayPoints[0].target, _camZ);
+                // if(cinemachineBrain) cinemachineBrain.enabled = true;
+                if (sequenceCamera) sequenceCamera.gameObject.SetActive(false);
                 EventManager.RaiseSequenceComplete();
             }
         }
