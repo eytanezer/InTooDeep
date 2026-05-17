@@ -9991,7 +9991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Managment.OpeningSequenceManager
   sequenceCamera: {fileID: 338080311}
   globalLight: {fileID: 1118833977}
-  lightIntensity: 0.005
+  lightIntensity: 0.01
   normalIntensity: 0
   wayPoints:
   - target: {fileID: 201397728}
@@ -14907,7 +14907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -19921,9 +19921,6 @@ GameObject:
   - component: {fileID: 965510735}
   - component: {fileID: 965510734}
   - component: {fileID: 965510733}
-  - component: {fileID: 965510738}
-  - component: {fileID: 965510739}
-  - component: {fileID: 965510740}
   - component: {fileID: 965510736}
   - component: {fileID: 965510741}
   m_Layer: 0
@@ -20052,104 +20049,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &965510738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965510732}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 0
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 201397728}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
---- !u!114 &965510739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965510732}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
-  CameraDistance: 10
-  DeadZoneDepth: 0
-  Composition:
-    ScreenPosition: {x: 0, y: 0}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
-  Lookahead:
-    Enabled: 1
-    Time: 1
-    Smoothing: 16
-    IgnoreY: 0
---- !u!114 &965510740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965510732}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
-  ApplyAfter: 2
-  ChannelMask: 1
-  Gain: 1
-  Use2DDistance: 0
-  UseCameraSpace: 1
-  SignalCombinationMode: 0
-  ReactionSettings:
-    m_SecondaryNoise: {fileID: 0}
-    AmplitudeGain: 1
-    FrequencyGain: 1
-    Duration: 1
-    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &965510741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20173,7 +20072,7 @@ MonoBehaviour:
     Enabled: 0
     DefaultMode: 2
   DefaultBlend:
-    Style: 1
+    Style: 0
     Time: 2
     CustomCurve:
       serializedVersion: 2
@@ -20181,7 +20080,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
+  CustomBlends: {fileID: 11400000, guid: 137a07d0612524acba4db06756eb2f3c, type: 2}
 --- !u!1001 &965594203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23512,7 +23411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -24046,7 +23945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: damage
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8244334432171723248, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: acceleration
@@ -34089,7 +33988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8551486538417123147, guid: 1431563258f9f454285b340ff16bf0ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8551486538417123147, guid: 1431563258f9f454285b340ff16bf0ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36150,7 +36049,7 @@ MonoBehaviour:
           InterruptsOnStop: 1
           NumberOfRepeats: 0
           RepeatForever: 0
-          DelayBetweenRepeats: 1
+          DelayBetweenRepeats: 0
           PlayCount: 38
           LimitPlayCount: 0
           MaxPlayCount: 3
