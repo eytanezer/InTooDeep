@@ -84,8 +84,8 @@ public class GameOverScreenUI : MonoBehaviour
             
             resultText.text =
                 result == GameManager.GameResult.Win
-                    ? "winner"
-                    : randomLosePrompt;;
+                    ? "you have honored us"
+                    : randomLosePrompt;
         }
 
         if (backgroundImage)
