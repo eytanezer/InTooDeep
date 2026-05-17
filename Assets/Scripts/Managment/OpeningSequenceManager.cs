@@ -44,6 +44,7 @@ namespace Managment
         [SerializeField] private float lockTime = 0.5f;
         
         private Sequence _openingSequence;
+        private float _camZ;
 
         private void OnEnable()
         {
@@ -60,7 +61,10 @@ namespace Managment
 
         private void Update()
         {
-            CheckSkipIntro();
+            if (_openingSequence != null)
+            {
+                CheckSkipIntro();
+            }
         }
 
         private void HandleGameState(GameManager.GameState state)
@@ -78,6 +82,8 @@ namespace Managment
 
         private void PlayOpeningMovie()
         {
+            sequenceText.text = wayPoints[1].textToType;
+            sequenceText.gameObject.SetActive(true);
             skipIntroHint.gameObject.SetActive(true);
             Debug.Log("Playing Opening Movie");
             if (wayPoints == null || wayPoints.Count <= 0)
@@ -90,8 +96,8 @@ namespace Managment
             
             if(cinemachineBrain) cinemachineBrain.enabled = false;
             
-            float camZ = mainCamera.transform.position.z;
-            mainCamera.transform.position = GetPos(wayPoints[1].target, camZ);
+            _camZ = mainCamera.transform.position.z;
+            mainCamera.transform.position = GetPos(wayPoints[1].target, _camZ);
             
             _openingSequence?.Kill();
             
@@ -112,7 +118,7 @@ namespace Managment
                 
                 int currentIndex = i; 
                 
-                _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, camZ), travelTime, false).SetEase(Ease.InOutSine));
+                _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, _camZ), travelTime, false).SetEase(Ease.InOutSine));
 
                 if (sequenceText && !string.IsNullOrWhiteSpace(wayPoints[currentIndex].textToType))
                 {
@@ -147,8 +153,8 @@ namespace Managment
             }
             
             //return to player
-            if (wayPoints.Count > 1) _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, camZ), travelTime).SetEase(Ease.InOutSine));
-            
+            if (wayPoints.Count > 1) _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, _camZ), travelTime).SetEase(Ease.InOutSine));
+
             //light off
             if(globalLight)
             {
@@ -170,8 +176,25 @@ namespace Managment
             if (Shift.action.WasPressedThisFrame())
             {
                 Debug.Log("pressed shift to skip intro");
-                wayPoints.Clear();
+
+                _openingSequence?.Kill();
+                _openingSequence = DOTween.Sequence();
+                
+                //light off
+                if(globalLight)
+                {
+                    _openingSequence.Join(DOTween.To(() =>
+                        globalLight.intensity, x => globalLight.intensity = x, normalIntensity, 1));
+                }
+                
+                //turn off texts
                 skipIntroHint.gameObject.SetActive(false);
+                sequenceText.gameObject.SetActive(false);
+                
+                //camera
+                mainCamera.transform.position = GetPos(wayPoints[0].target, _camZ);
+                if(cinemachineBrain) cinemachineBrain.enabled = true;
+                EventManager.RaiseSequenceComplete();
             }
         }
     }
