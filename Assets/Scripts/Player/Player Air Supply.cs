@@ -4,6 +4,7 @@ using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
+
 namespace Player
 {
     public class PlayerAirSupply : MonoBehaviour
@@ -14,6 +15,7 @@ namespace Player
         [SerializeField] private float airLossSpeed;
         [SerializeField] private float airLossAmount;
         [SerializeField] private float airGainSpeed;
+        
 
         [Header("Lights")] [SerializeField] private List<PlayerLightControler> lights;
 
