@@ -1,0 +1,978 @@
+fileFormatVersion: 2
+guid: 0c72eadfbf94642a0892987793d0962a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5819354746505413360
+    second: air_pocket_water animation_2_0
+  - first:
+      213: 8058742840251985715
+    second: air_pocket_water animation_2_1
+  - first:
+      213: 7456888492072439335
+    second: air_pocket_water animation_2_2
+  - first:
+      213: -5957594151491052212
+    second: air_pocket_water animation_2_3
+  - first:
+      213: 5066110747119672244
+    second: air_pocket_water animation_2_4
+  - first:
+      213: 8548288442084513361
+    second: air_pocket_water animation_2_5
+  - first:
+      213: -2200488175681064229
+    second: air_pocket_water animation_2_6
+  - first:
+      213: -3294057479635794124
+    second: air_pocket_water animation_2_7
+  - first:
+      213: 6176244368815331201
+    second: air_pocket_water animation_2_8
+  - first:
+      213: -4558000109749137201
+    second: air_pocket_water animation_2_9
+  - first:
+      213: 5210067955396684450
+    second: air_pocket_water animation_2_10
+  - first:
+      213: 962815861623136458
+    second: air_pocket_water animation_2_11
+  - first:
+      213: 7425429940314690974
+    second: air_pocket_water animation_2_12
+  - first:
+      213: 2403982007673160858
+    second: air_pocket_water animation_2_13
+  - first:
+      213: 3721596171908116058
+    second: air_pocket_water animation_2_14
+  - first:
+      213: 8347079483089939157
+    second: air_pocket_water animation_2_15
+  - first:
+      213: -2522910589592121356
+    second: air_pocket_water animation_2_16
+  - first:
+      213: 38642855478841494
+    second: air_pocket_water animation_2_17
+  - first:
+      213: -6540077416386318210
+    second: air_pocket_water animation_2_18
+  - first:
+      213: -1229379239458989241
+    second: air_pocket_water animation_2_19
+  - first:
+      213: 6116230936559142093
+    second: air_pocket_water animation_2_20
+  - first:
+      213: -2925772029317210051
+    second: air_pocket_water animation_2_21
+  - first:
+      213: -8888869702678374915
+    second: air_pocket_water animation_2_22
+  - first:
+      213: -7389694520861012540
+    second: air_pocket_water animation_2_23
+  - first:
+      213: -4212261280034537214
+    second: air_pocket_water animation_2_24
+  - first:
+      213: 2533081605949337452
+    second: air_pocket_water animation_2_25
+  - first:
+      213: 7269445433503501945
+    second: air_pocket_water animation_2_26
+  - first:
+      213: -9038610120365469708
+    second: air_pocket_water animation_2_27
+  - first:
+      213: -7549701859252949633
+    second: air_pocket_water animation_2_28
+  - first:
+      213: -7782041748151734516
+    second: air_pocket_water animation_2_29
+  - first:
+      213: -1540598960761865294
+    second: air_pocket_water animation_2_30
+  - first:
+      213: -1130262880284621118
+    second: air_pocket_water animation_2_31
+  - first:
+      213: -5210179469789504373
+    second: air_pocket_water animation_2_32
+  - first:
+      213: 3138694295302812092
+    second: air_pocket_water animation_2_33
+  - first:
+      213: -6498281178562699665
+    second: air_pocket_water animation_2_34
+  - first:
+      213: -1324361538694877315
+    second: air_pocket_water animation_2_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 747
+        width: 3509
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f21798ae766df60800000000000000
+      internalID: 8058742840251985715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_4
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 926
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb5bd212e07e4640800000000000000
+      internalID: 5066110747119672244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_5
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 916
+        width: 121
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156560c1c0f91a670800000000000000
+      internalID: 8548288442084513361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_6
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 898
+        width: 84
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd23514b9ab4671e0800000000000000
+      internalID: -2200488175681064229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_7
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 900
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4370798cc282942d0800000000000000
+      internalID: -3294057479635794124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_8
+      rect:
+        serializedVersion: 2
+        x: 3161
+        y: 898
+        width: 45
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1879e31c78d66b550800000000000000
+      internalID: 6176244368815331201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_10
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 891
+        width: 76
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aaa0198331ed4840800000000000000
+      internalID: 5210067955396684450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_11
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 613
+        width: 71
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0a828cceb9c5d00800000000000000
+      internalID: 962815861623136458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_12
+      rect:
+        serializedVersion: 2
+        x: 3213
+        y: 619
+        width: 42
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95d109603d6c0760800000000000000
+      internalID: 7425429940314690974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 430
+        width: 3509
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a940acd26e8ac5120800000000000000
+      internalID: 2403982007673160858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_14
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 576
+        width: 158
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e69002004c5a330800000000000000
+      internalID: 3721596171908116058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_15
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 601
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dae68da098c6d370800000000000000
+      internalID: 8347079483089939157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_16
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 591
+        width: 47
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff4a4b8f22dcfcd0800000000000000
+      internalID: -2522910589592121356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_17
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 584
+        width: 73
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6905ce9e879498000800000000000000
+      internalID: 38642855478841494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_18
+      rect:
+        serializedVersion: 2
+        x: 2170
+        y: 588
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e703db89d3afc35a0800000000000000
+      internalID: -6540077416386318210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_19
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 157
+        width: 3510
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b9ec1681e50fee0800000000000000
+      internalID: -1229379239458989241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_20
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 350
+        width: 41
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4ccd1b1a731e450800000000000000
+      internalID: 6116230936559142093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_21
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 318
+        width: 49
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3026ca37d19567d0800000000000000
+      internalID: -2925772029317210051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_22
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 317
+        width: 44
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df59f15c91464a480800000000000000
+      internalID: -8888869702678374915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_23
+      rect:
+        serializedVersion: 2
+        x: 2471
+        y: 317
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cdcd6d4cf7827990800000000000000
+      internalID: -7389694520861012540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_24
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 310
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201c86eeeaa0b85c0800000000000000
+      internalID: -4212261280034537214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_25
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 157
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6fafadbc40572320800000000000000
+      internalID: 2533081605949337452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 157
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ecf0a4b1242e460800000000000000
+      internalID: 7269445433503501945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_27
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 157
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff8d50fbf7609280800000000000000
+      internalID: -9038610120365469708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_28
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 157
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d2f17b8221a3790800000000000000
+      internalID: -7549701859252949633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_29
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 157
+        width: 43
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0fe726d242a00490800000000000000
+      internalID: -7782041748151734516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_30
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 157
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbf37a5861be9ae0800000000000000
+      internalID: -1540598960761865294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_31
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 157
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c643d516ef7050f0800000000000000
+      internalID: -1130262880284621118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_32
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 157
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cd92f7069b1b7b0800000000000000
+      internalID: -5210179469789504373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_33
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 157
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1b11205d1ee8b20800000000000000
+      internalID: 3138694295302812092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_34
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 157
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ed92d82b771d5a0800000000000000
+      internalID: -6498281178562699665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: air_pocket_water animation_2_35
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 157
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7fe6e3823cee9de0800000000000000
+      internalID: -1324361538694877315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 360b7260e80c747f4b79089c8009f4ff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      air_pocket_water animation_2_0: -5819354746505413360
+      air_pocket_water animation_2_1: 8058742840251985715
+      air_pocket_water animation_2_10: 5210067955396684450
+      air_pocket_water animation_2_11: 962815861623136458
+      air_pocket_water animation_2_12: 7425429940314690974
+      air_pocket_water animation_2_13: 2403982007673160858
+      air_pocket_water animation_2_14: 3721596171908116058
+      air_pocket_water animation_2_15: 8347079483089939157
+      air_pocket_water animation_2_16: -2522910589592121356
+      air_pocket_water animation_2_17: 38642855478841494
+      air_pocket_water animation_2_18: -6540077416386318210
+      air_pocket_water animation_2_19: -1229379239458989241
+      air_pocket_water animation_2_2: 7456888492072439335
+      air_pocket_water animation_2_20: 6116230936559142093
+      air_pocket_water animation_2_21: -2925772029317210051
+      air_pocket_water animation_2_22: -8888869702678374915
+      air_pocket_water animation_2_23: -7389694520861012540
+      air_pocket_water animation_2_24: -4212261280034537214
+      air_pocket_water animation_2_25: 2533081605949337452
+      air_pocket_water animation_2_26: 7269445433503501945
+      air_pocket_water animation_2_27: -9038610120365469708
+      air_pocket_water animation_2_28: -7549701859252949633
+      air_pocket_water animation_2_29: -7782041748151734516
+      air_pocket_water animation_2_3: -5957594151491052212
+      air_pocket_water animation_2_30: -1540598960761865294
+      air_pocket_water animation_2_31: -1130262880284621118
+      air_pocket_water animation_2_32: -5210179469789504373
+      air_pocket_water animation_2_33: 3138694295302812092
+      air_pocket_water animation_2_34: -6498281178562699665
+      air_pocket_water animation_2_35: -1324361538694877315
+      air_pocket_water animation_2_4: 5066110747119672244
+      air_pocket_water animation_2_5: 8548288442084513361
+      air_pocket_water animation_2_6: -2200488175681064229
+      air_pocket_water animation_2_7: -3294057479635794124
+      air_pocket_water animation_2_8: 6176244368815331201
+      air_pocket_water animation_2_9: -4558000109749137201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
