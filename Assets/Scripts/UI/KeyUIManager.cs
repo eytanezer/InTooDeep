@@ -97,8 +97,8 @@ namespace UI
             {
                 Transform targetUITransform = _keyUIImages[targetKeysCollected].transform;
                 
-                flyingKey.transform.DOMove(targetUITransform.position, flyDuration)
-                    .SetEase(Ease.InBack)
+                flyingKey.transform.DOJump(targetUITransform.position, jumpPower: 50f, numJumps: 1, flyDuration)
+                    .SetEase(Ease.InOutSine)
                     .OnComplete(() =>
                 {
                     Destroy(flyingKey);

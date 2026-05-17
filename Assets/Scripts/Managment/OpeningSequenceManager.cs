@@ -42,6 +42,9 @@ namespace Managment
         [Header("Movement Settings")]
         [SerializeField] private float travelTime = 1.5f;
         [SerializeField] private float lockTime = 0.5f;
+        
+        private Sequence _openingSequence;
+        private float _camZ;
 
         private void OnEnable()
         {
@@ -53,6 +56,15 @@ namespace Managment
         {
             EventManager.OnGameStateChanged -= HandleGameState;
             Shift.action.Disable();
+            _openingSequence?.Kill();
+        }
+
+        private void Update()
+        {
+            if (_openingSequence != null)
+            {
+                CheckSkipIntro();
+            }
         }
 
         private void HandleGameState(GameManager.GameState state)
@@ -60,7 +72,6 @@ namespace Managment
             if (state == GameManager.GameState.OpeningSequence)
             {
                 PlayOpeningMovie();
-                CheckSkipIntro();
             }
         }
         
@@ -71,6 +82,8 @@ namespace Managment
 
         private void PlayOpeningMovie()
         {
+            sequenceText.text = wayPoints[1].textToType;
+            sequenceText.gameObject.SetActive(true);
             skipIntroHint.gameObject.SetActive(true);
             Debug.Log("Playing Opening Movie");
             if (wayPoints == null || wayPoints.Count <= 0)
@@ -83,18 +96,19 @@ namespace Managment
             
             if(cinemachineBrain) cinemachineBrain.enabled = false;
             
-            float camZ = mainCamera.transform.position.z;
+            _camZ = mainCamera.transform.position.z;
+            mainCamera.transform.position = GetPos(wayPoints[1].target, _camZ);
             
-            mainCamera.transform.position = GetPos(wayPoints[1].target, camZ);
+            _openingSequence?.Kill();
             
-            Sequence sequence = DOTween.Sequence();
-            sequence.SetUpdate(UpdateType.Late);
+            _openingSequence = DOTween.Sequence();
+            _openingSequence.SetUpdate(UpdateType.Late);
             
             // light on
             if(globalLight)
             {
                 // globalLight.enabled = true;
-                sequence.Join(DOTween.To(() =>
+                _openingSequence.Join(DOTween.To(() =>
                     globalLight.intensity, x => globalLight.intensity = x, lightIntensity, 1));
             }
 
@@ -104,12 +118,12 @@ namespace Managment
                 
                 int currentIndex = i; 
                 
-                sequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, camZ), travelTime, false).SetEase(Ease.InOutSine));
+                _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[currentIndex].target, _camZ), travelTime, false).SetEase(Ease.InOutSine));
 
                 if (sequenceText && !string.IsNullOrWhiteSpace(wayPoints[currentIndex].textToType))
                 {
                     // reset the text and hide
-                    sequence.AppendCallback(() => 
+                    _openingSequence.AppendCallback(() => 
                     {
                         // Use currentIndex here instead of i!
                         sequenceText.text = wayPoints[currentIndex].textToType; 
@@ -118,41 +132,42 @@ namespace Managment
                     });
      
                     // typewriter effect
-                    sequence.Append(DOTween.To(
+                    _openingSequence.Append(DOTween.To(
                         () => sequenceText.maxVisibleCharacters, 
                         x => sequenceText.maxVisibleCharacters = x, 
                         wayPoints[currentIndex].textToType.Length, // Use currentIndex here!
                         typeDuration).SetEase(Ease.Linear));
     
                     //wait
-                    sequence.AppendInterval(lockTime*2);
+                    _openingSequence.AppendInterval(lockTime*2);
     
                     // fadeout
-                    sequence.Append(DOTween.To(
+                    _openingSequence.Append(DOTween.To(
                         () => sequenceText.alpha, 
                         x => sequenceText.alpha = x, 
                         0f, 
                         textFadeDuration));
                 }
                 
-                sequence.AppendInterval(lockTime*0.75f);
+                _openingSequence.AppendInterval(lockTime*0.75f);
             }
             
             //return to player
-            if (wayPoints.Count > 1) sequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, camZ), travelTime).SetEase(Ease.InOutSine));
-            
+            if (wayPoints.Count > 1) _openingSequence.Append(mainCamera.transform.DOMove(GetPos(wayPoints[0].target, _camZ), travelTime).SetEase(Ease.InOutSine));
+
             //light off
             if(globalLight)
             {
-                sequence.Join(DOTween.To(() =>
+                _openingSequence.Join(DOTween.To(() =>
                     globalLight.intensity, x => globalLight.intensity = x, normalIntensity, 1));
                 // globalLight.enabled = false;
             }
             
-            sequence.OnComplete(() =>
+            _openingSequence.OnComplete(() =>
             {
                 if(cinemachineBrain) cinemachineBrain.enabled = true;
                 EventManager.RaiseSequenceComplete();
+                skipIntroHint.gameObject.SetActive(false);
             });
         }
         
@@ -161,7 +176,25 @@ namespace Managment
             if (Shift.action.WasPressedThisFrame())
             {
                 Debug.Log("pressed shift to skip intro");
-                wayPoints.Clear();
+
+                _openingSequence?.Kill();
+                _openingSequence = DOTween.Sequence();
+                
+                //light off
+                if(globalLight)
+                {
+                    _openingSequence.Join(DOTween.To(() =>
+                        globalLight.intensity, x => globalLight.intensity = x, normalIntensity, 1));
+                }
+                
+                //turn off texts
+                skipIntroHint.gameObject.SetActive(false);
+                sequenceText.gameObject.SetActive(false);
+                
+                //camera
+                mainCamera.transform.position = GetPos(wayPoints[0].target, _camZ);
+                if(cinemachineBrain) cinemachineBrain.enabled = true;
+                EventManager.RaiseSequenceComplete();
             }
         }
     }

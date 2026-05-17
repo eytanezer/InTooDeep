@@ -9,6 +9,7 @@ public class PlayerHitShake : MonoBehaviour
     {
         _impulseSource =
             GetComponent<CinemachineImpulseSource>();
+        if (_impulseSource == null) Debug.LogError(gameObject.name + ": No Cinemachine ImpulseSource attached!");
     }
 
     public void ShakeCamera()

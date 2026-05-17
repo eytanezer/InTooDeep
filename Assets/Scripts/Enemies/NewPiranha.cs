@@ -194,10 +194,10 @@ public class PiranhaMovement1 : MonoBehaviour
         {
             airSupply.UseAirSupply(damage);
             Debug.Log("Piranha hit player, oxygen reduced by: " + damage); 
-            PlayerHitShake hitShake =
-                collision.gameObject.GetComponentInParent<PlayerHitShake>();
-
-            hitShake?.ShakeCamera();
+            // PlayerHitShake hitShake =
+            //     collision.gameObject.GetComponentInParent<PlayerHitShake>();
+            EventManager.RaisePlayerHit();
+            // hitShake?.ShakeCamera();
         }
     }
 
