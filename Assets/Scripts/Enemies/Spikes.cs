@@ -24,6 +24,7 @@ namespace Enemies
                 if (!airSupply) return;
                 
                 airSupply.UseAirSupply(damage);
+                EventManager.RaisePlayerHit();
             }
         }
     }
