@@ -401,6 +401,9 @@ PlayerSettings:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1
     m_DynamicBatching: 0
+  - m_BuildTarget: WebGL
+    m_StaticBatching: 0
+    m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
@@ -705,7 +708,7 @@ PlayerSettings:
     Server: UNITY_MCP_READY
     Standalone: UNITY_MCP_READY;UNITY_POST_PROCESSING_STACK_V2;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;DOTWEEN
     VisionOS: UNITY_MCP_READY;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
-    WebGL: UNITY_MCP_READY;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
+    WebGL: UNITY_MCP_READY;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
     Windows Store Apps: UNITY_MCP_READY;DOTWEEN
     XboxOne: UNITY_MCP_READY;UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
     iPhone: UNITY_MCP_READY;DOTWEEN
