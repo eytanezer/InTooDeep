@@ -122,6 +122,7 @@ namespace Managment
         private void ReturnToMenu()
         {
             CurrentResult = GameResult.None;
+            EventManager.RaiseStartNewRun();
             ChangeState(GameState.Title);
         }
 

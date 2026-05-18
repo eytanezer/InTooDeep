@@ -106,10 +106,11 @@ namespace Collectables
         private void OnEnable()
         {
             EventManager.OnResetGame += ResetKey;
+            EventManager.OnStartNewRun += ResetKey;
         }
         private void OnDisable(){
             EventManager.OnResetGame -= ResetKey;
-            
+            EventManager.OnStartNewRun -= ResetKey;
         }
     }
 }
