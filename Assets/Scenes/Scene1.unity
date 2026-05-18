@@ -11594,9 +11594,9 @@ MonoBehaviour:
   - target: {fileID: 634558517}
     textToType: 
   - target: {fileID: 140103650}
-    textToType: COLLECT THE KEYS,
+    textToType: COLLECT THE KEYS
   - target: {fileID: 1735591498}
-    textToType: OPEN THE CHEST,
+    textToType: OPEN THE CHEST
   - target: {fileID: 1317629621}
     textToType: AND DO NOT RUN OUT OF AIR
   sequenceText: {fileID: 1715713579}
@@ -36598,7 +36598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press Shift to skip
+  m_text: press Shift or b to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b17babd2cbaf42d4a83a39d9c02262e, type: 2}
   m_sharedMaterial: {fileID: 4122319397498090963, guid: 0b17babd2cbaf42d4a83a39d9c02262e, type: 2}
