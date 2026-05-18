@@ -11574,7 +11574,7 @@ MonoBehaviour:
   normalIntensity: 0
   wayPoints:
   - target: {fileID: 201397728}
-    textToType: 
+    textToType: we count on you
   - target: {fileID: 634558517}
     textToType: 
   - target: {fileID: 140103650}
@@ -16970,6 +16970,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1786649485}
     m_Modifications:
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.b
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.g
+      value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
     - target: {fileID: 7347458072743474435, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: m_Name
       value: Giant Anglerfish (2)
@@ -26961,6 +26973,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.b
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.g
+      value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
     - target: {fileID: 7347458072743474435, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: m_Name
       value: Giant Anglerfish
@@ -27495,6 +27519,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1786649485}
     m_Modifications:
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.b
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.g
+      value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621813698677231542, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
+      propertyPath: dangerColor.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
     - target: {fileID: 7347458072743474435, guid: 62d560fb9bac2b3479c2bc87bed670da, type: 3}
       propertyPath: m_Name
       value: Giant Anglerfish (1)
@@ -35773,7 +35809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.82205
+      value: -0.60959995
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
@@ -35781,7 +35817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 3.58525
+      value: 3.7977
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[0].x
@@ -35817,19 +35853,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[4].x
-      value: -4.9447327
+      value: -5.664028
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[4].y
-      value: 1.2925091
+      value: 1.3578997
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[5].x
-      value: 0.35207367
+      value: 1.0277786
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[5].y
-      value: 1.2602339
+      value: 1.7179666
       objectReference: {fileID: 0}
     - target: {fileID: 1952139813462612262, guid: f957321f2246e442f9656f7196e4202d, type: 3}
       propertyPath: m_ShapePath.Array.data[6].x
@@ -36546,7 +36582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press Shift or b to skip
+  m_text: press Shift to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b17babd2cbaf42d4a83a39d9c02262e, type: 2}
   m_sharedMaterial: {fileID: 4122319397498090963, guid: 0b17babd2cbaf42d4a83a39d9c02262e, type: 2}

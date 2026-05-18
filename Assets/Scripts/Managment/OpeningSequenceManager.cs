@@ -124,31 +124,33 @@ namespace Managment
 
                 if (sequenceText && !string.IsNullOrWhiteSpace(wayPoints[currentIndex].textToType))
                 {
-                    // reset the text and hide
-                    _openingSequence.AppendCallback(() => 
-                    {
-                        // Use currentIndex here instead of i!
-                        sequenceText.text = wayPoints[currentIndex].textToType; 
-                        sequenceText.maxVisibleCharacters = 0; 
-                        sequenceText.alpha = 1f; 
-                    });
-     
-                    // typewriter effect
-                    _openingSequence.Append(DOTween.To(
-                        () => sequenceText.maxVisibleCharacters, 
-                        x => sequenceText.maxVisibleCharacters = x, 
-                        wayPoints[currentIndex].textToType.Length, // Use currentIndex here!
-                        typeDuration).SetEase(Ease.Linear));
-    
-                    //wait
-                    _openingSequence.AppendInterval(lockTime*2);
-    
-                    // fadeout
-                    _openingSequence.Append(DOTween.To(
-                        () => sequenceText.alpha, 
-                        x => sequenceText.alpha = x, 
-                        0f, 
-                        textFadeDuration));
+                    displayText(currentIndex);
+                    
+                    // // reset the text and hide
+                    // _openingSequence.AppendCallback(() => 
+                    // {
+                    //     // Use currentIndex here instead of i!
+                    //     sequenceText.text = wayPoints[currentIndex].textToType; 
+                    //     sequenceText.maxVisibleCharacters = 0; 
+                    //     sequenceText.alpha = 1f; 
+                    // });
+                    //
+                    // // typewriter effect
+                    // _openingSequence.Append(DOTween.To(
+                    //     () => sequenceText.maxVisibleCharacters, 
+                    //     x => sequenceText.maxVisibleCharacters = x, 
+                    //     wayPoints[currentIndex].textToType.Length,
+                    //     typeDuration).SetEase(Ease.Linear));
+                    //
+                    // //wait
+                    // _openingSequence.AppendInterval(lockTime*2);
+                    //
+                    // // fadeout
+                    // _openingSequence.Append(DOTween.To(
+                    //     () => sequenceText.alpha, 
+                    //     x => sequenceText.alpha = x, 
+                    //     0f, 
+                    //     textFadeDuration));
                 }
                 
                 _openingSequence.AppendInterval(lockTime*0.75f);
@@ -157,6 +159,8 @@ namespace Managment
             //return to player
             if (wayPoints.Count > 1) _openingSequence.Append(sequenceCamera.transform.DOMove(GetPos(wayPoints[0].target, _camZ), travelTime).SetEase(Ease.InOutSine));
 
+            displayText(0);
+            
             //light off
             if(globalLight)
             {
@@ -198,6 +202,36 @@ namespace Managment
                 if (sequenceCamera) sequenceCamera.gameObject.SetActive(false);
                 EventManager.RaiseSequenceComplete();
             }
+        }
+
+
+        private void displayText(int currentIndex)
+        {
+            // reset the text and hide
+            _openingSequence.AppendCallback(() => 
+            {
+                // Use currentIndex here instead of i!
+                sequenceText.text = wayPoints[currentIndex].textToType; 
+                sequenceText.maxVisibleCharacters = 0; 
+                sequenceText.alpha = 1f; 
+            });
+     
+            // typewriter effect
+            _openingSequence.Append(DOTween.To(
+                () => sequenceText.maxVisibleCharacters, 
+                x => sequenceText.maxVisibleCharacters = x, 
+                wayPoints[currentIndex].textToType.Length, 
+                typeDuration).SetEase(Ease.Linear));
+    
+            //wait
+            _openingSequence.AppendInterval(lockTime*2);
+    
+            // fadeout
+            _openingSequence.Append(DOTween.To(
+                () => sequenceText.alpha, 
+                x => sequenceText.alpha = x, 
+                0f, 
+                textFadeDuration));
         }
     }
 }
