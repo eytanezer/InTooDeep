@@ -104,3 +104,6 @@ Assets/TextMesh Pro.meta
 # Feel package (avoid pushing heavy assets)
 #Assets/Feel/
 #Assets/Feel.meta
+
+# Unity Crash Logs
+mono_crash*.json
